@@ -8,7 +8,7 @@
 </p>
 
 <li> 🌍  I'm based in Egypt</li>
-<li> ✉️  You can contact me at [rhsan1565@gmail.com](mailto:rhsan1565@gmail.com)</li>
+<li> ✉️  You can contact me at (mailto:rhsan1565@gmail.com)</li>
 <li> 🧠  I'm learning Flutter , ML</li>
 <br>
 My name is Mohamed Sayed. I'm a FullStack web dev with more than 3 years of experience. I started my journey in programming because I found that I can do anything I want without limits and that nothing is impossible in programming.
