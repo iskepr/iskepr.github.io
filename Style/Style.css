@@ -1,0 +1,55 @@
+@font-face {
+  font-family: IBM;
+  src: url("../Fonts/IBMPlexSansArabic-Bold.ttf");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-color: #000;
+  --tx-color: #fff;
+  --primary-color: #122;
+  --secondary-color: #000;
+}
+/* width */
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+body {
+  font-family: IBM;
+  background-color: var(--bg-color);
+  color: var(--tx-color);
+  overflow-x: hidden;
+}
+
+a {
+  color: var(--tx-color);
+  text-decoration: none;
+}
+
+/* header */
+header .ul {
+  display: flex;
+  list-style: none;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .ul li {
+  margin: 10px;
+}
+header .ul .but {
+  display: flex;
+  margin-right: 20px;
+}
+
+header .ul .logo {
+  margin-left: 20px;
+  color: var(--primary-color);
+}
+

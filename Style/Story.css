@@ -1,0 +1,7 @@
+@import url(Style.css);
+/* story */
+.story {
+  background-color: var(--bg-color);
+  position: relative;
+  top: -500px;
+}
