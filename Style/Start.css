@@ -1,81 +1,46 @@
 @import url(Style.css);
 /* start */
 .start {
-  text-align: center;
-  margin-top: 50px;
-  height: 300px;
+  height: 800;
   display: flex;
+  flex-wrap: wrap;
+  padding: 10%;
+  margin-top: 20px;
+  text-align: center;
+  border-radius: 20px 20px 0px 0px;
+  animation: startt 2s;
   flex-direction: column;
   justify-content: space-evenly;
-  animation: startt 2s;
+  border: solid  1px var(--primary-color);
+  border-bottom: none;
 }
 
 /* me */
 .start .me {
-  justify-content: center;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
   margin-top: 50px;
   display: flex;
 }
-
-.start .me .text {
-  margin: auto;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row-reverse;
-  justify-content: center;
-  font-size: 25px;
-  font-weight: 900;
-  z-index: 2;
-  animation: textstart 2s;
-}
-.start .me .text h1 {
-  position: relative;
-  top: -70px;
-  margin: 0 5px;
-  animation: textflow 2s ease-in infinite alternate-reverse;
-}
-
-.start .me .bac {
-  position: absolute;
-  width: 250px;
-  height: 350px;
-  rotate: 15deg;
-  background-color: var(--primary-color);
-  z-index: 1;
-  animation: fly 2s ease-in infinite alternate-reverse;
-}
-.start .me .bacb {
-  position: absolute;
-  width: 260px;
-  height: 100px;
-  rotate: 15deg;
-  background-color: var(--bg-color);
-  z-index: 4;
-  top: 505px;
-  animation: bacbfly 2s ease-in infinite alternate-reverse;
-}
-
-.start .me .myimg {
-  width: 200px;
-  position: absolute;
-  z-index: 3;
-  animation: fly 2s ease-in infinite alternate-reverse;
-}
-
 .start .me .meimg {
   width: 200px;
+  height: 200px;
+  border-radius: 20px;
+  border: solid 1px var(--primary-color);
+  animation: fly 2s ease-in infinite alternate-reverse;
 }
+.start .me .text {
+  margin: auto;
+}
+
 
 @keyframes fly {
   to {
     transform: translateY(10px);
   }
 }
-@keyframes bacbfly {
-  to {
-    transform: translateY(10px);
-  }
-}
+
 
 @keyframes textflow {
   to {
@@ -116,7 +81,7 @@
   padding: 10px 3px;
   background-color: var(--tx-color);
   z-index: 5;
-  animation: langstart 4s ease-in;
+  /* animation: langstart 4s ease-in; */
 }
 .start .langbut .but {
   background-color: var(--tx-color);
@@ -131,7 +96,7 @@
   border-radius: 10px;
   padding: 10px;
 }
-@keyframes langstart {
+/* @keyframes langstart {
   from {
     transform: translateX(500px);
     opacity: 0;
@@ -139,7 +104,7 @@
   to {
     opacity: 1;
   }
-}
+} */
 /* start menu buts */
 .start .buts {
   z-index: 4;
@@ -189,4 +154,3 @@
 .scruoll:hover .anim {
   display: block;
 }
-

@@ -1,4 +1,4 @@
-fetch("Imgs/animation.json")
+fetch("Assets/imgs/animation.json")
   .then((response) => response.json())
   .then((data) => {
     // تهيئة الرسوم المتحركة باستخدام Lottie
