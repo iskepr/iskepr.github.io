@@ -4,11 +4,12 @@
   height: 800;
   display: flex;
   flex-wrap: wrap;
-  padding: 10%;
+  padding: 5% 10%;
   margin-top: 20px;
   text-align: center;
   border-radius: 20px 20px 0px 0px;
-  animation: startt 2s;
+  animation:  startt 1s;
+  animation-delay: 2100ms;
   flex-direction: column;
   justify-content: space-evenly;
   border: solid 1px var(--primary-color);
@@ -22,16 +23,21 @@
   flex-wrap: wrap;
   margin-top: 50px;
   display: flex;
+  animation: fly 2s ease-in infinite alternate-reverse;
 }
+
+
 .start .me .meimg {
-  width: 200px;
-  height: 200px;
+  width: 426px;
+  height: 426px;
   border-radius: 20px;
-  border: solid 1px var(--primary-color);
   animation: fly 2s ease-in infinite alternate-reverse;
 }
 .start .me .text {
   margin: auto;
+}
+.start .me .text .logos img {
+  width: 50px;
 }
 
 @keyframes fly {
@@ -55,6 +61,7 @@
 @keyframes startt {
   from {
     transform: translatez(200px);
+    transform: translateY(200px);
     opacity: 0;
   }
   to {
@@ -63,9 +70,9 @@
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 1000px) {
   .start .me .text {
-    margin: auto;
+    margin-top: 100px;
   }
 }
 

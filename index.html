@@ -12,12 +12,12 @@
   <link rel="stylesheet" href="Style/Contact.css">
   <!-- link -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.4/lottie.min.js"></script>
-  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <link rel="stylesheet" href="Style/aos.css" />
 </head>
-
-<body>
+<div id="preloader"></div>
+<body id="body">
   <!-- header -->
-  <header>
+  <header data-aos="fade-dowen">
     <div class="ul">
       <div class="logo">
         <li><a href="Index.html">سكيبر</a></li>
@@ -30,29 +30,36 @@
     </div>
   </header>
   <!-- start -->
-  <div class="start">
+  <div class="start" data-aos="fade-up">
     <div class="me">
-      <img class="meimg" src="Assets/imgs/حديقه الامل.jpg" alt="mohamed sayed skepr">
-      <div class="text">
+      <div class="myimg" data-aos="fade-right">
+        <img class="meimg" src="Assets/imgs/حديقه الامل.jpg" alt="mohamed sayed skepr">
+      </div>
+      <div class="text" data-aos="fade-left">
         <!-- <h1>السلام عليكم</h1> -->
-        <h1>محمد سيد</h1>
-        <h4>مُطور مواقع</h4>
-        <div class="logos">
-          <img src="Assets/vectors/html_logo_x2.svg" width="30" alt="">
-          <img src="Assets/vectors/css_logo_x2.svg" width="30" alt="">
-          <img src="Assets/vectors/javascript_logo_x2.svg" width="30" alt="">
-          <img src="Assets/vectors/php_logo_x2.svg" width="30" alt="">
-          <img src="Assets/vectors/mysql.svg" width="50" alt="">
-        </div>
-        <h4>مُطور فلاتر</h4>
-        <div class="logos">
-          <img src="Assets/vectors/flutter.svg" width="30" alt="">
+        <h1 style="font-size: 95px;">مُحمد سَــــــــيد</h1>
+        <div class="skils">
+          <div class="flutter">
+            <h4 style="font-size: 60px;">مُطور تطبيقات</h4>
+            <div class="logos">
+              <img src="Assets/vectors/flutter.svg" alt="">
+            </div>
+          </div>
+          <div class="web">
+            <h4 style="font-size: 60px;">مُطور مواقع</h4>
+            <div class="logos">
+              <img src="Assets/vectors/html_logo_x2.svg" alt="">
+              <img src="Assets/vectors/css_logo_x2.svg" alt="">
+              <img src="Assets/vectors/javascript_logo_x2.svg" alt="">
+              <img src="Assets/vectors/php_logo_x2.svg" alt="">
+              <img src="Assets/vectors/mysql.svg" alt="">
+            </div>
+          </div>
+
         </div>
       </div>
-      <div class="bac"></div>
-      <div class="bacb"></div>
     </div>
-
+    <br>
     <div class="buts">
       <a href="#" class="but scruoll">
         <p class="text">قصتي</p>
@@ -63,7 +70,7 @@
   </div>
   <!-- story -->
   <div class="story">
-    <h2>البداية</h2>
+    <h2 style="font-size: 60px;">البداية</h2>
     <div class="hrt" data-aos="fade-up"></div>
     <div class="card" data-aos="fade-up">
       <div class="scard left">
@@ -120,10 +127,12 @@
   <!-- footer -->
   <footer>
     <div class="links">
-      <a href="#" target="_blank"><img src="Assets/vectors/github_x2.svg" alt="github"></a>
-      <a href="#" target="_blank"><img src="Assets/vectors/telegram_x2.svg" alt="github"></a>
-      <a href="#" target="_blank"><img src="Assets/vectors/facebook_x2.svg" alt="github"></a>
-      <a href="#" target="_blank"><img src="Assets/vectors/instagram_x2.svg" alt="github"></a>
+      <a href="https://github.com/iskepr" target="_blank"><img src="Assets/vectors/github_x2.svg" alt="github"></a>
+      <a href="https://t.me/Iskepr" target="_blank"><img src="Assets/vectors/telegram_x2.svg" alt="github"></a>
+      <a href="https://www.facebook.com/itskepr/" target="_blank"><img src="Assets/vectors/facebook_x2.svg"
+          alt="github"></a>
+      <a href="https://www.instagram.com/itskepr/" target="_blank"><img src="Assets/vectors/instagram_x2.svg"
+          alt="github"></a>
     </div>
     <h3>تم برمجة الموقع بواسطة <span>@سكيبر</span></h3>
   </footer>
@@ -132,7 +141,7 @@
   <!-- Script -->
   <script src="Js/Main.js"></script>
   <!-- link -->
-  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script src="Js/aos.js"></script>
   <script>
     AOS.init();
     AOS.init({

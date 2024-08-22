@@ -30,7 +30,10 @@
   border-left: solid 1px var(--primary-color);
 }
 .card .right h2 {
-  text-align: right;
+  font-size: 60px;
+}
+.card .right p {
+  font-size: 20px;
 }
 
 .card .left {
@@ -47,8 +50,8 @@
   top: 0px;
   right: 0px;
 
-  width: 100px;
-  height: 100px;
+  width: 260px;
+  height: 260px;
   border-radius: 20px;
   border: solid 1px var(--primary-color);
 }

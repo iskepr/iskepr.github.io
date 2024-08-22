@@ -10,3 +10,12 @@ fetch("Assets/imgs/animation.json")
       animationData: data, // بيانات الرسوم المتحركة من ملف JSON
     });
   });
+
+// prelodar
+var lodar = document.getElementById("preloader");
+
+window.addEventListener("load", function () {
+  setTimeout(function () {
+    lodar.style.transform = "translateY(-100%)";
+  }, 2000);
+});
