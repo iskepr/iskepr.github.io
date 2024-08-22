@@ -12,7 +12,7 @@
 :root {
   --bg-color: #111;
   --tx-color: #fff;
-  --primary-color: #122;
+  --primary-color: #05ff2d;
   --secondary-color: #000;
 }
 /* width */
@@ -43,8 +43,13 @@ header .ul {
 
 header .ul li {
   margin: 10px;
+  transition: .5s;
 }
-header .ul .but {
+header .ul li:hover {
+  margin: 10px;
+  margin-top: 20px;
+}
+header .ul .buts {
   display: flex;
   margin-right: 20px;
 }
@@ -54,3 +59,20 @@ header .ul .logo {
   color: var(--primary-color);
 }
 
+/* footer */
+footer {
+  text-align: right;
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-between;
+}
+footer .links {
+  display: flex;
+}
+footer .links img {
+  width: 30px;
+  margin: 0 5px;
+}
+footer span {
+  color: var(--primary-color);
+}

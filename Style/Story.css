@@ -1,7 +1,54 @@
 @import url(Style.css);
 /* story */
-.story {
-  background-color: var(--bg-color);
-  position: relative;
-  top: -500px;
+.story h2 {
+  text-align: center;
+}
+.story .hrt {
+  margin: 20px auto;
+  width: 90%;
+  border-top: solid 1px var(--primary-color);
+}
+.story .hrl {
+  margin: 20px auto;
+  height: 90%;
+  border-left: solid 1px var(--primary-color);
+}
+
+.card {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+.card .scard {
+  width: 50%;
+  height: 100%;
+  padding: 20px;
+}
+
+.card .right {
+  text-align: right;
+  border-left: solid 1px var(--primary-color);
+}
+.card .right h2 {
+  text-align: right;
+}
+
+.card .left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.card .left .space {
+  height: 100px; width: 100px;
+}
+.card .left .cardimg {
+  position: sticky;
+  top: 0px;
+  right: 0px;
+
+  width: 100px;
+  height: 100px;
+  border-radius: 20px;
+  border: solid 1px var(--primary-color);
 }

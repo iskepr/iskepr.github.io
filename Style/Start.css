@@ -11,7 +11,7 @@
   animation: startt 2s;
   flex-direction: column;
   justify-content: space-evenly;
-  border: solid  1px var(--primary-color);
+  border: solid 1px var(--primary-color);
   border-bottom: none;
 }
 
@@ -34,13 +34,11 @@
   margin: auto;
 }
 
-
 @keyframes fly {
   to {
     transform: translateY(10px);
   }
 }
-
 
 @keyframes textflow {
   to {
@@ -65,46 +63,12 @@
   }
 }
 
-@media (min-width: 500px) {
+@media (max-width: 500px) {
   .start .me .text {
-    margin-top: 50px;
+    margin: auto;
   }
 }
 
-/* lang but */
-.start .langbut {
-  position: absolute;
-  bottom: 100px;
-  right: 30px;
-  width: 90px;
-  border-radius: 10px;
-  padding: 10px 3px;
-  background-color: var(--tx-color);
-  z-index: 5;
-  /* animation: langstart 4s ease-in; */
-}
-.start .langbut .but {
-  background-color: var(--tx-color);
-  color: var(--bg-color);
-  border-radius: 10px;
-  padding: 10px;
-  font-size: 13px;
-}
-.start .langbut .active {
-  background-color: var(--primary-color);
-  color: var(--tx-color);
-  border-radius: 10px;
-  padding: 10px;
-}
-/* @keyframes langstart {
-  from {
-    transform: translateX(500px);
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-} */
 /* start menu buts */
 .start .buts {
   z-index: 4;

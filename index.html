@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar">
 
 <head>
   <meta charset="UTF-8">
@@ -8,8 +8,11 @@
   <!-- style -->
   <link rel="stylesheet" href="Style/Style.css">
   <link rel="stylesheet" href="Style/Start.css">
+  <link rel="stylesheet" href="Style/Story.css">
+  <link rel="stylesheet" href="Style/Contact.css">
   <!-- link -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.4/lottie.min.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 
 <body>
@@ -19,16 +22,17 @@
       <div class="logo">
         <li><a href="Index.html">سكيبر</a></li>
       </div>
-      <div class="but">
+      <div class="buts">
         <li><a href="Padges/Work.html">أعمالي</a></li>
-        <li><a href="Padges/Contact.html">تواصل معي</a></li>
+        <li><a href="#Contact">تواصل معي</a></li>
+        <li> <a href="En/Home.html" class="but">En</a></li>
       </div>
     </div>
   </header>
   <!-- start -->
   <div class="start">
     <div class="me">
-        <img class="meimg" src="Assets/imgs/حديقه الامل.jpg" alt="mohamed sayed skepr">
+      <img class="meimg" src="Assets/imgs/حديقه الامل.jpg" alt="mohamed sayed skepr">
       <div class="text">
         <!-- <h1>السلام عليكم</h1> -->
         <h1>محمد سيد</h1>
@@ -56,19 +60,85 @@
       </a>
       <a href="Padges/Work.html" class="but">اعمالي</a>
     </div>
-    <div class="langbut">
-      <a href="En/Home.html" class="but">En</a>
-      <a href="#" class="but active">عربي</a>
-    </div>
   </div>
   <!-- story -->
   <div class="story">
-
+    <h2>البداية</h2>
+    <div class="hrt" data-aos="fade-up"></div>
+    <div class="card" data-aos="fade-up">
+      <div class="scard left">
+        <img class="cardimg" src="Assets/imgs/طفل طرش.jpg" alt="mohamed sayed skepr">
+      </div>
+      <div class="scard right">
+        <h2>الولاده</h2>
+      </div>
+    </div>
+    <div class="hrt" data-aos="fade-up"></div>
+    <div class="card" data-aos="fade-up">
+      <div class="scard left">
+        <img class="cardimg" src="Assets/imgs/الكمبيوتر.jpeg" alt="mohamed sayed skepr">
+        <div class="space"></div>
+      </div>
+      <div class="scard right">
+        <p>في سن الخامسة، حصلت على أول جهاز إلكتروني لي، وهو جهاز كمبيوتر. كانت تلك اللحظة مليئة بالدهشة والإعجاب، حيث
+          أسرني تمامًا كيف يمكن لهذا الجهاز أن يعمل بهذا الشكل المذهل. تملكني الفضول الشديد لمعرفة أسرار تشغيله وفهم
+          آلية عمله، مما أشعل في داخلي شرارة الشغف بالتكنولوجيا.</p>
+      </div>
+    </div>
+    <div class="hrt" data-aos="fade-up"></div>
+    <div class="card" data-aos="fade-up">
+      <div class="scard left">
+        <img class="cardimg" src="Assets/imgs/الكمبيوتر.jpeg" alt="mohamed sayed skepr">
+        <div class="space"></div>
+      </div>
+      <div class="scard right">
+        <p>في سن الخامسة، حصلت على أول جهاز إلكتروني لي، وهو جهاز كمبيوتر. كانت تلك اللحظة مليئة بالدهشة والإعجاب، حيث
+          أسرني تمامًا كيف يمكن لهذا الجهاز أن يعمل بهذا الشكل المذهل. تملكني الفضول الشديد لمعرفة أسرار تشغيله وفهم
+          آلية عمله، مما أشعل في داخلي شرارة الشغف بالتكنولوجيا.</p>
+      </div>
+    </div>
   </div>
+
+  <!-- contact -->
+  <div class="contact" id="Contact" data-aos="fade-up">
+    <form action="">
+      <h3>التواصل</h3>
+      <div class="top">
+        <input type="text" name="" placeholder="اللاسم" required>
+        <input type="text" name="" placeholder="البريد" required>
+        <select name="" id="">
+          <option selected disabled>نوع الطلب</option>
+          <option value="">تطبيق فلاتر</option>
+          <option value="">تطوير موقع</option>
+        </select>
+      </div>
+      <input type="text" name="" placeholder="عنوان الطلب" required>
+      <textarea type="textarea" name="" placeholder="شرح الطلب" required></textarea>
+    </form>
+  </div>
+
+  <!-- footer -->
+  <footer>
+    <div class="links">
+      <a href="#" target="_blank"><img src="Assets/vectors/github_x2.svg" alt="github"></a>
+      <a href="#" target="_blank"><img src="Assets/vectors/telegram_x2.svg" alt="github"></a>
+      <a href="#" target="_blank"><img src="Assets/vectors/facebook_x2.svg" alt="github"></a>
+      <a href="#" target="_blank"><img src="Assets/vectors/instagram_x2.svg" alt="github"></a>
+    </div>
+    <h3>تم برمجة الموقع بواسطة <span>@سكيبر</span></h3>
+  </footer>
 
 
   <!-- Script -->
   <script src="Js/Main.js"></script>
+  <!-- link -->
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+    AOS.init({
+      duration: 700,
+    })
+  </script>
 </body>
 
 </html>
