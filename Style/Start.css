@@ -6,9 +6,10 @@
   flex-wrap: wrap;
   padding: 5% 10%;
   margin-top: 20px;
+  margin-bottom: 50px;
   text-align: center;
   border-radius: 20px 20px 0px 0px;
-  animation:  startt 1s;
+  animation: startt 1s;
   animation-delay: 2100ms;
   flex-direction: column;
   justify-content: space-evenly;
@@ -26,7 +27,6 @@
   animation: fly 2s ease-in infinite alternate-reverse;
 }
 
-
 .start .me .meimg {
   width: 426px;
   height: 426px;
@@ -35,6 +35,12 @@
 }
 .start .me .text {
   margin: auto;
+}
+.start .me .text h1 {
+  font-size: 95px;
+}
+.start .me .text h3 {
+  font-size: 60px;
 }
 .start .me .text .logos img {
   width: 50px;
@@ -70,9 +76,25 @@
   }
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 700px) {
+  .start .me {
+    margin-top: 5%;
+  }
+  .start .me .meimg {
+    width: 100%;
+    height: 100%;
+  }
   .start .me .text {
-    margin-top: 100px;
+    margin-top: 50px;
+  }
+  .start .me .text h1 {
+    font-size: 65px;
+  } 
+  .start .me .text h3 {
+    font-size: 30px;
+  }
+  .start .me .text .logos img {
+    width: 30px;
   }
 }
 
