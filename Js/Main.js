@@ -23,70 +23,71 @@ window.addEventListener("load", function () {
 // fetch data
 
 // مسار ملف JSON
-const jsonFile = '../Story.json';
+const storys = [
+  {
+    "title": "الولاده",
+    "subtitle": "",
+    "img": "Assets/imgs/طفل طرش.jpg"
+  },
+  {
+    "title": "",
+    "subtitle": "في سن الخامسة، حصلت على أول جهاز إلكتروني لي، وهو جهاز كمبيوتر. كانت تلك اللحظة مليئةبالدهشة والإعجاب، حيث يمكن للمستخدمأسرني تمامًا كيف يمكن لهذا الجهاز أن يعمل بهذا الشكل المذهل. تملكني الفضول الشديد لمعرفة أسرار تشغيله وفهمآلية عمله، مما أشعل في داخلي شرارة الشغف بالتكنولوجيا.",
+    "img": "Assets/imgs/الكمبيوتر.jpeg"
+  },
+  {
+    "title": "",
+    "subtitle": "في سن الخامسة، حصلت على أول جهاز إلكتروني لي، وهو جهاز كمبيوتر. كانت تلك اللحظة مليئةبالدهشة والإعجاب، حيث يمكن للمستخدمأسرني تمامًا كيف يمكن لهذا الجهاز أن يعمل بهذا الشكل المذهل. تملكني الفضول الشديد لمعرفة أسرار تشغيله وفهمآلية عمله، مما أشعل في داخلي شرارة الشغف بالتكنولوجيا.",
+    "img": "Assets/imgs/الكمبيوتر.jpeg"
+  }
+];
 
+const contentDiv = document.getElementById('storys');
 // جلب البيانات باستخدام fetch
-fetch(jsonFile)
-  .then(response => {
-    if (!response.ok) {
-      throw new Error('Network response was not ok');
-    }
-    return response.json();
-  })
-  .then(data => {
-    // الحصول على العنصر حيث سيتم عرض البيانات
-    const contentDiv = document.getElementById('storys');
+storys.forEach(item => {
+  // إنشاء عنصر div جديد للبطاقة
+  const cardDiv = document.createElement('div');
+  cardDiv.classList.add('card');
+  cardDiv.setAttribute('data-aos', 'fade-up');
 
-    // تكرار البيانات في JSON
-    data.forEach(item => {
-      // إنشاء عنصر div جديد للبطاقة
-      const cardDiv = document.createElement('div');
-      cardDiv.classList.add('card');
-      cardDiv.setAttribute('data-aos', 'fade-up');
+  // إنشاء scard left
+  const scardLeft = document.createElement('div');
+  scardLeft.classList.add('scard', 'left');
+  
+  const imgElement = document.createElement('img');
+  imgElement.classList.add('cardimg');
+  imgElement.src = item.img;
+  imgElement.alt = item.title || 'Image';
+  scardLeft.appendChild(imgElement);
 
-      // إنشاء scard left
-      const scardLeft = document.createElement('div');
-      scardLeft.classList.add('scard', 'left');
-      
-      const imgElement = document.createElement('img');
-      imgElement.classList.add('cardimg');
-      imgElement.src = item.img;
-      imgElement.alt = item.title || 'Image';
-      scardLeft.appendChild(imgElement);
+  const subtitleElementLeft = document.createElement('p');
+  subtitleElementLeft.classList.add('subtitle');
+  subtitleElementLeft.textContent = item.subtitle;
+  scardLeft.appendChild(subtitleElementLeft);
 
-      const subtitleElementLeft = document.createElement('p');
-      subtitleElementLeft.classList.add('subtitle');
-      subtitleElementLeft.textContent = item.subtitle;
-      scardLeft.appendChild(subtitleElementLeft);
+  cardDiv.appendChild(scardLeft);
 
-      cardDiv.appendChild(scardLeft);
+  // إنشاء scard right
+  const scardRight = document.createElement('div');
+  scardRight.classList.add('scard', 'right');
 
-      // إنشاء scard right
-      const scardRight = document.createElement('div');
-      scardRight.classList.add('scard', 'right');
+  const titleElement = document.createElement('h2');
+  titleElement.id = 'title';
+  titleElement.textContent = item.title;
+  scardRight.appendChild(titleElement);
 
-      const titleElement = document.createElement('h2');
-      titleElement.id = 'title';
-      titleElement.textContent = item.title;
-      scardRight.appendChild(titleElement);
+  const subtitleElementRight = document.createElement('p');
+  subtitleElementRight.classList.add('subtitle');
+  subtitleElementRight.textContent = item.subtitle;
+  scardRight.appendChild(subtitleElementRight);
 
-      const subtitleElementRight = document.createElement('p');
-      subtitleElementRight.classList.add('subtitle');
-      subtitleElementRight.textContent = item.subtitle;
-      scardRight.appendChild(subtitleElementRight);
+  cardDiv.appendChild(scardRight);
 
-      cardDiv.appendChild(scardRight);
+  // إضافة البطاقة إلى contentDiv
+  contentDiv.appendChild(cardDiv);
 
-      // إضافة البطاقة إلى contentDiv
-      contentDiv.appendChild(cardDiv);
-
-      // إضافة عنصر hrt بعد كل بطاقة
-      const hrtDiv = document.createElement('div');
-      hrtDiv.classList.add('hrt');
-      hrtDiv.setAttribute('data-aos', 'fade-up');
-      contentDiv.appendChild(hrtDiv);
-    });
-  })
-  .catch(error => {
-    console.error('There has been a problem with your fetch operation:', error);
-  });
+  // إضافة عنصر hrt بعد كل بطاقة
+  const hrtDiv = document.createElement('div');
+  hrtDiv.classList.add('hrt');
+  hrtDiv.setAttribute('data-aos', 'fade-up');
+  contentDiv.appendChild(hrtDiv);
+});
