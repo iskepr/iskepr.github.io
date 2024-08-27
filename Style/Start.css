@@ -1,7 +1,6 @@
 @import url(Style.css);
 /* start */
 .start {
-  height: 800;
   display: flex;
   flex-wrap: wrap;
   padding: 5% 10%;
@@ -15,15 +14,18 @@
   justify-content: space-evenly;
   border: solid 1px var(--primary-color);
   border-bottom: none;
+  overflow-x: hidden;
 }
 
 /* me */
 .start .me {
+  position: relative;
   justify-content: space-evenly;
   align-items: center;
   flex-wrap: wrap;
   margin-top: 50px;
   display: flex;
+  height: 500px;
   animation: fly 2s ease-in infinite alternate-reverse;
 }
 
@@ -78,18 +80,29 @@
 
 @media (max-width: 700px) {
   .start .me {
+    position: relative;
+    height: 650px;
     margin-top: 5%;
   }
   .start .me .meimg {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: 100%;
+    height: 350px;
+    object-fit: cover;
+    z-index: 1;
   }
   .start .me .text {
+    transition: .2s;
+    position: absolute;
+    bottom: 0;
+    z-index: 0;
     margin-top: 50px;
   }
   .start .me .text h1 {
     font-size: 65px;
-  } 
+  }
   .start .me .text h3 {
     font-size: 30px;
   }

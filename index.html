@@ -17,6 +17,10 @@
   <meta property="twitter:description"
     content=" السلام عليكم انا مُحمد سيد مُطور مواقع منذ 2021 م - 1442 هـ ومُطور تطبيقات باستخدام فلاتر منذ 2024 م - 1445 هـ | تم برمجة الموقع بواسطة @سكيبر">
 
+  <meta name="keywords"
+    content="محمد سيد , محمد سيد عبدالعليم , محمد سيد عبدالعليم محمود , سكيبر , محمد سكيبر , محمد سيد سكيبر , مصر , الزاوية الحمرء , محد سيد ازاوية الحمراء , Mohamed , Mohamed Sayed , Mohamed Skepr , Mohamed Sayed Skepr , Mohamed Sayed AbdElalem ,iskrpr , itskepr, qwsdxccc">
+  <meta name="author" content="Mohamed Sayed , skepr , محمد سيد , سكيبر ,محمد سيد عبدالعليم">
+
   <meta property="og:image" content="Assets/imgs/حديقه الامل.jpg">
   <meta property="twitter:image" content="Assets/imgs/حديقه الامل.jpg">
   <meta name="twitter:card" content="summary_large_image">
@@ -46,6 +50,7 @@
     gtag('config', 'G-SGWQQRQ15Y');
   </script>
 </head>
+
 <div id="preloader"></div>
 
 <body>
@@ -63,12 +68,12 @@
     </div>
   </header>
   <!-- start -->
-  <div class="start" data-aos="fade-up">
+  <div class="start">
     <div class="me">
-      <div class="myimg" data-aos="fade-right">
+      <div class="myimg">
         <img class="meimg" src="Assets/imgs/حديقه الامل.jpg" alt="mohamed sayed skepr">
       </div>
-      <div class="text" data-aos="fade-left">
+      <div class="text">
         <!-- <h1>السلام عليكم</h1> -->
         <h1>مُحمد سَــــــــيد</h1>
         <div class="skils">
@@ -101,9 +106,16 @@
       <a href="Padges/Work.html" class="but">اعمالي</a>
     </div> -->
   </div>
+  <!-- work -->
+  <div class="work">
+    <h1 data-aos="fade-up">أعمالي</h1>
+    <div class="hrt" data-aos="fade-up"></div>
+    <div id="works"></div>
+    <div class="hrt" data-aos="fade-up"></div>
+  </div>
   <!-- story -->
   <div class="story">
-    <h1>البداية</h1>
+    <h1 data-aos="fade-up">البداية</h1>
     <div class="hrt" data-aos="fade-up"></div>
     <div id="storys"></div>
   </div>
@@ -112,7 +124,7 @@
   <div class="contact" id="Contact" data-aos="fade-up">
     <form action="">
       <h3>التواصل</h3>
-      <div class="top">
+      <dvalue= class="top">
         <input type="text" name="" placeholder="اللاسم" required>
         <input type="text" name="" placeholder="البريد" required>
         <select name="" id="">
@@ -120,28 +132,41 @@
           <option value="">تطبيق فلاتر</option>
           <option value="">تطوير موقع</option>
         </select>
-      </div>
-      <input type="text" name="" placeholder="عنوان الطلب" required>
-      <textarea type="textarea" name="" placeholder="شرح الطلب" required></textarea>
+
+        <input type="radio" id="flutter" name="work_type" value="flutter">
+        <label for="html">تطبيق فلاتر</label><br>
+        <input type="radio" id="web" name="work_type" value="web">
+        <label for="css">تطوير موقع</label><br>
+        <input type="radio" id="ui" name="work_type" value="ui">
+        <label for="javascript">تصميم UI/UX</label>
+
+        <input type="text" name="" placeholder="عنوان الطلب" required>
+        <textarea type="textarea" name="" placeholder="شرح الطلب" required></textarea>
     </form>
   </div>
 
   <!-- footer -->
   <footer>
-    <div class="links">
-      <a href="https://github.com/iskepr" target="_blank"><img src="Assets/vectors/github_x2.svg" alt="github"></a>
-      <a href="https://t.me/Iskepr" target="_blank"><img src="Assets/vectors/telegram_x2.svg" alt="github"></a>
-      <a href="https://www.facebook.com/itskepr/" target="_blank"><img src="Assets/vectors/facebook_x2.svg"
-          alt="github"></a>
-      <a href="https://www.instagram.com/itskepr/" target="_blank"><img src="Assets/vectors/instagram_x2.svg"
-          alt="github"></a>
+    <div class="top">
+      <div class="links">
+        <a href="https://github.com/iskepr" target="_blank"><img src="Assets/vectors/github_x2.svg" alt="github"></a>
+        <a href="https://t.me/Iskepr" target="_blank"><img src="Assets/vectors/telegram_x2.svg" alt="github"></a>
+        <a href="https://www.facebook.com/itskepr/" target="_blank"><img src="Assets/vectors/facebook_x2.svg"
+            alt="github"></a>
+        <a href="https://www.instagram.com/itskepr/" target="_blank"><img src="Assets/vectors/instagram_x2.svg"
+            alt="github"></a>
+      </div>
+      <h3>تم برمجة الموقع بواسطة <span>@سكيبر</span></h3>
     </div>
-    <h3>تم برمجة الموقع بواسطة <span>@سكيبر</span></h3>
+    <div class="email" onclick="copyEmail()">
+      <h4><span id="copytext">نسخ :</span> skeprContact@gmail.com</h4>
+    </div>
   </footer>
 
 
   <!-- Script -->
   <script src="Js/Main.js"></script>
+  <script src="Js/Data.js"></script>
   <!-- link -->
   <script src="Js/aos.js"></script>
   <script>

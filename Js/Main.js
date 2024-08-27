@@ -20,74 +20,59 @@ window.addEventListener("load", function () {
   }, 2000);
 });
 
-// fetch data
+// copy Email
+function copyEmail() {
+  let copyEmail = "skeprContact@gmail.com";
+  let copyText = document.querySelector("#copytext");
 
-// مسار ملف JSON
-const storys = [
-  {
-    "title": "الولاده",
-    "subtitle": "",
-    "img": "Assets/imgs/طفل طرش.jpg"
-  },
-  {
-    "title": "",
-    "subtitle": "في سن الخامسة، حصلت على أول جهاز إلكتروني لي، وهو جهاز كمبيوتر. كانت تلك اللحظة مليئةبالدهشة والإعجاب، حيث يمكن للمستخدمأسرني تمامًا كيف يمكن لهذا الجهاز أن يعمل بهذا الشكل المذهل. تملكني الفضول الشديد لمعرفة أسرار تشغيله وفهمآلية عمله، مما أشعل في داخلي شرارة الشغف بالتكنولوجيا.",
-    "img": "Assets/imgs/الكمبيوتر.jpeg"
-  },
-  {
-    "title": "",
-    "subtitle": "في سن الخامسة، حصلت على أول جهاز إلكتروني لي، وهو جهاز كمبيوتر. كانت تلك اللحظة مليئةبالدهشة والإعجاب، حيث يمكن للمستخدمأسرني تمامًا كيف يمكن لهذا الجهاز أن يعمل بهذا الشكل المذهل. تملكني الفضول الشديد لمعرفة أسرار تشغيله وفهمآلية عمله، مما أشعل في داخلي شرارة الشغف بالتكنولوجيا.",
-    "img": "Assets/imgs/الكمبيوتر.jpeg"
+  navigator.clipboard.writeText(copyEmail);
+  copyText.textContent = "نُسِخ!:";
+  setTimeout(function () {
+    copyText.textContent = "نسخ :";
+  }, 2000);
+}
+
+// animation contact
+let startSection = document.querySelector(".start");
+let workSection = document.querySelector(".wordk");
+let storySection = document.querySelector(".story");
+let contactSection = document.querySelector(".contact");
+
+let meimg = document.querySelector(".meimg");
+let metext = document.querySelector(".me .text");
+let me = document.querySelector(".me");
+
+window.onscroll = function () {
+  let value = window.scrollY;
+  let width = window.screen.availWidth;
+  meimg.style.top = value * 0.9 + "px";
+  metext.style.bottom = value + "px";
+
+  if (value >= 100 && width < 700) {
+    metext.style.opacity = 0;
+  } else {
+    metext.style.opacity = 1;
   }
-];
+  if (width > 700) {
+    me.style.top = value * .4 + "px";
+  }
 
-const contentDiv = document.getElementById('storys');
-// جلب البيانات باستخدام fetch
-storys.forEach(item => {
-  // إنشاء عنصر div جديد للبطاقة
-  const cardDiv = document.createElement('div');
-  cardDiv.classList.add('card');
-  cardDiv.setAttribute('data-aos', 'fade-up');
-
-  // إنشاء scard left
-  const scardLeft = document.createElement('div');
-  scardLeft.classList.add('scard', 'left');
-  
-  const imgElement = document.createElement('img');
-  imgElement.classList.add('cardimg');
-  imgElement.src = item.img;
-  imgElement.alt = item.title || 'Image';
-  scardLeft.appendChild(imgElement);
-
-  const subtitleElementLeft = document.createElement('p');
-  subtitleElementLeft.classList.add('subtitle');
-  subtitleElementLeft.textContent = item.subtitle;
-  scardLeft.appendChild(subtitleElementLeft);
-
-  cardDiv.appendChild(scardLeft);
-
-  // إنشاء scard right
-  const scardRight = document.createElement('div');
-  scardRight.classList.add('scard', 'right');
-
-  const titleElement = document.createElement('h2');
-  titleElement.id = 'title';
-  titleElement.textContent = item.title;
-  scardRight.appendChild(titleElement);
-
-  const subtitleElementRight = document.createElement('p');
-  subtitleElementRight.classList.add('subtitle');
-  subtitleElementRight.textContent = item.subtitle;
-  scardRight.appendChild(subtitleElementRight);
-
-  cardDiv.appendChild(scardRight);
-
-  // إضافة البطاقة إلى contentDiv
-  contentDiv.appendChild(cardDiv);
-
-  // إضافة عنصر hrt بعد كل بطاقة
-  const hrtDiv = document.createElement('div');
-  hrtDiv.classList.add('hrt');
-  hrtDiv.setAttribute('data-aos', 'fade-up');
-  contentDiv.appendChild(hrtDiv);
-});
+  if (window.scrollY >= workSection.offsetTop) {
+    contactSection.style.display = "none";
+    startSection.style.display = "none";
+    workSection.style.display = "block";
+    storySection.style.display = "none";
+  }
+  if (window.scrollY >= storySection.offsetTop) {
+    contactSection.style.display = "none";
+    startSection.style.display = "none";
+    workSection.style.display = "none";
+    storySection.style.display = "block";
+  }
+  if (window.scrollY >= contactSection.offsetTop) {
+    contactSection.style.display = "block";
+    startSection.style.display = "none";
+    workSection.style.display = "none";
+    storySection.style.display = "none";
+  }
+};
