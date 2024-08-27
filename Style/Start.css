@@ -5,7 +5,7 @@
   flex-wrap: wrap;
   padding: 5% 10%;
   margin-top: 20px;
-  margin-bottom: 50px;
+  margin-bottom: 70px;
   text-align: center;
   border-radius: 20px 20px 0px 0px;
   animation: startt 1s;
@@ -30,6 +30,7 @@
 }
 
 .start .me .meimg {
+  transition: .5s;
   width: 426px;
   height: 426px;
   border-radius: 20px;

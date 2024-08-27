@@ -50,7 +50,12 @@ body {
   overflow-x: hidden;
   padding: 0px 5% 30px 5%;
 }
-
+div{
+  transition: .3s;
+}
+img {
+  max-width: 100%;
+}
 a {
   color: var(--tx-color);
   text-decoration: none;
@@ -87,6 +92,36 @@ header .ul .buts {
 header .ul .logo {
   margin-left: 20px;
   color: var(--primary-color);
+}
+/* progras */
+.progras {
+  position: fixed;
+  bottom: 20px;
+  display: flex;
+  font-size: small;
+  align-items: center;
+  justify-content: space-between;
+  right: 8%;
+  width: 85%;
+  height: 50px;
+  background-color: #222;
+  border-radius: 10px;
+  padding: 20px;
+  border: 1px solid gray;
+  z-index: 100;
+}
+.progras .but {
+  padding-left: 5px;
+}
+.progras .prograsbar {
+  height: 1px;
+  width: 100%;
+  background-color: gray;
+}
+.progras .prograsbarin {
+  height: 1px;
+  width: 0px;
+  background-color: var(--primary-color);
 }
 
 /* footer */

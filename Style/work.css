@@ -1,0 +1,93 @@
+@import url(Style.css);
+/* story */
+.story h1 {
+  text-align: center;
+  font-size: 60px;
+}
+.story .hrt {
+  margin: 20px auto;
+  width: 90%;
+  border-top: solid 1px var(--primary-color);
+}
+
+.card {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  min-height: 100px;
+}
+.card .scard {
+  width: 50%;
+  height: 100%;
+  padding: 20px;
+}
+
+.card .right {
+  text-align: right;
+  border-left: solid 1px var(--primary-color);
+}
+.card .right h2 {
+  text-align: center;
+  font-size: 50px;
+}
+.card .right h1 {
+  text-align: center;
+  font-size: 95px;
+}
+.card .right h3 {
+  font-size: 60px;
+}
+.card .right p {
+  font-size: 20px;
+}
+
+.card .left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  min-height: 200px;
+}
+.card .left p {
+  display: none;
+}
+.card .left .cardimg {
+  position: sticky;
+  top: 0px;
+  right: 0px;
+
+  width: 240px;
+  height: 240px;
+  border-radius: 20px;
+  border: solid 1px var(--primary-color);
+}
+
+@media (max-width: 700px) {
+  .story h1 {
+    font-size: 40px;
+  }
+  .card .right h2 {
+    font-size: 30px;
+  }
+  .card .right h1 {
+    text-align: center;
+    font-size: 95px;
+  }
+  .card .right h3 {
+    font-size: 60px;
+  }
+  .card .right p {
+    font-size: 15px;
+  }
+
+  .card .left p {
+    display: block;
+    opacity: 0;
+    margin-top: -160px;
+  }
+  .card .left .cardimg {
+    width: 160px;
+    height: 160px;
+    border-radius: 10px;
+  }
+}
