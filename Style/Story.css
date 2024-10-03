@@ -55,6 +55,7 @@
   position: sticky;
   top: 0px;
   right: 0px;
+  object-fit: cover;
 
   width: 240px;
   height: 240px;

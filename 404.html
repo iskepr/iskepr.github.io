@@ -9,98 +9,83 @@
 
     @font-face {
       font-family: NerkoOne;
-      src: url("Fonts/NerkoOne-Regular.ttf");
+      src: url("Fonts/TitilliumWeb-Regular.ttf");
     }
 
-    footer{
+    footer {
       transform: scale(.9);
-      font-family: IBM;
-    }
-    footer span {
-      color: var(--tx-color);
     }
 
     body {
-      padding: 200px 20px;
-      transition: 0.5s;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      font-family: NerkoOne;
-      background-color: var(--primary-color);
-      color: var(--bg-color);
-      flex-direction: column;
-    }
-
-    .but{
       font-family: IBM;
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    .but a{
       background-color: var(--bg-color);
-      padding: 10px;
-      border-radius: 10px;
-      margin-top: 15px;
-      width: fit-content;
+      color: var(--tx-color);
+      padding: 0;
+      height: 100vh;
     }
 
     .center {
-      transform: scale(.4);
-      transition: 0.5s;
+      font-family: NerkoOne;
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
-      font-family: NerkoOne;
-      background-color: var(--primary-color);
-      color: var(--bg-color);
-      padding: 0px 5% 30px 5%;
+      height: 80%;
     }
 
-    .center:hover {
-      transform: prespective(1000px) translate(-50%, -50%);
+    h2 {
+      font-size: 120px;
+      color: var(--primary-color);
+      padding: 0 50px;
     }
 
-    .center h1 span {
+    h2 span {
       position: absolute;
-      top: 0;
-      left: 0;
-      transform: translate(-50%, -50%);
-      margin: 0;
-      padding: 0;
-      text-transform: uppercase;
-      font-size: 12em;
-      color: var(--tx-color);
-      transform-style: preserve-3d;
-      transition: 0.8s;
+      bottom: 200px;
     }
 
-    .center h1 span:nth-child(1) {
-      clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+    h1 {
+      position: absolute;
+      top: 100px;
+      font-family: IBM;
     }
 
-    .center h1 span:nth-child(2) {
-      color: var(--bg-color);
-      transform: translate(-50%, -50%) skewX(-60deg);
-      left: -38px;
-      clip-path: polygon(0 45%, 100% 45%, 100% 55%, 0 55%);
+    .back {
+      position: absolute;
+      top: -50px;
+      right: 30%;
+      display: flex;
+      margin: auto;
+      background-color: var(--bg-color);
+      border-top: 1px solid var(--tx-color);
+      border-right: 1px solid var(--tx-color);
+      border-left: 1px solid var(--tx-color);
+      font-family: IBM;
+      padding: 10px;
+      padding-bottom: 4px;
+      width: 130px;
+      border-radius: 10px 10px 0px 0px;
+      margin-top: 15px;
+      animation: but 10s infinite;
     }
 
-    .center h1 span:nth-child(3) {
-      transform: translate(-50%, -50%) skewY(0deg);
-      left: -76px;
-      clip-path: polygon(0 55%, 100% 55%, 100% 100%, 0 100%);
+    @keyframes but {
+      0% {
+        right: 0%;
+      }
+
+      50% {
+        right: 100%;
+      }
+
+      100% {
+        right: 0%;
+      }
     }
 
-    .center:hover h1 span:nth-child(2),
-    .center:hover h1 span:nth-child(3) {
-      transform: translate(-50%, -50%) skewX(0deg);
-      left: 0;
-      color: var(--tx-color);
+    .bottom {
+      border-top: 1px solid var(--tx-color);
+      padding-top: -100px;
+      position: relative;
     }
   </style>
   <title>الصفحة غير موجودة</title>
@@ -108,36 +93,54 @@
 
 <body>
   <div class="center">
-    <h1>
-      <span>404</span>
-      <span>404</span>
-      <span>404</span>
-    </h1>
-  </div>
-  <div class="but">
     <h1>الصفحة غير موجودة</h1>
-    <a href="Home.html">الصفحة الرئيسية</a>
-  </div>
+    <h2>
+      <span>4</span>
+    </h2>
+    <h2>
+      <span>0</span>
+    </h2>
+    <h2>
 
-  <div id="footer"></div>
-  
-  <script src="Js/Main.js"></script>
-  <footer style="position: absolute; bottom: 10px; width: 90%;">
-    <div class="top">
-      <div class="links">
-        <a href="https://github.com/iskepr" target="_blank"><img src="Assets/vectors/github_x2.svg" alt="github"></a>
-        <a href="https://t.me/Iskepr" target="_blank"><img src="Assets/vectors/telegram_x2.svg" alt="github"></a>
-        <a href="https://www.facebook.com/itskepr/" target="_blank"><img src="Assets/vectors/facebook_x2.svg"
-            alt="github"></a>
-        <a href="https://www.instagram.com/itskepr/" target="_blank"><img src="Assets/vectors/instagram_x2.svg"
-            alt="github"></a>
+      <span>4</span>
+    </h2>
+  </div>
+  <div class="bottom">
+    <a class="back" href="Home.html">الصفحة الرئيسية</a>
+
+    <div id="footer"></div>
+
+    <footer>
+      <div class="top">
+        <div class="links">
+          <a href="https://github.com/iskepr" target="_blank"><img src="Assets/vectors/github_x2.svg" alt="github"></a>
+          <a href="https://t.me/Iskepr" target="_blank"><img src="Assets/vectors/telegram.svg" alt="github"></a>
+          <a href="https://www.facebook.com/itskepr/" target="_blank"><img src="Assets/vectors/facebook.svg"
+              alt="github"></a>
+          <a href="https://www.instagram.com/itskepr/" target="_blank"><img src="Assets/vectors/instagram_x2.svg"
+              alt="github"></a>
+        </div>
+        <h3>تم برمجة الموقع بواسطة <span>@سكيبر</span></h3>
       </div>
-      <h3>تم برمجة الموقع بواسطة <span>@سكيبر</span></h3>
-    </div>
-    <div class="email" onclick="copyEmail()">
-      <h4><span id="copytext">نسخ :</span> skeprContact@gmail.com</h4>
-    </div>
-  </footer>
+      <div class="email" onclick="copyEmail()">
+        <h4><span id="copytext">نسخ :</span> skeprContact@gmail.com</h4>
+      </div>
+    </footer>
+  </div>
+  <script>
+    let num = document.querySelector("span");
+    numMakan = num.style.bottom
+    num.innerHTML = numMakan;
+    //set gravity for numbers
+    for (i = 0; i < 10; i++) {
+      
+    }
+    for (numMakan = 0; numMakan < 84 + "px"; numMakan++) {
+
+      num.style.bottom = num.style.bottom + 3 + "px";
+    }
+
+  </script>
 </body>
 
 </html>

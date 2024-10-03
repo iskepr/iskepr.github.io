@@ -32,9 +32,6 @@ function copyEmail() {
   }, 2000);
 }
 
-
-
-
 // animation contact
 let startSection = document.querySelector(".start");
 let workSection = document.querySelector(".work");
@@ -95,3 +92,44 @@ window.onscroll = function () {
     console.log("تم start الصفحة الرئيسية بنجاح");
   }
 };
+
+// // work
+// gsap.registerPlugin("ScrollTargger");
+// let weel = document.querySelector(".weel");
+// let images = gsap.utils.toArray(".weel_card");
+
+// function setup() {
+//   let radius = weel.offsetWidth;
+//   let center = weel.offsetWidth;
+//   let total = images.length;
+//   let slice = (2 * Math.PI) / total;
+
+//   images.forEach((item, i) => {
+//     let angle = i * slice;
+//     let x = Math.sin(angle) * radius;
+//     let y = Math.cos(angle) * radius;
+
+//     gsap.set(item, {
+//       rotation: angle + "-rad",
+//       xPercent: -50,
+//       yPercent: -50,
+//       x: x,
+//       y: y,
+//     });
+//   });
+// }
+// gsap.to(".weel", {
+//   rotate: () => 360,
+//   duration: images.length,
+//   ease: "none",
+//   scrollTrigger: {
+//     start: 1,
+//     end: "max",
+//     scrub: 1,
+//     snap: 1 / images.length,
+//     invalidateOnRefresh: true,
+//   },
+// })
+
+// setup();
+// window.addEventListener("resize", setup);

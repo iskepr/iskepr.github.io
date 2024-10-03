@@ -1,65 +1,55 @@
 @import url(Style.css);
-/* story */
-.story h1 {
-  text-align: center;
-  font-size: 60px;
-}
-.story .hrt {
-  margin: 20px auto;
-  width: 90%;
-  border-top: solid 1px var(--primary-color);
-}
 
-.card {
-  display: flex;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  min-height: 100px;
-}
-.card .scard {
-  width: 50%;
-  height: 100%;
-  padding: 20px;
-}
-
-.card .right {
-  text-align: right;
-  border-left: solid 1px var(--primary-color);
-}
-.card .right h2 {
-  text-align: center;
-  font-size: 50px;
-}
-.card .right h1 {
-  text-align: center;
-  font-size: 95px;
-}
-.card .right h3 {
-  font-size: 60px;
-}
-.card .right p {
-  font-size: 20px;
-}
-
-.card .left {
+.work {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform: scale(0.8);
+}
+.work img:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+.work .image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.work .image img {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 10%;
+}
+.work .contbut {
+  width: 30%;
+  margin: 15% 0;
+}
+.work .left .contbut {
+  transform: rotate(180deg);
+}
+.work .space {
+  width: 100%;
+  max-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.work .top {
+  display: flex;
+  margin: 20px 10%;
   justify-content: space-between;
-  align-items: flex-end;
-  min-height: 200px;
+  align-items: center;
+  width: 100%;
 }
-.card .left p {
-  display: none;
+.work .main {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
 }
-.card .left .cardimg {
-  position: sticky;
-  top: 0px;
-  right: 0px;
-
-  width: 240px;
-  height: 240px;
-  border-radius: 20px;
-  border: solid 1px var(--primary-color);
+.work .main .right .image img,
+.work .main .left .image img {
+  width: 80%;
 }
 
 @media (max-width: 700px) {
