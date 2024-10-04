@@ -52,32 +52,136 @@
   width: 80%;
 }
 
-@media (max-width: 700px) {
-  .story h1 {
-    font-size: 40px;
-  }
-  .card .right h2 {
-    font-size: 30px;
-  }
-  .card .right h1 {
-    text-align: center;
-    font-size: 95px;
-  }
-  .card .right h3 {
-    font-size: 60px;
-  }
-  .card .right p {
-    font-size: 15px;
-  }
 
-  .card .left p {
-    display: block;
-    opacity: 0;
-    margin-top: -160px;
+/* app works padge */
+.works {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: end;
+  align-items: center;
+}
+.works .workcard {
+  width: 300px;
+  height: 240px;
+  border-radius: 20px;
+  margin: 10px;
+  background-color: #222;
+}
+.works .workcard .all {
+  background-color: #222;
+  padding: 10px;
+  border-radius: 20px;
+}
+.works .workcard .all:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+.works .workcard .cover {
+  width: 280px;
+  height: 140px;
+  border-radius: 16px;
+}
+.works .workcard .buttom {
+  position: relative;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+}
+.works .workcard .mainbut {
+  font-size: 10px;
+  padding: 10px 10px;
+  border-radius: 15px;
+  position: absolute;
+  left: 0px;
+}
+.works .workcard .detals {
+  text-align: right;
+  margin-right: 10px;
+}
+
+.works .workcard .logo {
+  width: 70px;
+  border-radius: 16px;
+}
+
+.works .workcard .detals h3 {
+  font-size: 20px;
+}
+.works .workcard .detals h4 {
+  font-size: 14px;
+  margin: -5px 0;
+}
+.works .workcard .detals h5 {
+  font-size: 10px;
+  margin: -5px 0;
+}
+
+@media (max-width: 1420px) {
+  .works .workcard {
+    width: 31.5%;
+    height: 26%;
   }
-  .card .left .cardimg {
-    width: 160px;
-    height: 160px;
-    border-radius: 10px;
+  .works .workcard .cover {
+    width: 100%;
+    height: 50%;
   }
+}
+@media (max-width: 1215px) {
+  .works .workcard {
+    width: 47%;
+    height: 40%;
+  }
+  .works .workcard .cover {
+    width: 100%;
+    height: 50%;
+  }
+}
+@media (max-width: 740px) {
+  .works .workcard {
+    width: 100%;
+    height: 80%;
+  }
+  .works .workcard .cover {
+    width: 100%;
+    height: 50%;
+  }
+}
+/* one project page  */
+.project .top{
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+  text-align: right;
+}
+.project .top .detals{
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  flex-direction: row-reverse;
+}
+.project .top .logo {
+  width: 100px;
+  margin-left: 20px;
+}
+.project .top .mainbut{
+  font-size: 20px;
+}
+
+.project .buttom .dis {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: end;
+}
+.project .buttom .imgs {
+  display: flex;
+  margin: 10px 0;
+  overflow-x: scroll;
+  border-radius: 20px;
+}
+.project .buttom .cover {
+  height: 400px;
+  margin: 0 10px;
+  border-radius: 20px;
 }

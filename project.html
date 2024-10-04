@@ -46,21 +46,12 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.4/lottie.min.js"></script>
   <link rel="stylesheet" href="Style/aos.css" />
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('set', 'page', window.location.pathname);
-    gtag('send', 'pageview');
-
-    gtag('config', 'G-SGWQQRQ15Y');
-  </script>
 </head>
 
 <!-- <div id="preloader"></div> -->
 
 <body>
-  <!-- header -->
+  <!----------------------------------- header ----------------------------------->
   <header data-aos="fade-dowen">
     <div class="ul">
       <div class="logo">
@@ -73,131 +64,10 @@
       </div>
     </div>
   </header>
-  <!-- progras -->
-  <div class="progras">
-    <div class="prograsbar">
-      <div class="prograsbarin"></div>
-    </div>
-    <div class="but">
-      <a href="index.html#Contact">التواصل</a>
-    </div>
+  <!-- works -->
+  <div class="project">
+
   </div>
-  <!-- start -->
-  <div class="start">
-    <div class="me">
-      <div class="myimg">
-        <img class="meimg" src="assets/imgs/حديقه الامل.jpg" alt="mohamed sayed skepr">
-      </div>
-      <div class="text">
-        <!-- <h1>السلام عليكم</h1> -->
-        <h1>مُحمد سَــــــــيد</h1>
-        <div class="skils">
-          <div class="flutter">
-            <h3>مُطور تطبيقات</h3>
-            <div class="logos">
-              <img src="assets/vectors/flutter.svg" alt="">
-            </div>
-          </div>
-          <div class="web">
-            <h3>مُطور مواقع</h3>
-            <div class="logos">
-              <img src="assets/vectors/html_logo_x2.svg" alt="">
-              <img src="assets/vectors/css_logo_x2.svg" alt="">
-              <img src="assets/vectors/javascript_logo_x2.svg" alt="">
-              <img src="assets/vectors/php_logo_x2.svg" alt="">
-              <img src="assets/vectors/mysql.svg" alt="">
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </div>
-    <br>
-    <!-- <div class="buts">
-      <a href="#" class="but scruoll">
-        <p class="text">قصتي</p>
-        <p class="anim" id="animationContainer" style="height: 100px;"></p>
-      </a>
-      <a href="Work.html" class="but">اعمالي</a>
-    </div> -->
-  </div>
-  <!-- work -->
-
-
-
-  <!----------------------------------- work -------------------------------->
-  <div class="work" data-aos="fade-up">
-    <h1 style="font-size: 60px;">أعمالي</h1>
-    <div class="top">
-      <a href="work.html" class="mainbut">المزيد</a>
-      <h1>الشهر اعمالي</h1>
-    </div>
-    <div class="main">
-      <!-------------------- left ------------------->
-      <div class="left">
-        <div class="space">
-          <img class="contbut" src="assets/imgs/controller.svg" alt="">
-        </div>
-        <div class="image">
-          <a href="project.html?المعرف=0"><img src="assets/imgs/elaka.jpg" alt="elaka"></a>
-        </div>
-      </div>
-      <!-------------------- center ------------------->
-      <div class="center">
-        <div class="image">
-          <a href="project.html?المعرف=1"><img src="assets/imgs/tatbelalogo.svg" alt="elaka"></a>
-        </div>
-      </div>
-      <!-------------------- right ------------------->
-      <div class="right">
-        <div class="space">
-          <img class="contbut" src="assets/imgs/controller.svg" alt="">
-        </div>
-        <div class="image">
-          <a href="project.html?المعرف=2"><img src="assets/imgs/AlifLogo.svg" alt="elaka"></a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!----------------------------------- story ----------------------------------->
-  <div class="story">
-    <h1 data-aos="fade-up">البداية</h1>
-    <div class="hrt" data-aos="fade-up"></div>
-    <div id="storys"></div>
-  </div>
-
-  <!----------------------------------- contact ----------------------------------->
-  <div class="contact" id="Contact" data-aos="fade-up">
-    <form action="">
-      <h3>التواصل</h3>
-      <div class="textInput">
-        <input type="text" name="" placeholder="مثلا: محمد سيد">
-        <h4>اسمك هو</h4>
-      </div>
-      <div class="textInput">
-        <input type="text" name="" placeholder="@ :مثلا">
-        <h4>بريدك هو</h4>
-      </div>
-      <div class="textInput">
-        <select>
-          <option selected disabled>نوع الطلب</option>
-          <option value="flutter">تطبيق فلاتر</option>
-          <option value="web">تطوير موقع</option>
-        </select>
-        <h4>اساعدُك في</h4>
-      </div>
-      <div class="textInput">
-        <input type="text" name="" placeholder="مثلا: محمد سيد">
-        <h4>اساعدك في</h4>
-      </div><br>
-      <textarea></textarea>
-      <textarea></textarea>
-      <textarea></textarea>
-      <textarea></textarea>
-    </form>
-  </div>
-
   <!----------------------------------- footer ----------------------------------->
   <footer class="footer">
     <div class="top">
@@ -220,14 +90,52 @@
 
   <!-- Script -->
   <script src="Js/Main.js"></script>
-  <script src="Js/Data.js"></script>
-  <!-- link -->
   <script src="Js/aos.js"></script>
+  <script src="Js/jquery-3.7.1.min.js"></script>
   <script>
     AOS.init();
-    AOS.init({
-      duration: 700,
-    })
+    // قراءة المعرف من الرابط
+    const urlParams = new URLSearchParams(window.location.search);
+    const projectId = urlParams.get('المعرف');
+    // تحميل بيانات المنتجات
+    fetch('data/projects.json')
+      .then(response => response.json())
+      .then(data => {
+        // التحقق من وجود المنتج
+        if (data[projectId]) {
+          const project = data[projectId];
+
+          $(".project")
+            .append(
+              `<div class="top">
+      <div class="detals">
+        <img src="` + project.الشعار + `" alt="` + project.الاسم + `" class="logo">
+        <div class="texts">
+          <h3>` + project.الاسم + `</h3>
+          <h4>` + project.الوصف + `</h4>
+        </div>
+      </div>
+      <a href="` + project.الرابط + `" class="mainbut">أَلْقَى نَظْرَةً</a>
+    </div>
+    <div class="buttom">
+      <div class="imgs">
+        <img class="cover" src="` + project.الصور.الاولي + `" alt="` + project.الاسم + `">
+        <img class="cover" src="` + project.الصور.الثانية + `" alt="` + project.الاسم + `">
+        <img class="cover" src="` + project.الصور.الثالثة + `" alt="` + project.الاسم + `">
+        <img class="cover" src="` + project.الصور.الرابعة + `" alt="` + project.الاسم + `">
+      </div>
+      <div class="dis">
+        <p>` + project.الشرح + `</p>
+      </div>
+    </div>`
+            );
+        } else {
+          alert("المنتج غير موجود");
+        }
+      })
+      .catch(error => {
+        alert("حدث خطأ في تحميل البيانات", error);
+      });
   </script>
 </body>
 
