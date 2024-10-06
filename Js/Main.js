@@ -34,7 +34,7 @@ function copyEmail() {
 
 // animation contact
 let startSection = document.querySelector(".start");
-let workSection = document.querySelector(".work");
+let portfolioSection = document.querySelector(".portfolio");
 let storySection = document.querySelector(".story");
 let contactSection = document.querySelector(".contact");
 
@@ -65,7 +65,7 @@ window.onscroll = function () {
   if (window.scrollY >= contactSection.offsetTop - 300) {
     contactSection.style.opacity = 1;
     startSection.style.opacity = 0;
-    workSection.style.opacity = 0;
+    portfolioSection.style.opacity = 0;
     storySection.style.opacity = 0;
     prograsbarin.style.width = 100 + "%";
     prograsbar.style.opacity = 0;
@@ -73,27 +73,27 @@ window.onscroll = function () {
   } else if (window.scrollY >= storySection.offsetTop - 200) {
     contactSection.style.opacity = 0;
     startSection.style.opacity = 0;
-    workSection.style.opacity = 0;
+    portfolioSection.style.opacity = 0;
     storySection.style.opacity = 1;
     prograsbar.style.opacity = 1;
 
     console.log("تم story المقالات بنجاح");
-  } else if (window.scrollY >= workSection.offsetTop - 300) {
+  } else if (window.scrollY >= portfolioSection.offsetTop - 300) {
     contactSection.style.opacity = 0;
     startSection.style.opacity = 0;
-    workSection.style.opacity = 1;
+    portfolioSection.style.opacity = 1;
     storySection.style.opacity = 0;
-    console.log("تم work المشاريع بنجاح");
+    console.log("تم portfolio المشاريع بنجاح");
   } else if (window.scrollY >= startSection.offsetTop + 200) {
     contactSection.style.opacity = 0;
     startSection.style.opacity = 1;
-    workSection.style.opacity = 0;
+    portfolioSection.style.opacity = 0;
     storySection.style.opacity = 0;
     console.log("تم start الصفحة الرئيسية بنجاح");
   }
 };
 
-// // work
+// // portfolio
 // gsap.registerPlugin("ScrollTargger");
 // let weel = document.querySelector(".weel");
 // let images = gsap.utils.toArray(".weel_card");
