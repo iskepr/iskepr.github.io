@@ -186,7 +186,9 @@
 .project .top .logo {
   width: 100px;
   margin-left: 20px;
+  border-radius: 20px;
 }
+
 .project .top .mainbut{
   font-size: 20px;
 }
@@ -217,7 +219,7 @@
 
 @media (max-width: 740px) {
   .project .buttom .cover {
-    height: 150px;
+    height: 200px;
   }
   .project .top .mainbut{
     font-size: 15px;

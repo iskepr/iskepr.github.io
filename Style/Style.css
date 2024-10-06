@@ -69,9 +69,7 @@ button {
   color: var(--tx-color);
   font-family: IBM;
 }
-img{
-  border-radius: 20px;
-}
+
 
 .mainbut {
   border: solid 1px var(--primary-color);
