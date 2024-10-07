@@ -1,52 +1,136 @@
 @import url(Style.css);
-/* start */
-.start {
-  display: flex;
-  flex-wrap: wrap;
-  padding: 5% 10%;
-  margin-top: 20px;
+section.top {
+  background-image: url(../assets/imgs/back.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  margin: 0 -6%;
   margin-bottom: 70px;
-  text-align: center;
-  border-radius: 20px 20px 0px 0px;
-  animation: startt 1s;
-  animation-delay: 2100ms;
-  flex-direction: column;
-  justify-content: space-evenly;
-  border: solid 1px var(--primary-color);
-  border-bottom: none;
   overflow-x: hidden;
 }
-
-/* me */
-.start .me {
-  position: relative;
-  justify-content: space-evenly;
-  align-items: center;
-  flex-wrap: wrap;
-  margin-top: 50px;
+/* header */
+header {
+  position: fixed;
   display: flex;
-  height: 500px;
-  animation: fly 2s ease-in infinite alternate-reverse;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  z-index: 10;
+}
+header .ul {
+  display: flex;
+  list-style: none;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  font-size: 20px;
 }
 
-.start .me .meimg {
-  transition: .5s;
-  width: 426px;
-  height: 426px;
-  border-radius: 20px;
-  animation: fly 2s ease-in infinite alternate-reverse;
+header .ul li {
+  margin: 5px;
+  transition: 0.5s;
 }
-.start .me .text {
-  margin: auto;
+header .ul li a:hover {
+  margin-top: 7px;
+  color: var(--primary-color);
 }
-.start .me .text h1 {
-  font-size: 95px;
+header .ul .buts {
+  display: flex;
+  margin-right: -20px;
 }
-.start .me .text h3 {
-  font-size: 60px;
+
+header .ul .logo {
+  margin-left: 20px;
+  font-size: 35px;
+
+  color: var(--primary-color);
 }
-.start .me .text .logos img {
-  width: 50px;
+/* start */
+.start {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.top .gradian {
+  position: absolute;
+  height: 80%;
+  width: 101%;
+  bottom: 0px;
+  left: 0px;
+  background: linear-gradient(0deg, var(--bg-color) 5%, #00000000 100%);
+  z-index: 6;
+}
+
+.start .myimg {
+  justify-content: center;
+  height: 85%;
+  z-index: 3;
+  padding-right: 50px;
+  position: absolute;
+  bottom: 0px;
+}
+
+.start .myname {
+  width: 90%;
+  max-width: 1000px;
+  margin-bottom: 250px;
+  z-index: 1;
+}
+/* circle  */
+.start .circle {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  width: 850px;
+  left: -250px;
+  animation: circlee infinite 1000s;
+  z-index: 5;
+}
+@keyframes circlee {
+  to {
+    transform: rotate(40000deg);
+  }
+}
+@media (max-width: 1150px) {
+  .start .circle {
+    transform: rotate(100deg);
+    width: 80%;
+    top: 50px;
+    left: -300px;
+  }
+}
+@media (max-width: 700px) {
+  .start .circle {
+    transform: rotate(100deg);
+    width: 90%;
+    top: 50px;
+    left: -300px;
+  }
+}
+@media (max-width: 500px) {
+  .start .circle {
+    transform: rotate(100deg);
+    width: 150%;
+    top: 50px;
+    left: -385px;
+  }
+}
+
+/* links */
+.start .links {
+  position: fixed;
+  right: 30px;
+  top: 300px;
+  z-index: 10;
+}
+.start .links a img {
+  width: 30px;
+}
+.start .links a {
+  margin: 10px 0;
 }
 
 @keyframes fly {
@@ -55,13 +139,18 @@
   }
 }
 
-@keyframes textflow {
-  to {
-    transform: translateX(-5px);
-    opacity: 0.5;
-    font-size: 50px;
+@media (max-width: 700px) {
+  .start .myimg {
+    padding-right: 80px;
+  }
+  .start .myname {
+    font-size: 70px;
+  }
+  .start .links {
+    position: absolute;
   }
 }
+
 @keyframes textstart {
   from {
     transform: translatey(-200px);
@@ -78,40 +167,6 @@
     opacity: 1;
   }
 }
-
-@media (max-width: 700px) {
-  .start .me {
-    position: relative;
-    height: 650px;
-    margin-top: 5%;
-  }
-  .start .me .meimg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 350px;
-    object-fit: cover;
-    z-index: 1;
-  }
-  .start .me .text {
-    transition: .2s;
-    position: absolute;
-    bottom: 0;
-    z-index: 0;
-    margin-top: 50px;
-  }
-  .start .me .text h1 {
-    font-size: 65px;
-  }
-  .start .me .text h3 {
-    font-size: 30px;
-  }
-  .start .me .text .logos img {
-    width: 30px;
-  }
-}
-
 /* start menu buts */
 .start .buts {
   z-index: 4;

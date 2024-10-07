@@ -15,9 +15,29 @@ fetch("assets/imgs/animation.json")
 var lodar = document.getElementById("preloader");
 
 window.addEventListener("load", function () {
+  meimg.style.transform = "translateY(100px)";
+  metext.style.marginBottom = "-100px";
+  startlinks.style.transform = "translateY(200px)";
+  circle.style.top = "400px";
   setTimeout(function () {
     lodar.style.transform = "translateY(-100%)";
-  }, 2000);
+  }, 1000);
+  setTimeout(function () {
+    meimg.style.transition = "1s";
+    meimg.style.transform = "translateY(0px)";
+  }, 1100);
+  setTimeout(function () {
+    metext.style.transition = "1s";
+    metext.style.marginBottom = "270px";
+  }, 1300);
+  setTimeout(function () {
+    startlinks.style.transition = "1s";
+    startlinks.style.transform = "translateY(0px)";
+  }, 1100);
+  setTimeout(function () {
+    circle.style.transition = "1s";
+    circle.style.top = "30px";
+  }, 1000);
 });
 
 // copy Email
@@ -38,9 +58,13 @@ let portfolioSection = document.querySelector(".portfolio");
 let storySection = document.querySelector(".story");
 let contactSection = document.querySelector(".contact");
 
-let meimg = document.querySelector(".meimg");
-let metext = document.querySelector(".me .text");
-let me = document.querySelector(".me");
+let header = document.querySelector('.header');
+let startlinks = document.querySelector("#links");
+let circle = document.querySelector(".circle");
+
+let meimg = document.querySelector(".myimg");
+let metext = document.querySelector(".myname");
+let me = document.querySelector(".start");
 
 let prograsbarin = document.querySelector(".prograsbarin");
 let prograsbar = document.querySelector(".progras");
@@ -48,88 +72,44 @@ let prograsbar = document.querySelector(".progras");
 window.onscroll = function () {
   let value = window.scrollY;
   let width = window.screen.availWidth;
-  meimg.style.top = value * 0.9 + "px";
-  metext.style.bottom = value + "px";
+  if (value > 20) {
+    meimg.style.transition = ".3s";
+    meimg.style.transform = "translateY(" + value * 0.09 + "px)";
 
-  prograsbarin.style.width = value / 20.7 + "%";
+    metext.style.transition = ".3s";
+    metext.style.marginBottom = -(value) + "px";
+    circle.style.transform = "rotate(" + value * .3 + "deg)";
 
-  if (value >= 100 && width < 1000) {
-    metext.style.opacity = 0;
+    if (width < 400) {
+      startlinks.style.transform = "translateY(" + -value * 0.8 + "px)";
+    }
   } else {
-    metext.style.opacity = 1;
-  }
-  if (width > 700) {
-    me.style.top = value * 0.4 + "px";
+    metext.style.marginBottom = "270px";
+    meimg.style.transform = "translateY(0px)";
+    startlinks.style.transform = "translateY(0px)";
   }
 
-  if (window.scrollY >= contactSection.offsetTop - 300) {
+  prograsbarin.style.width = value / 20 + "%";
+
+  if (window.scrollY >= portfolioSection.offsetTop - 100) {
+    header.style.transition = ".3s";
+    header.style.transform = "translateY(-60px)";
+  } else {
+    header.style.transform = "translateY(0px)";
+  }
+
+  if (window.scrollY >= contactSection.offsetTop - 100) {
     contactSection.style.opacity = 1;
     startSection.style.opacity = 0;
     portfolioSection.style.opacity = 0;
     storySection.style.opacity = 0;
     prograsbarin.style.width = 100 + "%";
     prograsbar.style.opacity = 0;
-    console.log("تم contact الاتصال بنجاح");
-  } else if (window.scrollY >= storySection.offsetTop - 200) {
-    contactSection.style.opacity = 0;
-    startSection.style.opacity = 0;
-    portfolioSection.style.opacity = 0;
+  } else {
+    contactSection.style.opacity = 1;
+    startSection.style.opacity = 1;
+    portfolioSection.style.opacity = 1;
     storySection.style.opacity = 1;
     prograsbar.style.opacity = 1;
-
-    console.log("تم story المقالات بنجاح");
-  } else if (window.scrollY >= portfolioSection.offsetTop - 300) {
-    contactSection.style.opacity = 0;
-    startSection.style.opacity = 0;
-    portfolioSection.style.opacity = 1;
-    storySection.style.opacity = 0;
-    console.log("تم portfolio المشاريع بنجاح");
-  } else if (window.scrollY >= startSection.offsetTop + 200) {
-    contactSection.style.opacity = 0;
-    startSection.style.opacity = 1;
-    portfolioSection.style.opacity = 0;
-    storySection.style.opacity = 0;
-    console.log("تم start الصفحة الرئيسية بنجاح");
   }
 };
-
-// // portfolio
-// gsap.registerPlugin("ScrollTargger");
-// let weel = document.querySelector(".weel");
-// let images = gsap.utils.toArray(".weel_card");
-
-// function setup() {
-//   let radius = weel.offsetWidth;
-//   let center = weel.offsetWidth;
-//   let total = images.length;
-//   let slice = (2 * Math.PI) / total;
-
-//   images.forEach((item, i) => {
-//     let angle = i * slice;
-//     let x = Math.sin(angle) * radius;
-//     let y = Math.cos(angle) * radius;
-
-//     gsap.set(item, {
-//       rotation: angle + "-rad",
-//       xPercent: -50,
-//       yPercent: -50,
-//       x: x,
-//       y: y,
-//     });
-//   });
-// }
-// gsap.to(".weel", {
-//   rotate: () => 360,
-//   duration: images.length,
-//   ease: "none",
-//   scrollTrigger: {
-//     start: 1,
-//     end: "max",
-//     scrub: 1,
-//     snap: 1 / images.length,
-//     invalidateOnRefresh: true,
-//   },
-// })
-
-// setup();
-// window.addEventListener("resize", setup);

@@ -12,7 +12,7 @@
 #preloader {
   background: #100e10 url(../assets/imgs/hello.gif) no-repeat center center;
   background-size: 250px;
-  border-radius: 0 0 20% 20%;
+  /* border-radius: 0 0 500px 500px; */
   width: 100%;
   height: 120%;
   position: fixed;
@@ -82,31 +82,7 @@ button {
   background-color: var(--primary-color);
 }
 
-/* header */
-header .ul {
-  display: flex;
-  list-style: none;
-  justify-content: space-between;
-  align-items: center;
-}
 
-header .ul li {
-  margin: 10px;
-  transition: 0.5s;
-}
-header .ul li a:hover {
-  margin-top: 7px;
-  color: var(--primary-color);
-}
-header .ul .buts {
-  display: flex;
-  margin-right: 20px;
-}
-
-header .ul .logo {
-  margin-left: 20px;
-  color: var(--primary-color);
-}
 /* progras */
 .progras {
   position: fixed;
