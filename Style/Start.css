@@ -1,218 +1,189 @@
+/* استيراد ملف الـ CSS الأساسي */
 @import url(Style.css);
+
+/* القسم العلوي */
 section.top {
-  background-image: url(../assets/imgs/back.jpg);
-  background-size: cover;
-  background-position: center;
-  height: 100vh;
-  margin: 0 -6%;
-  margin-bottom: 70px;
-  overflow-x: hidden;
+  background-image: url(../assets/imgs/back.jpg); /* إضافة خلفية */
+  background-size: cover; /* جعل الخلفية تغطي القسم بأكمله */
+  background-position: center; /* تمركز الخلفية في المنتصف */
+  height: 100vh; /* جعل القسم يغطي كامل ارتفاع الشاشة */
+  margin: 0 -6%; /* تعديل الهوامش */
+  margin-bottom: 70px; /* إضافة مسافة تحت القسم */
+  overflow-x: hidden; /* إخفاء التمرير الأفقي */
 }
-/* header */
+
+/* تصميم الهيدر */
+.top header {
+  position: fixed; /* تثبيت الهيدر في أعلى الصفحة */
+  display: flex; /* عرض العناصر في سطر */
+  align-items: center; /* توسيط العناصر عموديًا */
+  justify-content: center; /* توسيط العناصر أفقيًا */
+  width: 100%; /* عرض الهيدر 100% */
+  z-index: 10; /* تحديد الطبقة العلوية */
+}
 header {
-  position: fixed;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  z-index: 10;
+  display: flex; /* عرض العناصر في سطر */
+  align-items: center; /* توسيط العناصر عموديًا */
+  justify-content: center; /* توسيط العناصر أفقيًا */
+  width: 100%; /* عرض الهيدر 100% */
+  z-index: 10; /* تحديد الطبقة العلوية */
 }
+
 header .ul {
-  display: flex;
-  list-style: none;
-  justify-content: space-between;
-  align-items: center;
-  width: 90%;
-  font-size: 20px;
+  display: flex; /* عرض القائمة كصف */
+  list-style: none; /* إزالة النقط من القائمة */
+  justify-content: space-between; /* توزيع العناصر بالتساوي */
+  align-items: center; /* توسيط العناصر عموديًا */
+  width: 90%; /* عرض القائمة 90% */
+  font-size: 20px; /* حجم النص */
 }
 
 header .ul li {
-  margin: 5px;
-  transition: 0.5s;
+  margin: 5px; /* إضافة هوامش حول عناصر القائمة */
+  transition: 0.5s; /* إضافة تأثير انتقالي */
 }
+
 header .ul li a:hover {
-  margin-top: 7px;
-  color: var(--primary-color);
+  margin-top: 7px; /* تحريك العنصر لأعلى عند التحويم */
+  color: var(--primary-color); /* تغيير اللون عند التحويم */
 }
+
 header .ul .buts {
-  display: flex;
-  margin-right: -20px;
+  display: flex; /* عرض الأزرار كصف */
+  margin-right: -20px; /* ضبط الهوامش اليمنى */
 }
 
 header .ul .logo {
-  margin-left: 20px;
-  font-size: 35px;
-
-  color: var(--primary-color);
+  margin-left: 20px; /* ضبط الهوامش اليسرى */
+  font-size: 35px; /* حجم شعار الموقع */
+  color: var(--primary-color); /* لون شعار الموقع */
 }
-/* start */
+
+/* قسم البداية */
 .start {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  width: 100%; /* عرض القسم 100% */
+  height: 100%; /* ارتفاع القسم 100% */
+  position: relative; /* تحديد الموضع بالنسبة للعناصر الأخرى */
+  display: flex; /* عرض العناصر كصف */
+  align-items: center; /* توسيط العناصر عموديًا */
+  justify-content: center; /* توسيط العناصر أفقيًا */
 }
+
+/* التدرج فوق القسم العلوي */
 .top .gradian {
-  position: absolute;
-  height: 80%;
-  width: 101%;
-  bottom: 0px;
-  left: 0px;
-  background: linear-gradient(0deg, var(--bg-color) 5%, #00000000 100%);
-  z-index: 6;
+  position: absolute; /* تحديد الموضع بالنسبة للقسم */
+  height: 100%; /* تغطية كامل الارتفاع */
+  width: 101%; /* تغطية العرض مع زيادة بسيطة */
+  top: 70px; /* موضع أعلى */
+  bottom: 0px; /* موضع أسفل */
+  left: 0px; /* محاذاة إلى اليسار */
+  background: linear-gradient(
+    0deg,
+    var(--bg-color) 10%,
+    #00000000 60%,
+    #00000000 100%
+  ); /* إضافة تدرج */
+  z-index: 6; /* تحديد ترتيب الطبقات */
 }
 
+/* صورة الشخصية */
 .start .myimg {
-  justify-content: center;
-  height: 85%;
-  z-index: 3;
-  padding-right: 50px;
-  position: absolute;
-  bottom: 0px;
+  justify-content: center; /* توسيط الصورة */
+  height: 85%; /* ضبط الارتفاع */
+  z-index: 3; /* تحديد الطبقة */
+  padding-right: 50px; /* مسافة يمنى */
+  position: absolute; /* تحديد الموضع المطلق */
+  bottom: 0px; /* وضع الصورة في الأسفل */
 }
 
+/* النص الشخصي */
 .start .myname {
-  width: 90%;
-  max-width: 1000px;
-  margin-bottom: 250px;
-  z-index: 1;
+  width: 90%; /* عرض النص 90% */
+  max-width: 1000px; /* أقصى عرض للنص */
+  margin-bottom: 250px; /* إضافة مسافة أسفل النص */
+  z-index: 1; /* ترتيب الطبقات */
 }
-/* circle  */
+
+/* تصميم الدائرة */
 .start .circle {
-  display: flex;
-  align-items: center;
-  position: absolute;
-  width: 850px;
-  left: -250px;
-  animation: circlee infinite 1000s;
-  z-index: 5;
+  display: flex; /* عرض الدائرة كصف */
+  align-items: center; /* توسيط الدائرة عموديًا */
+  position: absolute; /* تحديد الموضع المطلق */
+  width: 850px; /* عرض الدائرة */
+  left: -250px; /* محاذاة إلى اليسار */
+  animation: circlee infinite 1100s; /* إضافة حركة دوران بطيئة */
+  z-index: 5; /* تحديد ترتيب الطبقات */
 }
+
+/* حركة دوران الدائرة */
 @keyframes circlee {
   to {
-    transform: rotate(40000deg);
+    transform: rotate(40000deg); /* تدوير الدائرة */
   }
 }
+
+/* تعديلات التصميم للشاشات الأصغر */
 @media (max-width: 1150px) {
   .start .circle {
-    transform: rotate(100deg);
-    width: 80%;
-    top: 50px;
-    left: -300px;
+    transform: rotate(100deg); /* تدوير بسيط للدائرة */
+    width: 80%; /* تعديل عرض الدائرة */
+    top: 50px; /* تعديل موضع الدائرة */
+    left: -300px; /* تعديل المحاذاة */
   }
 }
+
 @media (max-width: 700px) {
   .start .circle {
-    transform: rotate(100deg);
-    width: 90%;
-    top: 50px;
-    left: -300px;
+    transform: rotate(100deg); /* تدوير بسيط للدائرة */
+    width: 90%; /* تعديل عرض الدائرة */
+    top: 50px; /* تعديل موضع الدائرة */
+    left: -300px; /* تعديل المحاذاة */
   }
 }
+
 @media (max-width: 500px) {
   .start .circle {
-    transform: rotate(100deg);
-    width: 150%;
-    top: 50px;
-    left: -385px;
+    transform: rotate(100deg); /* تدوير بسيط للدائرة */
+    width: 150%; /* تعديل عرض الدائرة */
+    top: 50px; /* تعديل موضع الدائرة */
+    left: -385px; /* تعديل المحاذاة */
   }
 }
 
-/* links */
+/* تصميم الروابط */
 .start .links {
-  position: fixed;
-  right: 30px;
-  top: 300px;
-  z-index: 10;
-}
-.start .links a img {
-  width: 30px;
-}
-.start .links a {
-  margin: 10px 0;
+  position: fixed; /* تثبيت الروابط في مكانها */
+  right: 30px; /* محاذاة إلى اليمين */
+  top: 300px; /* موضع الروابط من الأعلى */
+  z-index: 10; /* تحديد ترتيب الطبقات */
 }
 
+/* تصميم الأيقونات في الروابط */
+.start .links a img {
+  width: 30px; /* حجم الأيقونة */
+}
+
+/* إضافة مسافة بين الروابط */
+.start .links a {
+  margin: 10px 0; /* مسافة أعلى وأسفل الروابط */
+}
+
+/* حركة صغيرة للروابط */
 @keyframes fly {
   to {
-    transform: translateY(10px);
+    transform: translateY(10px); /* تحريك الروابط لأعلى قليلاً */
   }
 }
 
+/* تعديلات تصميم الروابط والصورة للشاشات الأصغر */
 @media (max-width: 700px) {
   .start .myimg {
-    padding-right: 80px;
+    padding-right: 80px; /* تعديل المسافة اليمنى */
   }
   .start .myname {
-    font-size: 70px;
+    font-size: 70px; /* تصغير حجم النص */
   }
   .start .links {
-    position: absolute;
+    position: absolute; /* تعديل موضع الروابط */
   }
-}
-
-@keyframes textstart {
-  from {
-    transform: translatey(-200px);
-  }
-}
-@keyframes startt {
-  from {
-    transform: translatez(200px);
-    transform: translateY(200px);
-    opacity: 0;
-  }
-  to {
-    transform: translatez(0px);
-    opacity: 1;
-  }
-}
-/* start menu buts */
-.start .buts {
-  z-index: 4;
-  display: flex;
-  flex-wrap: wrap;
-  margin: 30px 50px;
-  align-items: center;
-  justify-content: space-evenly;
-}
-
-.start .buts .but {
-  background-color: var(--primary-color);
-  border-radius: 10px;
-  padding: 10px 40px;
-  margin: 20px 10px;
-  height: 45px;
-}
-.scruoll {
-  position: relative;
-  display: inline-block;
-  height: 45px;
-  overflow: hidden;
-  text-align: center;
-  transition: height 0.3s ease;
-}
-
-.scruoll:hover {
-  height: 100px;
-  padding: 10px 0px;
-}
-
-.scruoll .text {
-  transition: opacity 0.3s ease;
-}
-
-.scruoll:hover .text {
-  opacity: 0;
-}
-
-.scruoll .anim {
-  display: none;
-  height: 100px;
-  margin-top: -30px;
-  background-size: cover;
-}
-
-.scruoll:hover .anim {
-  display: block;
 }
