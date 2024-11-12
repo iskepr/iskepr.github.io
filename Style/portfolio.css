@@ -1,76 +1,170 @@
-@import url(Style.css);
+@import url(../Style.css);
 
-.portfolio {
+.works {
+  margin-top: 150px;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  transform: scale(0.8);
-  margin-bottom: 200px;
+  justify-content: space-between;
+  position: relative;
+  margin-bottom: 100px;
 }
-.portfolio img:hover {
-  transform: scale(1.1);
-  cursor: pointer;
-}
-.portfolio .image {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.portfolio .image img {
+
+.works::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  max-width: 300px;
-  border-radius: 10%;
+  height: 100%;
+  background-image: var(
+    --background-image,
+    url(../assets/imgs/tatbelascreenshot.png)
+  );
+  /* الخلفية الافتراضية */
+  background-size: cover;
+  background-position: center;
+  filter: blur(2px);
+  z-index: -1;
 }
-.portfolio .contbut {
-  width: 30%;
-  margin: 15% 0;
-}
-.portfolio .left .contbut {
+.works .topg{
+  height: 50px;
+  top: 0px;
   transform: rotate(180deg);
 }
-.portfolio .space {
+.works .bottomg{
+  height: 100px;
+  bottom: 0px;
+  top: auto;
+}
+.works .top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 10%;
+  font-size: 20px;
+}
+
+.works .mainbut {
+  font-size: 20px;
+  padding: 10px;
+  width: 200px;
+}
+
+.works .bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 20%;
+  height: 100%;
+}
+
+.works .bottom .right .slider {
+  display: flex;
+}
+
+.works .bottom .right .work {
+  width: 200px;
+  text-align: center;
+  font-size: 18px;
+  margin: 0 10px;
+}
+.works .bottom .right .work h3 {
+  transform: translateY(-20px);
+}
+
+.works .bottom .right .work img {
   width: 100%;
-  max-height: 200px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+.works .bottom .right .work img:hover {
+  transform: scale(1.2);
+}
+
+.works .bottom .left #workSubtitle {
+  color: gray;
+  margin: 10px 0;
+}
+.works .bottom .mainbut {
+  background-color: var(--primary-color);
+}
+.works .bottom .mainbut:hover {
+  background-color: transparent;
+}
+
+.works .controls {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-.portfolio .top {
-  display: flex;
-  margin: 50px 10%;
-  justify-content: space-between;
-  align-items: center;
   width: 100%;
+  height: 200px;
+  position: relative;
+  bottom: 70px;
 }
-.portfolio .main {
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
+.works .controls i {
+  margin: 0 10px;
 }
-.portfolio .main .right .image img,
-.portfolio .main .left .image img {
-  width: 80%;
+.works .controls i:hover {
+  transform: scale(1.2);
 }
-@media (max-width: 740px) {
-  .portfolio .main .right .image{
+.works .controls svg {
+  width: 50px;
+  height: 50px;
+  padding: 15px;
+  fill: white;
+  background-color: #282828;
+  border-radius: 100px;
+  cursor: pointer;
+}
+
+@media (max-width: 700px) {
+  .works .bottom .right .work,
+  .works .bottom .left h2 {
     display: none;
   }
-  .portfolio .main .left .image{
-    display: none;
+  .works .top {
+    font-size: 15px;
   }
-  .portfolio .main .contbut{
-    width: 60px;
+  .works .top .mainbut {
+    font-size: 15;
+    width: 150px;
   }
-  .portfolio .main .center .image{
-    margin: 0 10px;
+
+  .works .bottom .right .work:nth-child(1) {
+    display: block;
+    width: 220px;
+    font-size: 30px;
   }
-  .portfolio .top .mainbut{
+
+  .works .bottom {
+    flex-direction: column-reverse;
+    justify-content: space-evenly;
+    text-align: center;
+    margin: 0;
+  }
+  .works .bottom .work {
+    transform: translateY(-25px);
+  }
+
+  .works .bottom .left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: -80px;
+    width: 80%;
+  }
+
+  .works .bottom .left #workSubtitle {
+    position: relative;
+    display: block;
     font-size: 20px;
-    padding: 5px 50px;
   }
-  .portfolio .top h1 {
-    font-size: 25px;
+
+  .works .controls {
+    bottom: 40px;
   }
 }
 
@@ -170,6 +264,9 @@
   }
 }
 /* one project page  */
+.project {
+  margin: 0 5%;
+}
 .project .top{
   margin-top: 30px;
   display: flex;

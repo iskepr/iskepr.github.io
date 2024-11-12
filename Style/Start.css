@@ -7,7 +7,8 @@ section.top {
   background-size: cover; /* جعل الخلفية تغطي القسم بأكمله */
   background-position: center; /* تمركز الخلفية في المنتصف */
   height: 100vh; /* جعل القسم يغطي كامل ارتفاع الشاشة */
-  margin: 0 -6%; /* تعديل الهوامش */
+  /* margin: 0 -6%; تعديل الهوامش */
+  padding: 0;
   margin-bottom: 70px; /* إضافة مسافة تحت القسم */
   overflow-x: hidden; /* إخفاء التمرير الأفقي */
 }
@@ -70,7 +71,7 @@ header .ul .logo {
 }
 
 /* التدرج فوق القسم العلوي */
-.top .gradian {
+.gradian {
   position: absolute; /* تحديد الموضع بالنسبة للقسم */
   height: 100%; /* تغطية كامل الارتفاع */
   width: 101%; /* تغطية العرض مع زيادة بسيطة */

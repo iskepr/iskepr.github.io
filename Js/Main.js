@@ -110,7 +110,7 @@ function setLanguage(language) {
     document.querySelector(".portfolio h1").textContent = "أعمالي";
     document.querySelector(".portfolio .top h1").textContent = "اخر اعمالي";
     document.querySelector(".portfolio .main .left h2").textContent =
-      "مشروع العلاقة";
+      "مشروع علاقة";
     document.querySelector(".portfolio .main .center h2").textContent =
       "مشروع تتبيلة";
     document.querySelector(".portfolio .main .right h2").textContent =
@@ -188,7 +188,7 @@ function copyEmail() {
 
 // التحكم في الرسوم المتحركة والتأثيرات عند التمرير على الصفحة
 let startSection = document.querySelector(".start");
-let portfolioSection = document.querySelector(".portfolio");
+let portfolioSection = document.querySelector(".works");
 let storySection = document.querySelector(".story");
 let contactSection = document.querySelector(".contact");
 
@@ -227,7 +227,11 @@ window.onscroll = function () {
   }
 
   // تحديث عرض شريط التقدم بناءً على التمرير
-  prograsbarin.style.width = value / (0.0112 * width) + "%";
+  let sHeight =
+    document.documentElement.scrollHeight -
+    document.documentElement.clientHeight;
+  let sTop = document.documentElement.scrollTop;
+  prograsbarin.style.width = (sTop / sHeight) * 100 + "%";
 
   // إخفاء الهيدر عند التمرير للأسفل
   if (window.scrollY >= portfolioSection.offsetTop - 100) {
@@ -253,6 +257,104 @@ window.onscroll = function () {
     storySection.style.opacity = 1;
   }
 };
+
+// ------------------- works section
+const prev = document.getElementById("prev");
+const next = document.getElementById("next");
+const workDiv = document.getElementById("work1");
+const imageElement = workDiv.getElementsByTagName("img")[0];
+const textElement = workDiv.getElementsByTagName("h3")[0];
+const link = document.getElementById("worklink");
+
+const section = document.querySelector(".works").style;
+// projects
+const workTitel = document.getElementById("workTitel");
+const workSubtitle = document.getElementById("workSubtitle");
+
+let project = "tatbela";
+const works = document.querySelectorAll(".work");
+const worksLength = works.length;
+// تغيير الخلفية عند الضغط على زر "prev"
+prev.addEventListener("click", () => {
+  if (project == "tatbela") {
+    imageElement.src = "../assets/imgs/AlifLogo.svg";
+    textElement.innerText = "لغة الف";
+    workTitel.innerHTML = "لغة الف";
+    workSubtitle.innerHTML = "اول تطبيق تواصل اجاماعي عربي بالملادئ ";
+    link.href = "project.html?المعرف=2";
+    project = "alif";
+    section.setProperty(
+      "--background-image",
+      "url(../assets/imgs/alifscrenshot.png)"
+    );
+  } else if (project == "alif") {
+    imageElement.src = "../assets/imgs/elaka.jpg";
+    textElement.innerText = "علاقة";
+    workTitel.innerHTML = "علاقة";
+    workSubtitle.innerHTML = "اول تطبيق تواصل اجاماعي عربي بالملادئ ";
+    link.href = "project.html?المعرف=0";
+    project = "elaka";
+    section.setProperty(
+      "--background-image",
+      "url(../assets/imgs/elakascreenshot.png)"
+    );
+  } else if (project == "elaka") {
+    imageElement.src = "../assets/imgs/tatbelalogo.svg";
+    textElement.innerText = "تتبيلة";
+    workTitel.innerHTML = "تتبيلة";
+    workSubtitle.innerHTML =
+      "موقع لمطعم  بحتوي علي قائمة الطعام و الطلب من الموقع";
+    link.href = "project.html?المعرف=1";
+
+    project = "tatbela";
+    section.setProperty(
+      "--background-image",
+      "url(../assets/imgs/tatbelascreenshot.png)"
+    );
+  }
+});
+
+// تغيير الخلفية عند الضغط على زر "next"
+next.addEventListener("click", () => {
+  if (project == "tatbela") {
+    imageElement.src = "../assets/imgs/elaka.jpg";
+    textElement.innerText = "علاقة";
+    workTitel.innerHTML = "علاقة";
+    workSubtitle.innerHTML = "اول تطبيق تواصل اجاماعي عربي بالملادئ ";
+    link.href = "project.html?المعرف=0";
+
+    project = "elaka";
+    section.setProperty(
+      "--background-image",
+      "url(../assets/imgs/elakascreenshot.png)"
+    );
+  } else if (project == "elaka") {
+    imageElement.src = "../assets/imgs/AlifLogo.svg";
+    textElement.innerText = "لغة الف";
+    workTitel.innerHTML = "لغة الف";
+    workSubtitle.innerHTML = "الموقع الرسمي لافضل لغة برمجة عربية لنواه 5";
+    link.href = "project.html?المعرف=2";
+
+    project = "alif";
+    section.setProperty(
+      "--background-image",
+      "url(../assets/imgs/alifscrenshot.png)"
+    );
+  } else if (project == "alif") {
+    imageElement.src = "../assets/imgs/tatbelalogo.svg";
+    textElement.innerText = "تتبيلة";
+    workTitel.innerHTML = "تتبيلة";
+    workSubtitle.innerHTML =
+      "موقع لمطعم  بحتوي علي قائمة الطعام و الطلب من الموقع";
+    link.href = "project.html?المعرف=1";
+
+    project = "tatbela";
+    section.setProperty(
+      "--background-image",
+      "url(../assets/imgs/tatbelascreenshot.png)"
+    );
+  }
+});
 
 // // إنشاء البطاقات الخاصة بقسم "القصة"
 // const storys = [
