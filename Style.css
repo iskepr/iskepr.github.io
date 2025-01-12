@@ -1,11 +1,10 @@
-@import url(Style/Contact.css);
-@import url(Style/portfolio.css);
-@import url(Style/Start.css);
-@import url(Style/Story.css);
-
 @font-face {
   font-family: "IBM";
   src: url("../assets/Fonts/IBMPlexSansArabic-Bold.ttf");
+}
+@font-face {
+  font-family: "لاكسر";
+  src: url("../assets/Fonts/لاكسر.otf");
 }
 
 * {
@@ -55,12 +54,12 @@ body {
   color: var(--tx-color);
   overflow-x: hidden;
   padding: 0px 0 30px 0;
-  cursor: url('../assets/imgs/icon.png');
+  cursor: url("../assets/imgs/icon.png");
 }
 div {
   transition: 0.3s;
 }
-section{
+section {
   height: 100vh;
 }
 a {
@@ -77,7 +76,6 @@ button {
   font-family: IBM;
 }
 
-
 .mainbut {
   border: solid 1px var(--primary-color);
   border-radius: 20px;
@@ -88,7 +86,6 @@ button {
 .mainbut:hover {
   background-color: var(--primary-color);
 }
-
 
 /* progras */
 .progras {
@@ -121,9 +118,199 @@ button {
   background-color: var(--primary-color);
 }
 
+/* ------------------------------------ Start */
+
+/* القسم العلوي */
+section.top {
+  background-image: url(../assets/imgs/back.jpg); /* إضافة خلفية */
+  background-size: cover; /* جعل الخلفية تغطي القسم بأكمله */
+  background-position: center; /* تمركز الخلفية في المنتصف */
+  height: 100vh; /* جعل القسم يغطي كامل ارتفاع الشاشة */
+  /* margin: 0 -6%; تعديل الهوامش */
+  padding: 0;
+  margin-bottom: 70px; /* إضافة مسافة تحت القسم */
+  overflow-x: hidden; /* إخفاء التمرير الأفقي */
+}
+
+/* تصميم الهيدر */
+.top header {
+  position: fixed; /* تثبيت الهيدر في أعلى الصفحة */
+  display: flex; /* عرض العناصر في سطر */
+  align-items: center; /* توسيط العناصر عموديًا */
+  justify-content: center; /* توسيط العناصر أفقيًا */
+  width: 100%; /* عرض الهيدر 100% */
+  z-index: 10; /* تحديد الطبقة العلوية */
+}
+header {
+  display: flex; /* عرض العناصر في سطر */
+  align-items: center; /* توسيط العناصر عموديًا */
+  justify-content: center; /* توسيط العناصر أفقيًا */
+  width: 100%; /* عرض الهيدر 100% */
+  z-index: 10; /* تحديد الطبقة العلوية */
+}
+
+header .ul {
+  display: flex; /* عرض القائمة كصف */
+  list-style: none; /* إزالة النقط من القائمة */
+  justify-content: space-between; /* توزيع العناصر بالتساوي */
+  align-items: center; /* توسيط العناصر عموديًا */
+  width: 90%; /* عرض القائمة 90% */
+  font-size: 20px; /* حجم النص */
+}
+
+header .ul li {
+  margin: 5px; /* إضافة هوامش حول عناصر القائمة */
+  transition: 0.5s; /* إضافة تأثير انتقالي */
+}
+
+header .ul li a:hover {
+  margin-top: 7px; /* تحريك العنصر لأعلى عند التحويم */
+  color: var(--primary-color); /* تغيير اللون عند التحويم */
+}
+
+header .ul .buts {
+  display: flex; /* عرض الأزرار كصف */
+  margin-right: -20px; /* ضبط الهوامش اليمنى */
+}
+
+header .ul .logo {
+  margin-left: 20px; /* ضبط الهوامش اليسرى */
+  font-size: 35px; /* حجم شعار الموقع */
+  color: var(--primary-color); /* لون شعار الموقع */
+}
+
+/* قسم البداية */
+.start {
+  width: 100%; /* عرض القسم 100% */
+  height: 100%; /* ارتفاع القسم 100% */
+  position: relative; /* تحديد الموضع بالنسبة للعناصر الأخرى */
+  display: flex; /* عرض العناصر كصف */
+  align-items: center; /* توسيط العناصر عموديًا */
+  justify-content: center; /* توسيط العناصر أفقيًا */
+}
+
+/* التدرج فوق القسم العلوي */
+.gradian {
+  position: absolute; /* تحديد الموضع بالنسبة للقسم */
+  height: 100%; /* تغطية كامل الارتفاع */
+  width: 101%; /* تغطية العرض مع زيادة بسيطة */
+  top: 70px; /* موضع أعلى */
+  bottom: 0px; /* موضع أسفل */
+  left: 0px; /* محاذاة إلى اليسار */
+  background: linear-gradient(
+    0deg,
+    var(--bg-color) 10%,
+    #00000000 60%,
+    #00000000 100%
+  ); /* إضافة تدرج */
+  z-index: 6; /* تحديد ترتيب الطبقات */
+}
+
+/* صورة الشخصية */
+.start .myimg {
+  justify-content: center; /* توسيط الصورة */
+  height: 85%; /* ضبط الارتفاع */
+  z-index: 3; /* تحديد الطبقة */
+  padding-right: 50px; /* مسافة يمنى */
+  position: absolute; /* تحديد الموضع المطلق */
+  bottom: 0px; /* وضع الصورة في الأسفل */
+}
+
+/* النص الشخصي */
+.start .myname {
+  width: 90%; /* عرض النص 90% */
+  max-width: 1000px; /* أقصى عرض للنص */
+  margin-bottom: 250px; /* إضافة مسافة أسفل النص */
+  z-index: 1; /* ترتيب الطبقات */
+}
+
+/* تصميم الدائرة */
+.start .circle {
+  display: flex; /* عرض الدائرة كصف */
+  align-items: center; /* توسيط الدائرة عموديًا */
+  position: absolute; /* تحديد الموضع المطلق */
+  width: 850px; /* عرض الدائرة */
+  left: -250px; /* محاذاة إلى اليسار */
+  animation: circlee infinite 1100s; /* إضافة حركة دوران بطيئة */
+  z-index: 5; /* تحديد ترتيب الطبقات */
+}
+
+/* حركة دوران الدائرة */
+@keyframes circlee {
+  to {
+    transform: rotate(40000deg); /* تدوير الدائرة */
+  }
+}
+
+/* تعديلات التصميم للشاشات الأصغر */
+@media (max-width: 1150px) {
+  .start .circle {
+    transform: rotate(100deg); /* تدوير بسيط للدائرة */
+    width: 80%; /* تعديل عرض الدائرة */
+    top: 50px; /* تعديل موضع الدائرة */
+    left: -300px; /* تعديل المحاذاة */
+  }
+}
+
+@media (max-width: 700px) {
+  .start .circle {
+    transform: rotate(100deg); /* تدوير بسيط للدائرة */
+    width: 90%; /* تعديل عرض الدائرة */
+    top: 50px; /* تعديل موضع الدائرة */
+    left: -300px; /* تعديل المحاذاة */
+  }
+}
+
+@media (max-width: 500px) {
+  .start .circle {
+    transform: rotate(100deg); /* تدوير بسيط للدائرة */
+    width: 150%; /* تعديل عرض الدائرة */
+    top: 50px; /* تعديل موضع الدائرة */
+    left: -385px; /* تعديل المحاذاة */
+  }
+}
+
+/* تصميم الروابط */
+.start .links {
+  position: fixed; /* تثبيت الروابط في مكانها */
+  right: 30px; /* محاذاة إلى اليمين */
+  top: 300px; /* موضع الروابط من الأعلى */
+  z-index: 10; /* تحديد ترتيب الطبقات */
+}
+
+/* تصميم الأيقونات في الروابط */
+.start .links a img {
+  width: 30px; /* حجم الأيقونة */
+}
+
+/* إضافة مسافة بين الروابط */
+.start .links a {
+  margin: 10px 0; /* مسافة أعلى وأسفل الروابط */
+}
+
+/* حركة صغيرة للروابط */
+@keyframes fly {
+  to {
+    transform: translateY(10px); /* تحريك الروابط لأعلى قليلاً */
+  }
+}
+
+/* تعديلات تصميم الروابط والصورة للشاشات الأصغر */
+@media (max-width: 700px) {
+  .start .myimg {
+    padding-right: 80px; /* تعديل المسافة اليمنى */
+  }
+  .start .myname {
+    font-size: 70px; /* تصغير حجم النص */
+  }
+  .start .links {
+    position: absolute; /* تعديل موضع الروابط */
+  }
+}
+
 /* footer */
 footer {
-  margin: auto;
+  margin: 0 100px;
 }
 footer .top {
   text-align: right;
@@ -254,5 +441,410 @@ button:hover,
   100% {
     clip-path: var(--move1);
     transform: translate(0);
+  }
+}
+
+/* Contact */
+
+.contact {
+  font-family: "لاكسر";
+  border-radius: 20px;
+  font-size: 30px;
+  text-align: right;
+  padding: 20px;
+  margin: 5px 3%;
+  border: solid 1px var(--primary-color);
+}
+
+.contact .textInput {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row-reverse;
+  justify-content: flex-start;
+}
+
+.contact .textInput input,
+.contact .textInput h4,
+.contact .textInput label,
+.contact input::placeholder,
+.contact .textInput textarea,
+textarea::placeholder {
+  font-size: 30px;
+  text-align: right;
+  font-family: "لاكسر";
+  padding: 5px;
+  color: var(--tx-color);
+  background-color: var(--bg-color);
+  border: none;
+  caret-color: var(--primary-color);
+}
+.contact input::placeholder,
+textarea::placeholder {
+  color: gray;
+}
+.contact .textInput textarea {
+  height: 80px;
+}
+.contact .textInput input[type="radio"] {
+  display: none;
+}
+.contact .textInput label {
+  cursor: pointer;
+  padding: 0px 20px;
+  margin: 5px;
+  border-radius: 15px;
+  border: solid 1px var(--primary-color);
+}
+.contact .textInput label:hover {
+  background-color: var(--primary-color);
+}
+.contact .mainbut {
+  display: flex;
+  margin: auto;
+}
+input:focus,
+textarea:focus,
+select:focus {
+  border: none;
+  outline: none;
+}
+
+@media (max-width: 800px) {
+  .contact .textInput input,
+  .contact .textInput select,
+  .contact .textInput h4,
+  .contact .textInput label,
+  .contact input::placeholder,
+  textarea::placeholder {
+    font-size: 20px;
+  }
+}
+
+/* ---------------------------------------- Work */
+.works {
+  margin-top: 150px;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  margin-bottom: 100px;
+}
+
+.works::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: var(--background-image, url(../assets/imgs/tatbelaS1.png));
+  /* الخلفية الافتراضية */
+  background-size: cover;
+  background-position: center;
+  filter: blur(2px);
+  z-index: -1;
+}
+
+.works .topg {
+  height: 50px;
+  top: 0px;
+  transform: rotate(180deg);
+}
+.works .bottomg {
+  height: 100px;
+  bottom: 0px;
+  top: auto;
+}
+.works .top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 10%;
+  font-size: 20px;
+}
+
+.works .mainbut {
+  font-size: 20px;
+  padding: 10px;
+  width: 200px;
+}
+
+.works .bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 20%;
+  height: 100%;
+}
+
+.works .bottom .right .slider {
+  display: flex;
+}
+
+.works .bottom .right .work {
+  width: 200px;
+  text-align: center;
+  font-size: 18px;
+  margin: 0 10px;
+}
+.works .bottom .right .work h3 {
+  transform: translateY(-20px);
+}
+
+.works .bottom .right .work img {
+  width: 100%;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+.works .bottom .right .work img:hover {
+  transform: scale(1.2);
+}
+
+.works .bottom .left #workSubtitle {
+  color: gray;
+  margin: 10px 0;
+}
+.works .bottom .mainbut {
+  background-color: var(--primary-color);
+}
+.works .bottom .mainbut:hover {
+  background-color: transparent;
+}
+
+.works .controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 200px;
+  position: relative;
+  bottom: 70px;
+}
+.works .controls i {
+  margin: 0 10px;
+}
+.works .controls i:hover {
+  transform: scale(1.2);
+}
+.works .controls svg {
+  width: 50px;
+  height: 50px;
+  padding: 15px;
+  fill: white;
+  background-color: #282828;
+  border-radius: 100px;
+  cursor: pointer;
+}
+
+@media (max-width: 700px) {
+  .works .bottom .right .work,
+  .works .bottom .left h2 {
+    display: none;
+  }
+  .works .top {
+    font-size: 15px;
+  }
+  .works .top .mainbut {
+    font-size: 15;
+    width: 150px;
+  }
+
+  .works .bottom .right .work:nth-child(1) {
+    display: block;
+    width: 220px;
+    font-size: 30px;
+  }
+
+  .works .bottom {
+    flex-direction: column-reverse;
+    justify-content: space-evenly;
+    text-align: center;
+    margin: 0;
+  }
+  .works .bottom .work {
+    transform: translateY(-25px);
+  }
+
+  .works .bottom .left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: -80px;
+    width: 80%;
+  }
+
+  .works .bottom .left #workSubtitle {
+    position: relative;
+    display: block;
+    font-size: 20px;
+  }
+
+  .works .controls {
+    bottom: 40px;
+  }
+}
+
+/* app portfolios padge */
+.portfolios {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: end;
+  align-items: center;
+}
+.portfolios .portfoliocard {
+  width: 300px;
+  height: 240px;
+  border-radius: 20px;
+  margin: 10px;
+  background-color: #222;
+}
+.portfolios .portfoliocard .all {
+  background-color: #222;
+  padding: 10px;
+  border-radius: 20px;
+}
+.portfolios .portfoliocard .all:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+.portfolios .portfoliocard .cover {
+  width: 280px;
+  height: 140px;
+  border-radius: 16px;
+}
+.portfolios .portfoliocard .buttom {
+  position: relative;
+  display: flex;
+  padding-top: 10px;
+  flex-direction: row-reverse;
+  align-items: center;
+}
+.portfolios .portfoliocard .mainbut {
+  font-size: 10px;
+  padding: 10px 10px;
+  border-radius: 15px;
+  position: absolute;
+  left: 0px;
+}
+.portfolios .portfoliocard .detals {
+  text-align: right;
+  margin-right: 10px;
+}
+
+.portfolios .portfoliocard .logo {
+  width: 70px;
+  border-radius: 16px;
+}
+
+.portfolios .portfoliocard .detals h3 {
+  font-size: 20px;
+}
+.portfolios .portfoliocard .detals h4 {
+  font-size: 14px;
+  margin: -5px 0;
+}
+.portfolios .portfoliocard .detals h5 {
+  font-size: 10px;
+  margin: -5px 0;
+}
+
+@media (max-width: 1420px) {
+  .portfolios .portfoliocard {
+    width: 31.5%;
+    height: 26%;
+  }
+  .portfolios .portfoliocard .cover {
+    width: 100%;
+    height: 50%;
+  }
+}
+@media (max-width: 1215px) {
+  .portfolios .portfoliocard {
+    width: 47%;
+    height: 40%;
+  }
+  .portfolios .portfoliocard .cover {
+    width: 100%;
+    height: 50%;
+  }
+}
+@media (max-width: 740px) {
+  .portfolios .portfoliocard {
+    width: 100%;
+    height: 80%;
+  }
+  .portfolios .portfoliocard .cover {
+    width: 100%;
+    height: 50%;
+  }
+}
+/* one project page  */
+.project {
+  margin: 0 5%;
+}
+.project .top {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+  text-align: right;
+}
+.project .top .detals {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  flex-direction: row-reverse;
+}
+.project .top .logo {
+  width: 100px;
+  margin-left: 20px;
+  border-radius: 20px;
+}
+
+.project .top .mainbut {
+  font-size: 20px;
+}
+
+.project .buttom {
+  margin: 40px 0;
+}
+
+.project .buttom .dis {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: end;
+}
+.project .buttom .imgs {
+  display: flex;
+  margin: 10px 0;
+  overflow-x: scroll;
+  border-radius: 20px;
+  scrollbar-width: none;
+}
+.project .buttom .cover {
+  height: 400px;
+  margin: 5px 10px;
+  border-radius: 20px;
+  box-shadow: #222 -4px 4px 0px;
+}
+
+@media (max-width: 740px) {
+  .project .buttom .cover {
+    height: 200px;
+  }
+  .project .top .mainbut {
+    font-size: 15px;
+    padding: 10px 50px;
+  }
+}
+@media (max-width: 430px) {
+  .project .top .mainbut {
+    font-size: 15px;
+    padding: 10px 20px;
   }
 }

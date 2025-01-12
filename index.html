@@ -66,7 +66,7 @@
 
 <body>
   <!-- مكون التحميل المسبق -->
-  <!-- <div id="preloader"></div> -->
+  <div id="preloader"></div>
 
   <!-- شريط التقدم والزر الخاص بالتواصل -->
   <div class="progras">
@@ -85,7 +85,7 @@
         <div class="buts">
           <!-- تعديل الزر ليحتوي على id -->
           <li><a href="#" id="langToggle" class="but">EN</a></li>
-          <li><a class="workbut" href="portfolio.html">أعمالي</a></li>
+          <li><a class="workbut" href="#portfolio">أعمالي</a></li>
         </div>
         <div class="logo">
           <li><a class="logotext" href="Index.html">سكِيبر</a></li>
@@ -119,11 +119,11 @@
   </section>
 
   <!-- قسم الأعمال (المشاريع) -->
-  <section class="works" data-aos="fade-up">
+  <section class="works" id="portfolio" data-aos="fade-up">
     <div class="gradian topg"></div>
     <div class="top">
-      <a href="portfolio.html" class="mainbut">المزيد</a>
-      <h1>اخر اعمالي</h1>
+      <a href="portfolio.html" class="mainbut" id="MoreWork">المزيد</a>
+      <h1 id="lastworktitle">اخر اعمالي</h1>
     </div>
     <div class="bottom">
       <div class="left">
@@ -142,7 +142,7 @@
     </div>
     <div class="controls">
 
-      <i id="prev"><svg version="1.1"  id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+      <i id="prev"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
           xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 150 118"
           style="enable-background:new 0 0 150 118;" xml:space="preserve">
           <g transform="translate(0.000000,118.000000) scale(0.100000,-0.100000)">
@@ -173,33 +173,40 @@
 
   <!-- قسم التواصل -->
   <div class="contact" id="Contact" data-aos="fade-up">
-    <form action="">
-      <h3>التواصل</h3>
+    <h3>التواصل</h3>
+    <div class="form">
       <div class="textInput">
-        <input type="text" placeholder="مثلا: محمد سيد">
-        <h4>اسمك هو</h4>
+        <h4>اسمك</h4>
+        <input type="text" id="cName" placeholder="محمد سيد ">
       </div>
       <div class="textInput">
-        <input type="text" placeholder="@ :مثلا">
-        <h4>بريدك هو</h4>
+        <h4>بريــــدك</h4>
+        <input type="email" id="cEmail" placeholder="سكيبر@بريد.كوم ">
       </div>
       <div class="textInput">
-        <select>
-          <option selected disabled>نوع الطلب</option>
-          <option value="flutter">تطبيق فلاتر</option>
-          <option value="web">تطوير موقع</option>
-        </select>
-        <h4>اساعدُك في</h4>
+        <h4>الميزانية</h4>
+        <input type="radio" name="budget" id="1" value="100$ - 500$">
+        <label for="1">100$ - 500$</label>
+        <input type="radio" name="budget" id="2" value="500$ - 1000$">
+        <label for="2">500$ - 1000$</label>
+        <input type="radio" name="budget" id="3" value="+1000$">
+        <label for="3">+1000$</label>
       </div>
       <div class="textInput">
-        <input type="text" placeholder="مثلا: محمد سيد">
-        <h4>اساعدك في</h4>
-      </div><br>
-      <textarea></textarea>
-      <textarea></textarea>
-      <textarea></textarea>
-      <textarea></textarea>
-    </form>
+        <h4>تحتتاج مهارة</h4>
+        <input type="radio" name="skill" value="design" id="design">
+        <label for="design">تصميم</label>
+        <input type="radio" name="skill" value="web" id="web">
+        <label for="web">برمجة مواقع</label>
+        <input type="radio" name="skill" value="app" id="app">
+        <label for="app">برمجة تطبيقات</label>
+      </div>
+      <div class="textInput">
+        <h4>المشروع هو</h4>
+        <textarea placeholder="منصة تعليمية" id="cProject"></textarea>
+      </div>
+      <button class="mainbut" onclick="sendEmail()">ارسال</button>
+    </div>
   </div>
 
   <!-- قسم التذييل (Footer) -->
@@ -229,10 +236,39 @@
   <!-- سكربتات خارجية -->
   <script src="Js/Main.js"></script>
   <script src="Js/aos.js"></script>
+  <script src="Js/smtp.js"></script>
   <script>
     AOS.init({
       duration: 700,
     });
+
+    function sendEmail() {
+      let cName = document.getElementById("cName").value;
+      let cEmail = document.getElementById("cEmail").value;
+      let cProject = document.getElementById("cProject").value;
+      let selectedBudget = document.querySelector('input[name="budget"]:checked');
+      let cBudget = selectedBudget.value;
+      let selectedSkill= document.querySelector('input[name="skill"]:checked');
+      let cSkill = selectedSkill.value;
+
+      Email.send({
+        SecureToken: "d08980c7-8f23-4bc5-9d8f-37f618605096",
+        To: "skeprfuc@gmail.com",
+        From: "skeprfuc@gmail.com",
+        Subject: "طلب عمل جديد من ",
+        Body: `
+        <div style="text-align: center; background-color: black; color: white;">
+          <h2>الاسم: ${cName}</h2> <br>
+          <h2>البريد الالكتروني: ${cEmail}</h2> <br>
+          <h2>المشروع: ${cProject}</h2> <br> 
+          <h2>الميزانية: ${cBudget}</h2> <br>
+          <h2>المهارة: ${cSkill}</h2> <br>
+        </div>
+        `,
+      }).then((message) => {
+        alert("تم إرسال الطلب بنجاح!");
+      });
+    }
   </script>
 </body>
 

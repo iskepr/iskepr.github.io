@@ -1,21 +1,5 @@
 [
   {
-    "الاسم": "علاقة",
-    "الشعار": "assets/imgs/elaka.jpg",
-    "الوصف": "تطبيق تواصل",
-    "الشرح": "اول تطبيق تواصل اجاماعي عربي بالملادئ الاسلامية",
-    "الرابط": "علاقة",
-    "النوع": "تواصل",
-    "الفديو": "assets/imgs/tatbelascreenshot.mp4",
-    "الصور": {
-      "الاولي": "assets/imgs/tatbelascreenshot.png",
-      "الثانية": "assets/imgs/tatbelascreenshot.png",
-      "الثالثة": "assets/imgs/tatbelascreenshot.png",
-      "الرابعة": "assets/imgs/tatbelascreenshot.png"
-    },
-    "التاريخ": "١ ربيع الآخر ١٤٤٦ هـ"
-  },
-  {
     "الاسم": "تتبيلة",
     "الشعار": "assets/imgs/tatbelalogo.svg",
     "الوصف": "موقع لمطعم",
@@ -24,10 +8,10 @@
     "النوع": "متجر",
     "الفديو": "assets/imgs/tatbelascreenshot.mp4",
     "الصور": {
-      "الاولي": "assets/imgs/tatbelascreenshot.png",
-      "الثانية": "assets/imgs/tatbelascreenshot.png",
-      "الثالثة": "assets/imgs/tatbelascreenshot.png",
-      "الرابعة": "assets/imgs/tatbelascreenshot.png"
+      "الاولي": "assets/imgs/tatbelaS1.png",
+      "الثانية": "assets/imgs/tatbelaS2.png",
+      "الثالثة": "assets/imgs/tatbelaS3.png",
+      "الرابعة": "assets/imgs/tatbelaS4.png"
     },
     "التاريخ": "١ ربيع الآخر ١٤٤٦ هـ"
   },
@@ -35,13 +19,13 @@
     "الاسم": "لغة الف",
     "الشعار": "assets/imgs/AlifLogo.svg",
     "الوصف": "موقع لغة برمجة",
-    "الشرح": "اول تطبيق تواصل اجاماعي عربي بالملادئ ",
+    "الشرح": "موقع لغة برمجة عربية بالكامل",
     "الرابط": "https://iskepr.github.io/Alif-Website/",
     "النوع": "تواصل",
     "الفديو": "assets/imgs/tatbelascreenshot.mp4",
     "الصور": {
-      "الاولي": "assets/imgs/alifscrenshot.png",
-      "الثانية": "assets/imgs/alifscrenshot.png",
+      "الاولي": "assets/imgs/alifS1.png",
+      "الثانية": "assets/imgs/alifS2.png",
       "الثالثة": "assets/imgs/alifscrenshot.png",
       "الرابعة": "assets/imgs/alifscrenshot.png"
     },

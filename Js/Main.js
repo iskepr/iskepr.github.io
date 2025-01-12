@@ -61,32 +61,19 @@ function setLanguage(language) {
     document.querySelector(".circle").src = "assets/imgs/circleen.svg";
 
     // تغيير العناوين والنصوص الأخرى
-    document.querySelector(".portfolio h1").textContent = "My Portfolio";
-    document.querySelector(".portfolio .top h1").textContent = "Latest Work";
-    document.querySelector(".portfolio .main .left h2").textContent =
-      "Elaka Project";
-    document.querySelector(".portfolio .main .center h2").textContent =
-      "Tatbila Project";
-    document.querySelector(".portfolio .main .right h2").textContent =
-      "Alif Project";
-    document.querySelector(".story h1").textContent = "The Beginning";
+    document.querySelector("#lastworktitle").textContent = "My Work";
     document.querySelector(".contact h3").textContent = "Contact Me";
     // تغير الازرار
-    document.querySelector(".portfolio .top a").textContent = "More";
+    document.querySelector("#MoreWork").textContent = "More";
 
-    document.querySelector("footer .power").textContent = "Code by";
-    document.querySelector(".footer .power span").textContent = "@Skepr";
-
-    console.log(document.querySelector(".footer .power"));
-    console.log(document.querySelector(".footer .power span"));
-
+    document.querySelector("footer .power").innerHTML = "Code by <span>@Skepr</span>";
     // مثال لتغيير placeholder للنماذج
     document
       .querySelectorAll(".textInput input")[0]
-      .setAttribute("placeholder", "e.g. Mohamed Sayed");
+      .setAttribute("placeholder", "Mohamed Sayed");
     document
       .querySelectorAll(".textInput input")[1]
-      .setAttribute("placeholder", "e.g. example@gmail.com");
+      .setAttribute("placeholder", "example@gmail.com");
   } else {
     // إعادة النصوص إلى العربية
     langToggle.textContent = "EN"; // تغيير النص في الزر إلى "EN"
@@ -107,33 +94,22 @@ function setLanguage(language) {
     document.querySelector(".circle").src = "assets/imgs/circle.svg";
 
     // تغيير العناوين والنصوص الأخرى
-    document.querySelector(".portfolio h1").textContent = "أعمالي";
-    document.querySelector(".portfolio .top h1").textContent = "اخر اعمالي";
-    document.querySelector(".portfolio .main .left h2").textContent =
-      "مشروع علاقة";
-    document.querySelector(".portfolio .main .center h2").textContent =
-      "مشروع تتبيلة";
-    document.querySelector(".portfolio .main .right h2").textContent =
-      "مشروع ألف";
-    document.querySelector(".story h1").textContent = "البداية";
+    document.querySelector("#lastworktitle").textContent = "اعمالي";
     document.querySelector(".contact h3").textContent = "التواصل";
 
-    document.querySelector(".portfolio .top a").textContent = "المزيد";
+    document.querySelector("#MoreWork").textContent = "المزيد";
 
     // تعديل النص داخل العنصر h3
-    document.querySelector(".footer .power").textContent =
-      "تم برمجة الموقع بواسطة ";
-
-    // إضافة النص إلى العنصر span داخل h3
-    document.querySelector(".footer .power span").textContent = "@سكيبر";
+    document.querySelector(".footer .power").innerHTML =
+      "تم برمجة الموقع بواسطة <span>@سكيبر</span>";
 
     // مثال لتغيير placeholder للنماذج
     document
       .querySelectorAll(".textInput input")[0]
-      .setAttribute("placeholder", "مثلا: محمد سيد");
+      .setAttribute("placeholder", "محمد سيد");
     document
       .querySelectorAll(".textInput input")[1]
-      .setAttribute("placeholder", "مثلا: example@gmail.com");
+      .setAttribute("placeholder", "example@gmail.com");
   }
 }
 
@@ -189,7 +165,6 @@ function copyEmail() {
 // التحكم في الرسوم المتحركة والتأثيرات عند التمرير على الصفحة
 let startSection = document.querySelector(".start");
 let portfolioSection = document.querySelector(".works");
-let storySection = document.querySelector(".story");
 let contactSection = document.querySelector(".contact");
 
 let header = document.querySelector(".header");
@@ -247,18 +222,17 @@ window.onscroll = function () {
     startSection.style.opacity = 0;
     portfolioSection.style.opacity = 0;
     prograsbar.style.transform = "translateY(100px)";
-    storySection.style.opacity = 0;
   } else {
     // إعادة إظهار جميع الأقسام عند الخروج من قسم الاتصال
     contactSection.style.opacity = 1;
     startSection.style.opacity = 1;
     portfolioSection.style.opacity = 1;
     prograsbar.style.transform = "translateY(0px)";
-    storySection.style.opacity = 1;
   }
 };
 
 // ------------------- works section
+// العناصر
 const prev = document.getElementById("prev");
 const next = document.getElementById("next");
 const workDiv = document.getElementById("work1");
@@ -266,164 +240,48 @@ const imageElement = workDiv.getElementsByTagName("img")[0];
 const textElement = workDiv.getElementsByTagName("h3")[0];
 const link = document.getElementById("worklink");
 
-const section = document.querySelector(".works").style;
+const section = document.querySelector(".works");
 // projects
 const workTitel = document.getElementById("workTitel");
 const workSubtitle = document.getElementById("workSubtitle");
 
-let project = "tatbela";
-const works = document.querySelectorAll(".work");
-const worksLength = works.length;
-// تغيير الخلفية عند الضغط على زر "prev"
+let projectData = [];
+let currentIndex = 0;
+
+// تحميل البيانات من ملف JSON
+fetch("data/projects.json")
+  .then((response) => response.json())
+  .then((data) => {
+    projectData = data;
+    updateProject(0); // تحديث المشروع الأول عند التحميل
+  })
+  .catch((error) => console.error("خطأ في تحميل ملف JSON:", error));
+
+// تحديث المشروع بناءً على الفهرس
+function updateProject(index) {
+  const project = projectData[index];
+  if (project) {
+    imageElement.src = project.الشعار;
+    textElement.innerText = project.الاسم;
+    workTitel.innerHTML = project.الوصف;
+    workSubtitle.innerHTML = project.الشرح;
+    link.href = "project.html?المعرف=" + index;
+
+    // تحديث الخلفية
+    section.style.setProperty(
+      "--background-image",
+      `url(../${project.الصور.الاولي})`
+    );
+  }
+}
+
+// التحكم في المشاريع باستخدام الأزرار
 prev.addEventListener("click", () => {
-  if (project == "tatbela") {
-    imageElement.src = "../assets/imgs/AlifLogo.svg";
-    textElement.innerText = "لغة الف";
-    workTitel.innerHTML = "لغة الف";
-    workSubtitle.innerHTML = "اول تطبيق تواصل اجاماعي عربي بالملادئ ";
-    link.href = "project.html?المعرف=2";
-    project = "alif";
-    section.setProperty(
-      "--background-image",
-      "url(../assets/imgs/alifscrenshot.png)"
-    );
-  } else if (project == "alif") {
-    imageElement.src = "../assets/imgs/elaka.jpg";
-    textElement.innerText = "علاقة";
-    workTitel.innerHTML = "علاقة";
-    workSubtitle.innerHTML = "اول تطبيق تواصل اجاماعي عربي بالملادئ ";
-    link.href = "project.html?المعرف=0";
-    project = "elaka";
-    section.setProperty(
-      "--background-image",
-      "url(../assets/imgs/elakascreenshot.png)"
-    );
-  } else if (project == "elaka") {
-    imageElement.src = "../assets/imgs/tatbelalogo.svg";
-    textElement.innerText = "تتبيلة";
-    workTitel.innerHTML = "تتبيلة";
-    workSubtitle.innerHTML =
-      "موقع لمطعم  بحتوي علي قائمة الطعام و الطلب من الموقع";
-    link.href = "project.html?المعرف=1";
-
-    project = "tatbela";
-    section.setProperty(
-      "--background-image",
-      "url(../assets/imgs/tatbelascreenshot.png)"
-    );
-  }
+  currentIndex = (currentIndex - 1 + projectData.length) % projectData.length;
+  updateProject(currentIndex);
 });
 
-// تغيير الخلفية عند الضغط على زر "next"
 next.addEventListener("click", () => {
-  if (project == "tatbela") {
-    imageElement.src = "../assets/imgs/elaka.jpg";
-    textElement.innerText = "علاقة";
-    workTitel.innerHTML = "علاقة";
-    workSubtitle.innerHTML = "اول تطبيق تواصل اجاماعي عربي بالملادئ ";
-    link.href = "project.html?المعرف=0";
-
-    project = "elaka";
-    section.setProperty(
-      "--background-image",
-      "url(../assets/imgs/elakascreenshot.png)"
-    );
-  } else if (project == "elaka") {
-    imageElement.src = "../assets/imgs/AlifLogo.svg";
-    textElement.innerText = "لغة الف";
-    workTitel.innerHTML = "لغة الف";
-    workSubtitle.innerHTML = "الموقع الرسمي لافضل لغة برمجة عربية لنواه 5";
-    link.href = "project.html?المعرف=2";
-
-    project = "alif";
-    section.setProperty(
-      "--background-image",
-      "url(../assets/imgs/alifscrenshot.png)"
-    );
-  } else if (project == "alif") {
-    imageElement.src = "../assets/imgs/tatbelalogo.svg";
-    textElement.innerText = "تتبيلة";
-    workTitel.innerHTML = "تتبيلة";
-    workSubtitle.innerHTML =
-      "موقع لمطعم  بحتوي علي قائمة الطعام و الطلب من الموقع";
-    link.href = "project.html?المعرف=1";
-
-    project = "tatbela";
-    section.setProperty(
-      "--background-image",
-      "url(../assets/imgs/tatbelascreenshot.png)"
-    );
-  }
+  currentIndex = (currentIndex + 1) % projectData.length;
+  updateProject(currentIndex);
 });
-
-// // إنشاء البطاقات الخاصة بقسم "القصة"
-// const storys = [
-//   {
-//     title: "الولاده",
-//     subtitle: "",
-//     img: "assets/imgs/طفل طرش.jpg",
-//   },
-//   {
-//     title: "",
-//     subtitle:
-//       "في سن الخامسة، حصلت على أول جهاز إلكتروني لي، وهو جهاز كمبيوتر. كانت تلك اللحظة مليئةبالدهشة والإعجاب، حيث يمكن للمستخدمأسرني تمامًا كيف يمكن لهذا الجهاز أن يعمل بهذا الشكل المذهل. تملكني الفضول الشديد لمعرفة أسرار تشغيله وفهمآلية عمله، مما أشعل في داخلي شرارة الشغف بالتكنولوجيا.",
-//     img: "assets/imgs/الكمبيوتر.jpeg",
-//   },
-// ];
-
-// // الحصول على عنصر الـ div الذي سيتم إضافة البطاقات إليه
-// const contentDiv = document.getElementById("storys");
-
-// // إنشاء البطاقات بناءً على البيانات
-// storys.forEach((item) => {
-//   // إنشاء عنصر البطاقة
-//   const cardDiv = document.createElement("div");
-//   cardDiv.classList.add("card");
-//   cardDiv.setAttribute("data-aos", "fade-up");
-
-//   // إنشاء الجزء الأيسر من البطاقة
-//   const scardLeft = document.createElement("div");
-//   scardLeft.classList.add("scard", "left");
-
-//   // إضافة الصورة إلى الجزء الأيسر
-//   const imgElement = document.createElement("img");
-//   imgElement.classList.add("cardimg");
-//   imgElement.src = item.img;
-//   imgElement.alt = item.title || "Image";
-//   scardLeft.appendChild(imgElement);
-
-//   // إضافة العنوان الفرعي إلى الجزء الأيسر
-//   const subtitleElementLeft = document.createElement("p");
-//   subtitleElementLeft.classList.add("subtitle");
-//   subtitleElementLeft.textContent = item.subtitle;
-//   scardLeft.appendChild(subtitleElementLeft);
-
-//   cardDiv.appendChild(scardLeft);
-
-//   // إنشاء الجزء الأيمن من البطاقة
-//   const scardRight = document.createElement("div");
-//   scardRight.classList.add("scard", "right");
-
-//   // إضافة العنوان إلى الجزء الأيمن
-//   const titleElement = document.createElement("h2");
-//   titleElement.id = "title";
-//   titleElement.textContent = item.title;
-//   scardRight.appendChild(titleElement);
-
-//   // إضافة العنوان الفرعي إلى الجزء الأيمن
-//   const subtitleElementRight = document.createElement("p");
-//   subtitleElementRight.classList.add("subtitle");
-//   subtitleElementRight.textContent = item.subtitle;
-//   scardRight.appendChild(subtitleElementRight);
-
-//   cardDiv.appendChild(scardRight);
-
-//   // إضافة البطاقة إلى الـ contentDiv
-//   contentDiv.appendChild(cardDiv);
-
-//   // إضافة خط أفقي بعد كل بطاقة
-//   const hrtDiv = document.createElement("div");
-//   hrtDiv.classList.add("hrt");
-//   hrtDiv.setAttribute("data-aos", "fade-up");
-//   contentDiv.appendChild(hrtDiv);
-// });
