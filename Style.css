@@ -6,6 +6,10 @@
   font-family: "لاكسر";
   src: url("../assets/Fonts/لاكسر.otf");
 }
+@font-face {
+  font-family: "زعتر";
+  src: url("../assets/Fonts/زعتر.otf");
+}
 
 * {
   margin: 0;
@@ -142,6 +146,7 @@ section.top {
   z-index: 10; /* تحديد الطبقة العلوية */
 }
 header {
+  font-family: "زعتر";
   display: flex; /* عرض العناصر في سطر */
   align-items: center; /* توسيط العناصر عموديًا */
   justify-content: center; /* توسيط العناصر أفقيًا */
@@ -175,7 +180,7 @@ header .ul .buts {
 
 header .ul .logo {
   margin-left: 20px; /* ضبط الهوامش اليسرى */
-  font-size: 35px; /* حجم شعار الموقع */
+  font-size: 30px; /* حجم شعار الموقع */
   color: var(--primary-color); /* لون شعار الموقع */
 }
 

@@ -7,13 +7,31 @@
     "الرابط": "https://iskepr.github.io/Tatbela/",
     "النوع": "متجر",
     "الفديو": "assets/imgs/tatbelascreenshot.mp4",
-    "الصور": {
-      "الاولي": "assets/imgs/tatbelaS1.png",
-      "الثانية": "assets/imgs/tatbelaS2.png",
-      "الثالثة": "assets/imgs/tatbelaS3.png",
-      "الرابعة": "assets/imgs/tatbelaS4.png"
-    },
+    "الصور": [
+      "assets/imgs/tatbelaS1.png",
+      "assets/imgs/tatbelaS2.png",
+      "assets/imgs/tatbelaS3.png",
+      "assets/imgs/tatbelaS4.png"
+    ],
     "التاريخ": "١ ربيع الآخر ١٤٤٦ هـ"
+  },
+  {
+    "الاسم": "مُجرميتو",
+    "الشعار": "assets/imgs/mogremeto/icon.webp",
+    "الوصف": "لعبة جماعية الهدف اكتشاف المُجرميتو",
+    "الشرح": "العب مع اصحابك الاربعة واتهمو بعض وحاولو تعرفو مين المجرميتو",
+    "الرابط": "https://github.com/iskepr/mogremeto/releases/latest/download/app.apk",
+    "النوع": "لعبة",
+    "الفديو": "assets/imgs/tatbelascreenshot.mp4",
+    "الصور": [
+      "assets/imgs/mogremeto/screenshots.webp",
+      "assets/imgs/mogremeto/screenshot 1.webp",
+      "assets/imgs/mogremeto/screenshot 2.webp",
+      "assets/imgs/mogremeto/screenshot 3.webp",
+      "assets/imgs/mogremeto/screenshot 4.webp",
+      "assets/imgs/mogremeto/screenshot 5.webp"
+    ],
+    "التاريخ": "١٧ شعبان ١٤٤٦ هـ"
   },
   {
     "الاسم": "لغة الف",
@@ -23,12 +41,12 @@
     "الرابط": "https://iskepr.github.io/Alif-Website/",
     "النوع": "تواصل",
     "الفديو": "assets/imgs/tatbelascreenshot.mp4",
-    "الصور": {
-      "الاولي": "assets/imgs/alifS1.png",
-      "الثانية": "assets/imgs/alifS2.png",
-      "الثالثة": "assets/imgs/alifscrenshot.png",
-      "الرابعة": "assets/imgs/alifscrenshot.png"
-    },
+    "الصور": [
+      "assets/imgs/alifS1.png",
+      "assets/imgs/alifS2.png",
+      "assets/imgs/alifscrenshot.png",
+      "assets/imgs/alifscrenshot.png"
+    ],
     "التاريخ": "١ ربيع الآخر ١٤٤٦ هـ"
   }
 ]

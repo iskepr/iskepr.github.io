@@ -1,5 +1,25 @@
 // preloader (الشاشة التحميلية)
-var lodar = document.getElementById("preloader");
+let lodar = document.getElementById("preloader");
+let footer = document.querySelector(".footer");
+footer.innerHTML = `
+<div class="top">
+      <div class="links">
+        <a href="https://github.com/iskepr" target="_blank"><img src="assets/vectors/github.png"
+            alt="github iskepr"></a>
+        <a href="https://t.me/Iskepr" target="_blank"><img src="assets/vectors/telegram.png" alt="telegram iskepr"></a>
+        <a href="https://www.facebook.com/itskepr/" target="_blank"><img src="assets/vectors/facebook.png"
+            alt="facebook itskepr"></a>
+        <a href="https://www.instagram.com/itskepr/" target="_blank"><img src="assets/vectors/instagram.png"
+            alt="instagram itskepr"></a>
+        <a href="https://www.youtube.com/@iskepr/" target="_blank"><img src="assets/vectors/youtube.png"
+            alt="youtube itskepr"></a>
+      </div>
+      <h3>تم برمجة الموقع بواسطة <span>@سكيبر</span></h3>
+    </div>
+    <div class="email" onclick="copyEmail()">
+      <h4><span id="copytext">نسخ :</span> skeprContact@gmail.com</h4>
+    </div>
+`;
 
 // دالة لاستخراج قيمة المعلمة من الرابط
 function getQueryParameter(param) {
@@ -66,7 +86,8 @@ function setLanguage(language) {
     // تغير الازرار
     document.querySelector("#MoreWork").textContent = "More";
 
-    document.querySelector("footer .power").innerHTML = "Code by <span>@Skepr</span>";
+    document.querySelector("footer .power").innerHTML =
+      "Code by <span>@Skepr</span>";
     // مثال لتغيير placeholder للنماذج
     document
       .querySelectorAll(".textInput input")[0]
@@ -265,12 +286,12 @@ function updateProject(index) {
     textElement.innerText = project.الاسم;
     workTitel.innerHTML = project.الوصف;
     workSubtitle.innerHTML = project.الشرح;
-    link.href = "project.html?المعرف=" + index;
+    link.href = "project.html?id=" + index;
 
     // تحديث الخلفية
     section.style.setProperty(
       "--background-image",
-      `url(../${project.الصور.الاولي})`
+      `url(../${project.الصور[0]})`
     );
   }
 }
