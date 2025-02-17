@@ -41,26 +41,12 @@
 <!-- <div id="preloader"></div> -->
 
 <body>
-  <!----------------------------------- header ----------------------------------->
-  <header class="header" data-aos="fade-dowen">
-    <div class="ul">
-      <div class="buts">
-        <!-- تعديل الزر ليحتوي على id -->
-        <li><a href="#" id="langToggle" class="but">EN</a></li>
-        <li><a class="workbut" href="portfolio.html">أعمالي</a></li>
-      </div>
-      <div class="logo">
-        <li><a class="logotext" href="Index.html">سكِيبر</a></li>
-      </div>
-      <li><a class="conbut" href="index.html#Contact">التواصل</a></li>
-    </div>
-  </header>
+  <!--header -->
+  <header class="header"></header>
   <!-- portfolios -->
   <div class="portfolios"></div>
-  <!----------------------------------- footer ----------------------------------->
+  <!-- footer -->
   <footer class="footer"></footer>
-
-
   <!-- Script -->
   <script src="Js/Main.js"></script>
   <script src="Js/aos.js"></script>
@@ -73,20 +59,21 @@
       caches: true,
       success: function (data, status) {
         $.each(data, function (index) {
+          let butText = data[index].النوع == "تطبيق"? 'تنزيل' : 'ألقى نظرة';
           $(".portfolios")
-            .append(
+          .append(
               `<a href="project.html?id=` + index + `">
                 <div class="portfoliocard" id="` + index + `" data-aos="fade-up">
                   <div class="all">
-                    <img class="cover" src="` + data[index].الصور[0] + `" alt="` + data[index].الاسم + `">
+                    <img class="cover" src="` + data[index].الصور[0] + `" alt="itskepr iskepr skepr سكيبر محمد سيد` + data[index].الوصف + data[index].الاسم + data[index].الشرح + `">
                     <div class="buttom">
                       <div class="detals">
                         <h3>` + data[index].الاسم + `</h3>
                         <h4>` + data[index].الوصف + `</h4>
                         <h5>` + data[index].التاريخ + `</h5>
                       </div>
-                      <img src="` + data[index].الشعار + `" alt="` + data[index].الاسم + `" class="logo">
-                      <a href="` + data[index].الرابط + `" class="mainbut">أَلْقَى نَظْرَةً</a>
+                      <img src="` + data[index].الشعار + `" alt="itskepr iskepr skepr سكيبر محمد سيد` + data[index].الوصف + data[index].الاسم + data[index].الشرح + `" class="logo">
+                      <a href="` + data[index].الرابط + `" class="mainbut">`+ butText +`</a>
                     </div>
                   </div>
                 </div>

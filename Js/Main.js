@@ -1,137 +1,44 @@
 // preloader (الشاشة التحميلية)
 let lodar = document.getElementById("preloader");
 let footer = document.querySelector(".footer");
+let header = document.querySelector(".header");
+
 footer.innerHTML = `
 <div class="top">
       <div class="links">
-        <a href="https://github.com/iskepr" target="_blank"><img src="assets/vectors/github.png"
+        <a href="https://github.com/iskepr" target="_blank"><img src="assets/vectors/github.svg"
             alt="github iskepr"></a>
-        <a href="https://t.me/Iskepr" target="_blank"><img src="assets/vectors/telegram.png" alt="telegram iskepr"></a>
-        <a href="https://www.facebook.com/itskepr/" target="_blank"><img src="assets/vectors/facebook.png"
+        <a href="https://t.me/Iskepr" target="_blank"><img src="assets/vectors/telegram.svg" alt="telegram iskepr"></a>
+        <a href="https://www.facebook.com/itskepr/" target="_blank"><img src="assets/vectors/facebook.svg"
             alt="facebook itskepr"></a>
-        <a href="https://www.instagram.com/itskepr/" target="_blank"><img src="assets/vectors/instagram.png"
+        <a href="https://www.instagram.com/itskepr/" target="_blank"><img src="assets/vectors/instagram.svg"
             alt="instagram itskepr"></a>
-        <a href="https://www.youtube.com/@iskepr/" target="_blank"><img src="assets/vectors/youtube.png"
+        <a href="https://www.youtube.com/@iskepr/" target="_blank"><img src="assets/vectors/youtube.svg"
             alt="youtube itskepr"></a>
       </div>
-      <h3>تم برمجة الموقع بواسطة <span>@سكيبر</span></h3>
+      <h3>برمجة <span>@سكيبر</span></h3>
     </div>
     <div class="email" onclick="copyEmail()">
       <h4><span id="copytext">نسخ :</span> skeprContact@gmail.com</h4>
     </div>
 `;
+header.innerHTML = `
+<div class="ul">
+      <div class="buts">
+        <!-- تعديل الزر ليحتوي على id -->
+        <li><a class="workbut" href="portfolio.html">أعمالي</a></li>
+      </div>
+      <div class="logo">
+        <li><a class="logotext" href="Index.html">سكِيبر</a></li>
+      </div>
+      <li><a class="conbut" href="index.html#Contact">التواصل</a></li>
+    </div>
+`
 
 // دالة لاستخراج قيمة المعلمة من الرابط
 function getQueryParameter(param) {
   const urlParams = new URLSearchParams(window.location.search);
   return urlParams.get(param);
-}
-
-// التحقق من معلمة "lang" في الرابط
-document.addEventListener("DOMContentLoaded", function () {
-  const urlLang = getQueryParameter("lang"); // قراءة معلمة 'lang' من الرابط
-  const savedLanguage = localStorage.getItem("language") || "ar"; // افتراض العربية إذا لم يكن هناك لغة محفوظة
-
-  // إذا كانت هناك لغة محددة في الرابط، استخدمها. إذا لم تكن موجودة، استخدم اللغة المحفوظة.
-  const language = urlLang ? urlLang : savedLanguage;
-
-  // تطبيق اللغة المختارة
-  setLanguage(language);
-});
-
-// التعامل مع زر تغيير اللغة
-const langToggle = document.getElementById("langToggle");
-
-langToggle.addEventListener("click", function (event) {
-  event.preventDefault(); // لمنع الانتقال الافتراضي للرابط
-
-  // تبديل اللغة بين العربية والإنجليزية
-  const currentLanguage = localStorage.getItem("language") || "ar";
-  const newLanguage = currentLanguage === "ar" ? "en" : "ar";
-
-  // تحديث الرابط ليشمل معلمة اللغة
-  const newUrl = `${window.location.pathname}?lang=${newLanguage}`;
-  window.history.pushState({}, "", newUrl);
-
-  // حفظ اللغة الجديدة في localStorage
-  localStorage.setItem("language", newLanguage);
-
-  // تطبيق التغييرات على الموقع
-  setLanguage(newLanguage);
-});
-
-// دالة لتطبيق اللغة
-function setLanguage(language) {
-  if (language === "en") {
-    // تغيير النصوص إلى الإنجليزية
-    langToggle.textContent = "ع"; // تغيير النص في الزر إلى "AR"
-    document.documentElement.setAttribute("lang", "en");
-
-    // تغيير النصوص الموجودة في الصفحة إلى الإنجليزية
-    document.querySelector("title").textContent = "Mohamed Sayed • Developer";
-    document.querySelector(".start .myimg").alt = "Mohamed Sayed Skepr";
-    document.querySelector(".start .myname").alt = "Mohamed Sayed Skepr";
-    document.querySelector(".progras a").textContent = "Contact";
-
-    // الهيدر
-    document.querySelector(".logotext").textContent = "Skepr";
-    document.querySelector(".header .workbut").textContent = "Portfolio";
-    document.querySelector(".header .conbut").textContent = "Contact";
-    document.querySelector(".myname").src = "assets/imgs/MohamedSayed.svg";
-    document.querySelector(".circle").src = "assets/imgs/circleen.svg";
-
-    // تغيير العناوين والنصوص الأخرى
-    document.querySelector("#lastworktitle").textContent = "My Work";
-    document.querySelector(".contact h3").textContent = "Contact Me";
-    // تغير الازرار
-    document.querySelector("#MoreWork").textContent = "More";
-
-    document.querySelector("footer .power").innerHTML =
-      "Code by <span>@Skepr</span>";
-    // مثال لتغيير placeholder للنماذج
-    document
-      .querySelectorAll(".textInput input")[0]
-      .setAttribute("placeholder", "Mohamed Sayed");
-    document
-      .querySelectorAll(".textInput input")[1]
-      .setAttribute("placeholder", "example@gmail.com");
-  } else {
-    // إعادة النصوص إلى العربية
-    langToggle.textContent = "EN"; // تغيير النص في الزر إلى "EN"
-    document.documentElement.setAttribute("lang", "ar");
-
-    // تغيير النصوص إلى العربية
-    document.querySelector("title").textContent = "مُحمد سَــــــــيد • مُطور";
-    document.querySelector(".start .myimg").alt = "محمد سيد سكيبر";
-    document.querySelector(".start .myname").alt = "محمد سيد سكيبر";
-    document.querySelector(".progras a").textContent = "التواصل";
-
-    // الهيدر
-    document.querySelector(".logotext").textContent = "سكِيبر";
-    document.querySelector(".header .workbut").textContent = "أعمالي";
-    document.querySelector(".header .conbut").textContent = "التواصل";
-    document.querySelector(".top .myname").textContent = "التواصل";
-    document.querySelector(".myname").src = "assets/imgs/myname.svg";
-    document.querySelector(".circle").src = "assets/imgs/circle.svg";
-
-    // تغيير العناوين والنصوص الأخرى
-    document.querySelector("#lastworktitle").textContent = "اعمالي";
-    document.querySelector(".contact h3").textContent = "التواصل";
-
-    document.querySelector("#MoreWork").textContent = "المزيد";
-
-    // تعديل النص داخل العنصر h3
-    document.querySelector(".footer .power").innerHTML =
-      "تم برمجة الموقع بواسطة <span>@سكيبر</span>";
-
-    // مثال لتغيير placeholder للنماذج
-    document
-      .querySelectorAll(".textInput input")[0]
-      .setAttribute("placeholder", "محمد سيد");
-    document
-      .querySelectorAll(".textInput input")[1]
-      .setAttribute("placeholder", "example@gmail.com");
-  }
 }
 
 window.addEventListener("load", function () {
@@ -188,7 +95,6 @@ let startSection = document.querySelector(".start");
 let portfolioSection = document.querySelector(".works");
 let contactSection = document.querySelector(".contact");
 
-let header = document.querySelector(".header");
 let startlinks = document.querySelector("#links");
 let circle = document.querySelector(".circle");
 

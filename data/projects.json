@@ -1,17 +1,17 @@
 [
   {
     "الاسم": "تتبيلة",
-    "الشعار": "assets/imgs/tatbelalogo.svg",
+    "الشعار": "assets/imgs/tatbela/icon.svg",
     "الوصف": "موقع لمطعم",
     "الشرح": "موقع لمطعم  بحتوي علي قائمة الطعام و الطلب من الموقع",
     "الرابط": "https://iskepr.github.io/Tatbela/",
-    "النوع": "متجر",
+    "النوع": "موقع",
     "الفديو": "assets/imgs/tatbelascreenshot.mp4",
     "الصور": [
-      "assets/imgs/tatbelaS1.png",
-      "assets/imgs/tatbelaS2.png",
-      "assets/imgs/tatbelaS3.png",
-      "assets/imgs/tatbelaS4.png"
+      "assets/imgs/tatbela/1.png",
+      "assets/imgs/tatbela/2.png",
+      "assets/imgs/tatbela/3.png",
+      "assets/imgs/tatbela/4.png"
     ],
     "التاريخ": "١ ربيع الآخر ١٤٤٦ هـ"
   },
@@ -21,31 +21,29 @@
     "الوصف": "لعبة جماعية الهدف اكتشاف المُجرميتو",
     "الشرح": "العب مع اصحابك الاربعة واتهمو بعض وحاولو تعرفو مين المجرميتو",
     "الرابط": "https://github.com/iskepr/mogremeto/releases/latest/download/app.apk",
-    "النوع": "لعبة",
-    "الفديو": "assets/imgs/tatbelascreenshot.mp4",
+    "النوع": "تطبيق",
+    "الفديو": "assets/imgs/mogremeto.mp4",
     "الصور": [
-      "assets/imgs/mogremeto/screenshots.webp",
-      "assets/imgs/mogremeto/screenshot 1.webp",
-      "assets/imgs/mogremeto/screenshot 2.webp",
-      "assets/imgs/mogremeto/screenshot 3.webp",
-      "assets/imgs/mogremeto/screenshot 4.webp",
-      "assets/imgs/mogremeto/screenshot 5.webp"
+      "assets/imgs/mogremeto/1.svg",
+      "assets/imgs/mogremeto/2.webp",
+      "assets/imgs/mogremeto/3.webp",
+      "assets/imgs/mogremeto/4.webp",
+      "assets/imgs/mogremeto/5.webp",
+      "assets/imgs/mogremeto/6.webp"
     ],
     "التاريخ": "١٧ شعبان ١٤٤٦ هـ"
   },
   {
     "الاسم": "لغة الف",
-    "الشعار": "assets/imgs/AlifLogo.svg",
+    "الشعار": "assets/imgs/alif/icon.svg",
     "الوصف": "موقع لغة برمجة",
     "الشرح": "موقع لغة برمجة عربية بالكامل",
     "الرابط": "https://iskepr.github.io/Alif-Website/",
-    "النوع": "تواصل",
-    "الفديو": "assets/imgs/tatbelascreenshot.mp4",
+    "النوع": "موقع",
+    "الفديو": "assets/imgs/alif.mp4",
     "الصور": [
-      "assets/imgs/alifS1.png",
-      "assets/imgs/alifS2.png",
-      "assets/imgs/alifscrenshot.png",
-      "assets/imgs/alifscrenshot.png"
+      "assets/imgs/alif/1.png",
+      "assets/imgs/alif/2.png"
     ],
     "التاريخ": "١ ربيع الآخر ١٤٤٦ هـ"
   }
