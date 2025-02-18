@@ -25,20 +25,26 @@ footer.innerHTML = `
 header.innerHTML = `
 <div class="ul">
       <div class="buts">
-        <!-- تعديل الزر ليحتوي على id -->
+        <li><button class="workbut" id="langButton" onclick="toggleLanguage()">EN</button></li>
         <li><a class="workbut" href="portfolio.html">أعمالي</a></li>
       </div>
       <div class="logo">
-        <li><a class="logotext" href="Index.html">سكِيبر</a></li>
+        <li><a class="logotext" href="Index.html">سكيبر</a></li>
       </div>
       <li><a class="conbut" href="index.html#Contact">التواصل</a></li>
     </div>
-`
+`;
 
-// دالة لاستخراج قيمة المعلمة من الرابط
-function getQueryParameter(param) {
-  const urlParams = new URLSearchParams(window.location.search);
-  return urlParams.get(param);
+// وظيفة لنسخ البريد الإلكتروني إلى الحافظة
+function copyEmail() {
+  let copyEmail = "skeprcontact@gmail.com"; 
+  let copyText = document.querySelector("#copytext");
+
+  navigator.clipboard.writeText(copyEmail);
+  copyText.textContent = "نُسِخ!:";
+  setTimeout(function () {
+    copyText.textContent = "نسخ :";
+  }, 2000);
 }
 
 window.addEventListener("load", function () {
@@ -78,29 +84,14 @@ window.addEventListener("load", function () {
   }, 1000);
 });
 
-// وظيفة لنسخ البريد الإلكتروني إلى الحافظة
-function copyEmail() {
-  let copyEmail = "skeprContact@gmail.com"; // البريد المراد نسخه
-  let copyText = document.querySelector("#copytext");
-
-  navigator.clipboard.writeText(copyEmail); // نسخ النص إلى الحافظة
-  copyText.textContent = "نُسِخ!:"; // تغيير النص بعد النسخ
-  setTimeout(function () {
-    copyText.textContent = "نسخ :"; // إعادة النص بعد مدة
-  }, 2000);
-}
-
 // التحكم في الرسوم المتحركة والتأثيرات عند التمرير على الصفحة
 let startSection = document.querySelector(".start");
 let portfolioSection = document.querySelector(".works");
 let contactSection = document.querySelector(".contact");
-
 let startlinks = document.querySelector("#links");
 let circle = document.querySelector(".circle");
-
 let meimg = document.querySelector(".myimg");
 let metext = document.querySelector(".myname");
-
 let prograsbarin = document.querySelector(".prograsbarin");
 let prograsbar = document.querySelector(".progras");
 
@@ -158,20 +149,16 @@ window.onscroll = function () {
   }
 };
 
-// ------------------- works section
-// العناصر
+// -- works section
 const prev = document.getElementById("prev");
 const next = document.getElementById("next");
 const workDiv = document.getElementById("work1");
 const imageElement = workDiv.getElementsByTagName("img")[0];
 const textElement = workDiv.getElementsByTagName("h3")[0];
 const link = document.getElementById("worklink");
-
 const section = document.querySelector(".works");
-// projects
 const workTitel = document.getElementById("workTitel");
 const workSubtitle = document.getElementById("workSubtitle");
-
 let projectData = [];
 let currentIndex = 0;
 
@@ -212,3 +199,52 @@ next.addEventListener("click", () => {
   currentIndex = (currentIndex + 1) % projectData.length;
   updateProject(currentIndex);
 });
+
+let currentLang = "ar";
+let translations = {};
+// تحميل ملف الترجمة
+fetch("data/translations.json")
+  .then((response) => response.json())
+  .then((data) => {
+    translations = data;
+    // توليد الترجمة العكسية تلقائيًا
+    translations.en = Object.fromEntries(
+      Object.entries(translations.ar).map(([arText, enText]) => [
+        enText,
+        arText,
+      ])
+    );
+    translatePage(); // ترجمة الصفحة بعد تحميل الترجمة
+  })
+  .catch((error) => console.error("خطأ في تحميل الترجمة:", error));
+function translatePage() {
+  const bodyTextNodes = getTextNodes(document.body);
+  bodyTextNodes.forEach((node) => {
+    const originalText = node.nodeValue.trim();
+    if (originalText && translations[currentLang]?.[originalText]) {
+      node.nodeValue = translations[currentLang][originalText];
+    }
+  });
+}
+function getTextNodes(element) {
+  let textNodes = [];
+  for (let child of element.childNodes) {
+    if (child.nodeType === Node.TEXT_NODE && child.nodeValue.trim()) {
+      textNodes.push(child);
+    } else if (child.nodeType === Node.ELEMENT_NODE) {
+      textNodes = textNodes.concat(getTextNodes(child));
+    }
+  }
+  return textNodes;
+}
+// تغيير اللغة عند الحاجة
+function changeLanguage(lang) {
+  currentLang = lang;
+  translatePage();
+}
+
+// تغيير اللغة تلقائيًا
+function toggleLanguage() {
+  currentLang = currentLang === "ar" ? "en" : "ar";
+  translatePage();
+}
