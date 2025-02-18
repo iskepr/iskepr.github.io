@@ -101,11 +101,47 @@ button {
   right: 8%;
   width: 85%;
   height: 50px;
-  background-color: #222;
+  backdrop-filter: blur(10px);
+  background-color: #22222222;
   border-radius: 10px;
   padding: 20px;
-  border: 1px solid gray;
+  border-image: linear-gradient(
+      to right,
+      #00000000 0%,
+      gray 20%,
+      #22222222 30%,
+      #22222222 70%,
+      gray 80%,
+      #00000000 100%
+    )
+    1;
+  border-width: 1px;
+  border-style: solid;
+  border-image-slice: 1;
+  animation: 3s infinite alternate progress;
   z-index: 100;
+}
+@keyframes progress {
+  0% {
+    border-image-source: linear-gradient(
+      to right,
+      transparent 0%,
+      #22222280 20%,
+      #222222cc 60%,
+      gray 80%,
+      transparent 100%
+    );
+  }
+  100% {
+    border-image-source: linear-gradient(
+      to right,
+      transparent 0%,
+      gray 20%,
+      #222222cc 40%,
+      #22222280 60%,
+      transparent 100%
+    );
+  }
 }
 .progras .but {
   padding-left: 5px;

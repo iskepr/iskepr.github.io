@@ -4,143 +4,150 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>الصفحة غير موجودة</title>
   <style>
-    @import url(Style/Style.css);
-
-    @font-face {
-      font-family: NerkoOne;
-      src: url("Fonts/TitilliumWeb-Regular.ttf");
-    }
-
-    footer {
-      transform: scale(.9);
-    }
-
     body {
-      font-family: IBM;
-      background-color: var(--bg-color);
-      color: var(--tx-color);
-      padding: 0;
       height: 100vh;
+      background-color: #e5e5f7;
+      opacity: 0.8;
+      background-image: radial-gradient(circle at center center, var(--primary-color), #e5e5f7), repeating-radial-gradient(circle at center center, #444cf7, #444cf7, 10px, transparent 20px, transparent 10px);
+      background-blend-mode: multiply;
     }
 
-    .center {
-      font-family: NerkoOne;
+    .notfound {
+      font-family: "زعتر";
+      font-size: 100px;
+      height: 75%;
       display: flex;
-      justify-content: center;
+      flex-direction: column;
       align-items: center;
-      height: 80%;
+      justify-content: space-evenly;
     }
 
-    h2 {
-      font-size: 120px;
-      color: var(--primary-color);
-      padding: 0 50px;
-    }
-
-    h2 span {
-      position: absolute;
-      bottom: 200px;
-    }
-
-    h1 {
-      position: absolute;
-      top: 100px;
-      font-family: IBM;
-    }
-
-    .back {
-      position: absolute;
-      top: -50px;
-      right: 30%;
+    .notfound .nums {
       display: flex;
-      margin: auto;
-      background-color: var(--bg-color);
-      border-top: 1px solid var(--tx-color);
-      border-right: 1px solid var(--tx-color);
-      border-left: 1px solid var(--tx-color);
-      font-family: IBM;
-      padding: 10px;
-      padding-bottom: 4px;
-      width: 130px;
-      border-radius: 10px 10px 0px 0px;
-      margin-top: 15px;
-      animation: but 10s infinite;
+      align-items: center;
+      justify-content: center;
     }
 
-    @keyframes but {
+    .chape {
+      width: 150px;
+      height: 150px;
+      position: absolute;
+      backdrop-filter: blur(20px);
+      border: solid 1px var(--primary-color);
+      z-index: 3;
+      background-color: #00000050;
+      border-left: none;
+      border-right: none;
+    }
+
+    .chape1 {
+      border-radius: 100px 50px 30px 80px;
+      animation: chape1 35s infinite alternate ease-in-out;
+    }
+
+    .chape2 {
+      border-top: none;
+      border-radius: 300px 500px 300px 100px;
+      animation: chape2 30s infinite alternate ease-in-out;
+    }
+
+    @keyframes chape1 {
       0% {
-        right: 0%;
+        top: 100%;
+        left: 100%;
+        transform: rotate(0deg);
+      }
+
+      25% {
+        top: 50%;
+        left: 80%;
+        transform: rotate(90deg);
       }
 
       50% {
-        right: 100%;
+        top: 70%;
+        left: 30%;
+        transform: rotate(180deg);
+      }
+
+      70% {
+        top: 0%;
+        left: 90%;
+        transform: rotate(180deg) scale(1.1);
+      }
+
+      75% {
+        top: 30%;
+        left: 60%;
+        transform: rotate(270deg);
       }
 
       100% {
-        right: 0%;
+        top: 0%;
+        left: 0%;
+        transform: rotate(360deg);
       }
     }
 
-    .bottom {
-      border-top: 1px solid var(--tx-color);
-      padding-top: -100px;
-      position: relative;
+    @keyframes chape2 {
+      0% {
+        top: 0%;
+        left: 0%;
+        transform: rotate(0deg) scale(1);
+      }
+
+      20% {
+        top: 80%;
+        left: 20%;
+        transform: rotate(45deg) scale(1.2);
+      }
+
+      40% {
+        top: 40%;
+        left: 0%;
+        transform: rotate(90deg) scale(0.8);
+      }
+
+      60% {
+        top: 90%;
+        left: 50%;
+        transform: rotate(180deg) scale(1.1);
+      }
+
+      80% {
+        top: 20%;
+        left: 80%;
+        transform: rotate(270deg) scale(0.9);
+      }
+
+      100% {
+        top: 0%;
+        left: 10%;
+        transform: rotate(360deg) scale(1);
+      }
     }
   </style>
-  <title>الصفحة غير موجودة</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <div class="center">
-    <h1>الصفحة غير موجودة</h1>
-    <h2>
-      <span>4</span>
-    </h2>
-    <h2>
-      <span>0</span>
-    </h2>
-    <h2>
+  <header class="header"></header>
 
-      <span>4</span>
-    </h2>
+  <div class="notfound">
+    <div class="nums">
+      <h1 style="z-index: 5;">4</h1>
+      <h1>0</h1>
+      <h1 style="z-index: 5;">4</h1>
+    </div>
+    <a class="mainbut" href="index.html">ارجع</a>
   </div>
-  <div class="bottom">
-    <a class="back" href="Home.html">الصفحة الرئيسية</a>
+  <div class="chape chape1"></div>
+  <div class="chape chape2"></div>
 
-    <div id="footer"></div>
-
-    <footer>
-      <div class="top">
-        <div class="links">
-          <a href="https://github.com/iskepr" target="_blank"><img src="assets/vectors/github_x2.svg" alt="github"></a>
-          <a href="https://t.me/Iskepr" target="_blank"><img src="assets/vectors/telegram.svg" alt="github"></a>
-          <a href="https://www.facebook.com/itskepr/" target="_blank"><img src="assets/vectors/facebook.svg"
-              alt="github"></a>
-          <a href="https://www.instagram.com/itskepr/" target="_blank"><img src="assets/vectors/instagram_x2.svg"
-              alt="github"></a>
-        </div>
-        <h3>تم برمجة الموقع بواسطة <span>@سكيبر</span></h3>
-      </div>
-      <div class="email" onclick="copyEmail()">
-        <h4><span id="copytext">نسخ :</span> skeprContact@gmail.com</h4>
-      </div>
-    </footer>
-  </div>
-  <script>
-    let num = document.querySelector("span");
-    numMakan = num.style.bottom
-    num.innerHTML = numMakan;
-    //set gravity for numbers
-    for (i = 0; i < 10; i++) {
-      
-    }
-    for (numMakan = 0; numMakan < 84 + "px"; numMakan++) {
-
-      num.style.bottom = num.style.bottom + 3 + "px";
-    }
-
-  </script>
+  <footer class="footer"></footer>
+  <script src="Js/Main.js"></script>
 </body>
 
 </html>
