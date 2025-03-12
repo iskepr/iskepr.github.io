@@ -133,7 +133,7 @@
         <h4>المشروع هو</h4>
         <input placeholder="منصة تعليمية" id="cProject"></input>
       </div>
-      <button class="mainbut" onclick="sendEmail()">إرسال</button>
+      <button class="mainbut" onclick="sendTelegramMessage()">إرسال</button>
     </div>
     <div class="ball tr"></div>
     <div class="ball bl"></div>
@@ -167,25 +167,25 @@
       setTimeout(function () {
         meimg.style.transition = "1s";
         meimg.style.transform = "translateY(0px)";
-      }, 400);
+      }, 200);
 
       // تحريك النص بعد الشاشة التحميلية
       setTimeout(function () {
         metext.style.transition = "1s";
         metext.style.marginBottom = "270px";
-      }, 400);
+      }, 200);
 
       // تحريك الروابط بعد الشاشة التحميلية
       setTimeout(function () {
         startlinks.style.transition = "1s";
         startlinks.style.transform = "translateY(0px)";
-      }, 400);
+      }, 200);
 
       // تحريك الدائرة بعد الشاشة التحميلية
       setTimeout(function () {
         circle.style.transition = "1s";
         circle.style.top = "30px";
-      }, 300);
+      }, 100);
     });
 
     // التحكم في الرسوم المتحركة والتأثيرات عند التمرير على الصفحة
@@ -304,31 +304,51 @@
       updateProject(currentIndex);
     });
 
-    function sendEmail() {
+    function sendTelegramMessage() {
       let cName = document.getElementById("cName").value;
       let cEmail = document.getElementById("cEmail").value;
       let cProject = document.getElementById("cProject").value;
       let selectedBudget = document.querySelector('input[name="budget"]:checked');
-      let cBudget = selectedBudget.value;
+      let cBudget = selectedBudget ? selectedBudget.value : "غير محدد";
       let selectedSkill = document.querySelector('input[name="skill"]:checked');
-      let cSkill = selectedSkill.value;
+      let cSkill = selectedSkill ? selectedSkill.value : "غير محدد";
+      let token = "7882906682:AAFrbBdASaSB2fPTRMsKDfE1oXpEHylkayo";  
+      let chatID = "1742032331"; 
 
-      Email.send({
-        SecureToken: "d08980c7-8f23-4bc5-9d8f-37f618605096",
-        To: "skeprfuc@gmail.com",
-        From: "skeprfuc@gmail.com",
-        Subject: "طلب عمل جديد من ",
-        Body: `
-        <div style="text-align: center; background-color: black; color: white;">
-          <h2>الاسم: ${cName}</h2> <br>
-          <h2>البريد الالكتروني: ${cEmail}</h2> <br>
-          <h2>المشروع: ${cProject}</h2> <br> 
-        </div>
-        `,
-      }).then((message) => {
-        alert("تم إرسال الطلب بنجاح!");
-      });
+      let message = `🔔 *طلب عمل جديد* 🔔\n\n` +
+        `👤 *الاسم:* ${cName}\n` +
+        `📧 *البريد:* ${cEmail}\n` +
+        `📌 *المشروع:* ${cProject}\n` +
+        `💰 *الميزانية:* ${cBudget}\n` +
+        `🛠 *المهارة المطلوبة:* ${cSkill}`;
+
+      let url = `https://api.telegram.org/bot${token}/sendMessage`;
+
+      fetch(url, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          chat_id: chatID,
+          text: message,
+          parse_mode: "Markdown"
+        })
+      })
+        .then(response => response.json())
+        .then(data => {
+          if (data.ok) {
+            alert("تم إرسال الطلب بنجاح إلى تيليجرام!");
+          } else {
+            alert("للاسف حدث خطا");
+          }
+        })
+        .catch(error => {
+          console.error("Error:", error);
+          alert("حدث خطأ أثناء الإرسال.");
+        });
     }
+
   </script>
 </body>
 

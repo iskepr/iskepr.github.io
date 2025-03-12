@@ -5,6 +5,7 @@
     "الوصف": "موقع لمطعم",
     "الشرح": "موقع لمطعم  بحتوي علي قائمة الطعام و الطلب من الموقع",
     "الرابط": "https://iskepr.github.io/Tatbela/",
+    "ريدمي":"https://raw.githubusercontent.com/iskepr/Tatbela/refs/heads/main/README.md",
     "النوع": "موقع",
     "الفديو": "assets/imgs/tatbelascreenshot.mp4",
     "الصور": [
@@ -22,6 +23,7 @@
     "الشرح": "العب مع اصحابك الاربعة واتهمو بعض وحاولو تعرفو مين المجرميتو",
     "الرابط": "https://github.com/iskepr/mogremeto/releases/latest/download/app.apk",
     "النوع": "تطبيق",
+    "ريدمي":"https://raw.githubusercontent.com/iskepr/Mogremeto/refs/heads/main/README.md",
     "الفديو": "assets/imgs/mogremeto.mp4",
     "الصور": [
       "assets/imgs/mogremeto/1.svg",
@@ -37,14 +39,46 @@
     "الاسم": "لغة الف",
     "الشعار": "assets/imgs/alif/icon.svg",
     "الوصف": "موقع لغة برمجة",
-    "الشرح": "موقع لغة برمجة عربية بالكامل",
+    "الشرح": "عضو في فريض تطوير لغة برمجة الف العربية",
     "الرابط": "https://iskepr.github.io/Alif-Website/",
+    "ريدمي":"https://raw.githubusercontent.com/iskepr/Alif-Website/refs/heads/main/README.md",
     "النوع": "موقع",
     "الفديو": "assets/imgs/alif.mp4",
     "الصور": [
       "assets/imgs/alif/1.png",
-      "assets/imgs/alif/2.png"
+      "assets/imgs/alif/2.png",
+      "assets/imgs/alif/3.png"
     ],
     "التاريخ": "١ ربيع الآخر ١٤٤٦ هـ"
+  },
+  {
+    "الاسم": "اضافة vscode",
+    "الشعار": "assets/imgs/AlifExtension/icon.svg",
+    "الوصف": "اضافة vscode للغة الف",
+    "الشرح": "اضافة vscode للغة برمجة عربية تلون الشفرة وتصحح الاخطاء وتشغل اللغة",
+    "الرابط": "https://marketplace.visualstudio.com/items?itemName=skepr.aliflang",
+    "ريدمي":"https://raw.githubusercontent.com/iskepr/AlifExtension/refs/heads/master/README.md",
+    "النوع": "موقع",
+    "الفديو": "assets/imgs/AlifExtension.mp4",
+    "الصور": [
+      "assets/imgs/AlifExtension/1.png",
+      "assets/imgs/AlifExtension/2.png"
+    ],
+    "التاريخ": "١٧ شعبان ١٤٤٦ هـ"
+  },
+  {
+    "الاسم": "معرض اعمال",
+    "الشعار": "assets/imgs/AhmedOsama/icon.svg",
+    "الوصف": "معرض اعمال لمحرر فديوهات",
+    "الشرح": "معرض اعمال لمحرر فديوهات",
+    "الرابط": "https://iskepr.github.io/AhmedOsama/",
+    "ريدمي":"https://raw.githubusercontent.com/iskepr/AhmedOsama/refs/heads/main/README.md",
+    "النوع": "موقع",
+    "الفديو": "assets/imgs/AhmedOsama.mp4",
+    "الصور": [
+      "assets/imgs/AhmedOsama/1.png",
+      "assets/imgs/AhmedOsama/2.png"
+    ],
+    "التاريخ": "١٢ رمضان ١٤٤٦ هـ"
   }
 ]

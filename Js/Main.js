@@ -29,9 +29,9 @@ header.innerHTML = `
         <li><a class="workbut" href="portfolio.html">أعمالي</a></li>
       </div>
       <div class="logo">
-        <li><a class="logotext" href="Index.html">سكيبر</a></li>
+        <li><a class="logotext" href="/">سكيبر</a></li>
       </div>
-      <li><a class="conbut" href="index.html#Contact">التواصل</a></li>
+      <li><a class="conbut" href="/#Contact">التواصل</a></li>
     </div>
 `;
 

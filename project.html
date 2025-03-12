@@ -9,6 +9,7 @@
   <!-- ملفات التنسيق الخارجية -->
   <link rel="stylesheet" href="Style.css">
   <link rel="stylesheet" href="Style/aos.css" />
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 
 <!-- <div id="preloader"></div> -->
@@ -57,10 +58,23 @@
                   `).join('') + `
                 </div>
                 <div class="dis">
-                  <p>` + project.الشرح + `</p>
+                <div id="markdown-container" dir="rtl"></div>
                 </div>
               </div>`
             );
+          fetch(project.ريدمي)
+            .then(res => {
+              if (!res.ok) {
+                throw new Error("الملف غير موجود");
+              }
+              return res.text();
+            })
+            .then(markdown => {
+              document.getElementById("markdown-container").innerHTML = marked.parse(markdown);
+            })
+            .catch(() => {
+              document.getElementById("markdown-container").innerHTML = project.الشرح;
+            });
         } else {
           alert("المنتج غير موجود");
         }
