@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <!-- ملفات التنسيق الخارجية -->
+  <link rel="stylesheet" href="../Style.css">
+  <link rel="stylesheet" href="../Style/aos.css" />
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+
+<body>
+  <div id="preloader"></div>
+  <!-- header -->
+  <header class="header">
+    <div class="ul">
+      <div class="buts">
+        <li><button class="workbut" id="langButton" onclick="toggleLanguage()">EN</button></li>
+        <li><a class="workbut" href="../المشاريع/">أعمالي</a></li>
+      </div>
+      <div class="logo">
+        <li><a class="logotext" href="/">سكيبر</a></li>
+      </div>
+      <li><a class="conbut" href="/#Contact">التواصل</a></li>
+    </div>
+  </header>
+  <!-- portfolios -->
+  <div class="project"></div>
+  <!-- footer -->
+  <footer class="footer">
+    <div class="top">
+      <div class="links">
+        <a href="https://github.com/iskepr" target="_blank"><img src="../assets/vectors/github.svg"
+            alt="github iskepr"></a>
+        <a href="https://t.me/Iskepr" target="_blank"><img src="../assets/vectors/telegram.svg"
+            alt="telegram iskepr"></a>
+        <a href="https://www.facebook.com/itskepr/" target="_blank"><img src="../assets/vectors/facebook.svg"
+            alt="facebook itskepr"></a>
+        <a href="https://www.instagram.com/itskepr/" target="_blank"><img src="../assets/vectors/instagram.svg"
+            alt="instagram itskepr"></a>
+        <a href="https://www.youtube.com/@iskepr/" target="_blank"><img src="../assets/vectors/youtube.svg"
+            alt="youtube itskepr"></a>
+      </div>
+      <h3>برمجة <span>@سكيبر</span></h3>
+    </div>
+    <div class="email" onclick="copyEmail()">
+      <h4><span id="copytext">نسخ :</span> skeprContact@gmail.com</h4>
+    </div>
+  </footer>
+  <!-- Script -->
+  <script src="../Js/aos.js"></script>
+  <script src="../Js/project.js"></script>
+  <script src="../Js/main.js"></script>
+  <script>
+    AOS.init();
+  </script>
+</body>
+
+</html>
