@@ -125,7 +125,7 @@ function updateProject(index) {
     textElement.innerText = project.الاسم;
     workTitel.innerHTML = project.الوصف;
     workSubtitle.innerHTML = project.الشرح;
-    link.href = "مشروع/?id=" + index;
+    link.href = "project/?id=" + index;
 
     // تحديث الخلفية
     section.style.setProperty(

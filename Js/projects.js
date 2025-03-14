@@ -25,7 +25,7 @@ const displayProjects = (projects) => {
 
     // إنشاء عنصر المشروع باستخدام innerHTML
     const projectCard = `
-            <a href="../مشروع/?id=${adjustedIndex}">
+            <a href="../project/?id=${adjustedIndex}">
               <div class="portfoliocard" id="project-${adjustedIndex}" data-aos="fade-up">
                 <div class="all">
                   <img class="cover" src="../${project.الصور[0]}" alt="${project.الاسم} ${project.الوصف}">
@@ -50,7 +50,7 @@ const displayProjects = (projects) => {
     const projectElement = document.getElementById(`project-${adjustedIndex}`);
     if (projectElement) {
       projectElement.addEventListener("click", () => {
-        window.location.href = `../مشروع/?id=${adjustedIndex}`;
+        window.location.href = `../project/?id=${adjustedIndex}`;
       });
     }
   });
