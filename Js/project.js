@@ -92,6 +92,7 @@ const updatePageContent = (project, buttonLabel) => {
     })
     .catch(() => {
       document.getElementById("markdown-container").innerHTML = project.الشرح;
+      translatePage();
     });
 };
 

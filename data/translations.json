@@ -41,6 +41,9 @@
     "A VSCode Extention for the Alif programming language.": "اضافة vscode للغة الف",
     "A VSCode Extention for an Arabic programming language that highlights code, corrects errors, and runs the language.": "اضافة vscode للغة برمجة عربية تلون الشفرة وتصحح الاخطاء وتشغل اللغة",
     "Video Editor Portfolio": "معرض اعمال",
-    "A portfolio for a video editor.": "معرض اعمال لمحرر فديوهات"
+    "A portfolio for a video editor.": "معرض اعمال لمحرر فديوهات",
+    "Quiz App":"تطبيق اختبار",
+    "Simple Quiz app":"تطبيق اختبار بسيط",
+    "An interactive quiz app with an attractive design that offers a smooth user experience. At the end, it displays incorrectly answered questions along with the correct answers to help users learn.":"تطبيق اختبار تفاعلي بتصميم جذّاب، يقدّم تجربة مستخدم سهلة، ويعرض في النهاية الأسئلة التي أُجيب عنها بشكل خاطئ مع الإجابات الصحيحة لمساعدة المستخدم على التعلم."
   }
 }

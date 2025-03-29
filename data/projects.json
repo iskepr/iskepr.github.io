@@ -78,5 +78,17 @@
     "الفديو": "assets/imgs/AhmedOsama.mp4",
     "الصور": ["assets/imgs/AhmedOsama/1.png", "assets/imgs/AhmedOsama/2.png"],
     "التاريخ": "١٢ رمضان ١٤٤٦ هـ"
+  },
+  {
+    "الاسم": "تطبيق اختبار",
+    "الشعار": "assets/imgs/quiz/icon.png",
+    "الوصف": "تطبيق اختبار بسيط",
+    "الشرح": "تطبيق اختبار تفاعلي بتصميم جذّاب، يقدّم تجربة مستخدم سهلة، ويعرض في النهاية الأسئلة التي أُجيب عنها بشكل خاطئ مع الإجابات الصحيحة لمساعدة المستخدم على التعلم.",
+    "الرابط": "https://iskepr.github.io/quiz/",
+    "ريدمي": "https://raw.githubusercontent.com/iskepr/quiz/refs/heads/main/README.md",
+    "النوع": "موقع",
+    "الفديو": "assets/imgs/quiz.mp4",
+    "الصور": ["assets/imgs/quiz/1.png", "assets/imgs/quiz/2.png"],
+    "التاريخ": "١٢ رمضان ١٤٤٦ هـ"
   }
 ]
