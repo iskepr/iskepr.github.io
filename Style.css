@@ -1,924 +1,906 @@
 @font-face {
-  font-family: "IBM";
-  src: url("../assets/Fonts/ibm.ttf");
+    font-family: "IBM";
+    src: url("../assets/Fonts/ibm.ttf");
 }
 @font-face {
-  font-family: "لاكسر";
-  src: url("../assets/Fonts/لاكسر.otf");
+    font-family: "لاكسر";
+    src: url("../assets/Fonts/لاكسر.otf");
 }
 @font-face {
-  font-family: "زعتر";
-  src: url("../assets/Fonts/زعتر.otf");
+    font-family: "زعتر";
+    src: url("../assets/Fonts/زعتر.otf");
 }
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  transition: 0.5s;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: 0.5s;
 }
 #preloader {
-  background: #100e10 url(../assets/imgs/hello.gif) no-repeat center center;
-  background-size: 250px;
-  width: 100%;
-  height: 120%;
-  position: fixed;
-  transform: translateY(0%);
-  transition: 1s;
-  top: 0;
-  left: 0;
-  z-index: 1000;
+    background: #100e10 url(../assets/imgs/hello.gif) no-repeat center center;
+    background-size: 250px;
+    width: 100%;
+    height: 120%;
+    position: fixed;
+    transform: translateY(0%);
+    transition: 1s;
+    top: 0;
+    left: 0;
+    z-index: 1000;
 }
 :root {
-  --bg-color: #111;
-  --tx-color: #fff;
-  --primary-color: green;
-  --secondary-color: #000;
+    --bg-color: #111;
+    --tx-color: #fff;
+    --primary-color: green;
+    --secondary-color: #000;
 }
 ::-webkit-scrollbar {
-  width: 0px;
+    width: 0px;
 }
 ::-moz-selection {
-  color: var(--bg-color);
-  background-color: var(--primary-color);
-  border-radius: 10px;
-  padding: 10px;
+    color: var(--bg-color);
+    background-color: var(--primary-color);
+    border-radius: 10px;
+    padding: 10px;
 }
 ::selection {
-  color: var(--bg-color);
-  background-color: var(--primary-color);
-  border-radius: 10px;
+    color: var(--bg-color);
+    background-color: var(--primary-color);
+    border-radius: 10px;
 }
 
 body {
-  transition: 0.5s;
-  font-family: IBM;
-  background-color: var(--bg-color);
-  color: var(--tx-color);
-  overflow-x: hidden;
-  padding: 0px 0 30px 0;
+    transition: 0.5s;
+    font-family: IBM;
+    background-color: var(--bg-color);
+    color: var(--tx-color);
+    overflow-x: hidden;
+    padding: 0px 0 30px 0;
 }
 div {
-  transition: 0.3s;
+    transition: 0.3s;
 }
 section {
-  height: 100vh;
+    height: 100vh;
 }
 a {
-  color: var(--tx-color);
-  text-decoration: none;
-  display: flex;
-  justify-content: center;
+    color: var(--tx-color);
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
 }
 button {
-  background: none;
-  border: none;
-  outline: none;
-  color: var(--tx-color);
-  font-family: IBM;
+    background: none;
+    border: none;
+    outline: none;
+    color: var(--tx-color);
+    font-family: IBM;
 }
 
 .mainbut {
-  border: solid 1px var(--primary-color);
-  border-radius: 20px;
-  padding: 10px 120px;
-  font-size: 30px;
-  text-align: center;
+    border: solid 1px var(--primary-color);
+    border-radius: 20px;
+    padding: 10px 120px;
+    font-size: 30px;
+    text-align: center;
 }
 .mainbut:hover {
-  background-color: var(--primary-color);
+    background-color: var(--primary-color);
 }
 
-/* progras */
 .progras {
-  position: fixed;
-  bottom: 20px;
-  display: flex;
-  font-size: small;
-  align-items: center;
-  justify-content: space-between;
-  right: 8%;
-  width: 85%;
-  height: 50px;
-  backdrop-filter: blur(10px);
-  background-color: #22222222;
-  border-radius: 10px;
-  padding: 20px;
-  border-image: linear-gradient(
-      to right,
-      #00000000 0%,
-      gray 20%,
-      #22222222 30%,
-      #22222222 70%,
-      gray 80%,
-      #00000000 100%
-    )
-    1;
-  border-width: 1px;
-  border-style: solid;
-  border-image-slice: 1;
-  animation: 3s infinite alternate progress;
-  z-index: 100;
+    position: fixed;
+    bottom: 20px;
+    display: flex;
+    font-size: small;
+    align-items: center;
+    justify-content: space-between;
+    right: 8%;
+    width: 85%;
+    height: 50px;
+    backdrop-filter: blur(10px);
+    background-color: #22222222;
+    border-radius: 10px;
+    padding: 20px;
+    border-image: linear-gradient(
+            to right,
+            #00000000 0%,
+            gray 20%,
+            #22222222 30%,
+            #22222222 70%,
+            gray 80%,
+            #00000000 100%
+        )
+        1;
+    border-width: 1px;
+    border-style: solid;
+    border-image-slice: 1;
+    animation: 3s infinite alternate progress;
+    z-index: 100;
 }
 @keyframes progress {
-  0% {
-    border-image-source: linear-gradient(
-      to right,
-      transparent 0%,
-      #22222280 20%,
-      #222222cc 60%,
-      gray 80%,
-      transparent 100%
-    );
-  }
-  100% {
-    border-image-source: linear-gradient(
-      to right,
-      transparent 0%,
-      gray 20%,
-      #222222cc 40%,
-      #22222280 60%,
-      transparent 100%
-    );
-  }
+    0% {
+        border-image-source: linear-gradient(
+            to right,
+            transparent 0%,
+            #22222280 20%,
+            #222222cc 60%,
+            gray 80%,
+            transparent 100%
+        );
+    }
+    100% {
+        border-image-source: linear-gradient(
+            to right,
+            transparent 0%,
+            gray 20%,
+            #222222cc 40%,
+            #22222280 60%,
+            transparent 100%
+        );
+    }
 }
 .progras .but {
-  padding-left: 5px;
+    padding-left: 5px;
 }
 .progras .prograsbar {
-  height: 1px;
-  width: 100%;
-  background-color: gray;
+    height: 1px;
+    width: 100%;
+    background-color: gray;
 }
 .progras .prograsbarin {
-  height: 1px;
-  width: 0px;
-  background-color: var(--primary-color);
+    height: 1px;
+    width: 0px;
+    background-color: var(--primary-color);
 }
 
-/* ------------------------------------ Start */
-
-/* القسم العلوي */
 section.top {
-  background-image: url(../assets/imgs/back.webp);
-  background-size: cover; /* جعل الخلفية تغطي القسم بأكمله */
-  background-position: center; /* تمركز الخلفية في المنتصف */
-  height: 100vh; /* جعل القسم يغطي كامل ارتفاع الشاشة */
-  /* margin: 0 -6%; تعديل الهوامش */
-  padding: 0;
-  margin-bottom: 70px; /* إضافة مسافة تحت القسم */
-  overflow-x: hidden; /* إخفاء التمرير الأفقي */
+    background-image: url(../assets/imgs/back.webp);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+
+    padding: 0;
+    margin-bottom: 70px;
+    overflow-x: hidden;
 }
 
-/* تصميم الهيدر */
 .top header {
-  position: fixed; /* تثبيت الهيدر في أعلى الصفحة */
-  display: flex; /* عرض العناصر في سطر */
-  align-items: center; /* توسيط العناصر عموديًا */
-  justify-content: center; /* توسيط العناصر أفقيًا */
-  width: 100%; /* عرض الهيدر 100% */
-  z-index: 10; /* تحديد الطبقة العلوية */
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    z-index: 10;
 }
 header {
-  font-family: "زعتر";
-  display: flex; /* عرض العناصر في سطر */
-  align-items: center; /* توسيط العناصر عموديًا */
-  justify-content: center; /* توسيط العناصر أفقيًا */
-  width: 100%; /* عرض الهيدر 100% */
-  z-index: 10; /* تحديد الطبقة العلوية */
+    font-family: "زعتر";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    z-index: 10;
 }
 
 header .ul {
-  display: flex; /* عرض القائمة كصف */
-  list-style: none; /* إزالة النقط من القائمة */
-  justify-content: space-between; /* توزيع العناصر بالتساوي */
-  align-items: center; /* توسيط العناصر عموديًا */
-  width: 90%; /* عرض القائمة 90% */
-  font-size: 20px; /* حجم النص */
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    font-size: 20px;
 }
 
 header .ul li {
-  margin: 5px; /* إضافة هوامش حول عناصر القائمة */
-  transition: 0.5s; /* إضافة تأثير انتقالي */
+    margin: 5px;
+    transition: 0.5s;
 }
 
 header .ul li a:hover {
-  margin-top: 7px; /* تحريك العنصر لأعلى عند التحويم */
-  color: var(--primary-color); /* تغيير اللون عند التحويم */
+    margin-top: 7px;
+    color: var(--primary-color);
 }
 
 header .ul .buts {
-  display: flex; /* عرض الأزرار كصف */
-  margin-right: -20px; /* ضبط الهوامش اليمنى */
+    display: flex;
+    margin-right: -20px;
 }
 
 header .ul .logo {
-  margin-left: 20px; /* ضبط الهوامش اليسرى */
-  font-size: 30px; /* حجم شعار الموقع */
-  color: var(--primary-color); /* لون شعار الموقع */
+    margin-left: 20px;
+    font-size: 30px;
+    color: var(--primary-color);
 }
 
-/* قسم البداية */
 .start {
-  width: 100%; /* عرض القسم 100% */
-  height: 100%; /* ارتفاع القسم 100% */
-  position: relative; /* تحديد الموضع بالنسبة للعناصر الأخرى */
-  display: flex; /* عرض العناصر كصف */
-  align-items: center; /* توسيط العناصر عموديًا */
-  justify-content: center; /* توسيط العناصر أفقيًا */
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-/* التدرج فوق القسم العلوي */
 .gradian {
-  position: absolute; /* تحديد الموضع بالنسبة للقسم */
-  height: 100%; /* تغطية كامل الارتفاع */
-  width: 101%; /* تغطية العرض مع زيادة بسيطة */
-  top: 70px; /* موضع أعلى */
-  bottom: 0px; /* موضع أسفل */
-  left: 0px; /* محاذاة إلى اليسار */
-  background: linear-gradient(
-    0deg,
-    var(--bg-color) 10%,
-    #00000000 60%,
-    #00000000 100%
-  ); /* إضافة تدرج */
-  z-index: 6; /* تحديد ترتيب الطبقات */
+    position: absolute;
+    height: 100%;
+    width: 101%;
+    top: 70px;
+    bottom: 0px;
+    left: 0px;
+    background: linear-gradient(
+        0deg,
+        var(--bg-color) 10%,
+        #00000000 60%,
+        #00000000 100%
+    );
+    z-index: 6;
 }
 
-/* صورة الشخصية */
 .start .myimg {
-  justify-content: center; /* توسيط الصورة */
-  height: 85%; /* ضبط الارتفاع */
-  z-index: 3; /* تحديد الطبقة */
-  padding-right: 50px; /* مسافة يمنى */
-  position: absolute; /* تحديد الموضع المطلق */
-  bottom: 0px; /* وضع الصورة في الأسفل */
+    justify-content: center;
+    height: 85%;
+    z-index: 3;
+    padding-right: 50px;
+    position: absolute;
+    bottom: 0px;
 }
 
-/* النص الشخصي */
 .start .myname {
-  width: 90%; /* عرض النص 90% */
-  max-width: 1000px; /* أقصى عرض للنص */
-  margin-bottom: 250px; /* إضافة مسافة أسفل النص */
-  z-index: 1; /* ترتيب الطبقات */
+    width: 90%;
+    max-width: 1000px;
+    margin-bottom: 250px;
+    z-index: 1;
 }
 
-/* تصميم الدائرة */
 .start .circle {
-  display: flex; /* عرض الدائرة كصف */
-  align-items: center; /* توسيط الدائرة عموديًا */
-  position: absolute; /* تحديد الموضع المطلق */
-  width: 850px; /* عرض الدائرة */
-  left: -250px; /* محاذاة إلى اليسار */
-  animation: circlee infinite 1100s; /* إضافة حركة دوران بطيئة */
-  z-index: 5; /* تحديد ترتيب الطبقات */
+    display: flex;
+    align-items: center;
+    position: absolute;
+    width: 850px;
+    left: -250px;
+    animation: circlee infinite 1100s;
+    z-index: 5;
 }
 
-/* حركة دوران الدائرة */
 @keyframes circlee {
-  to {
-    transform: rotate(40000deg); /* تدوير الدائرة */
-  }
+    to {
+        transform: rotate(40000deg);
+    }
 }
 
-/* تعديلات التصميم للشاشات الأصغر */
 @media (max-width: 1150px) {
-  .start .circle {
-    transform: rotate(100deg); /* تدوير بسيط للدائرة */
-    width: 80%; /* تعديل عرض الدائرة */
-    top: 50px; /* تعديل موضع الدائرة */
-    left: -300px; /* تعديل المحاذاة */
-  }
+    .start .circle {
+        transform: rotate(100deg);
+        width: 80%;
+        top: 50px;
+        left: -300px;
+    }
 }
 
 @media (max-width: 700px) {
-  .start .circle {
-    transform: rotate(100deg); /* تدوير بسيط للدائرة */
-    width: 90%; /* تعديل عرض الدائرة */
-    top: 50px; /* تعديل موضع الدائرة */
-    left: -300px; /* تعديل المحاذاة */
-  }
+    .start .circle {
+        transform: rotate(100deg);
+        width: 90%;
+        top: 50px;
+        left: -300px;
+    }
 }
 
 @media (max-width: 500px) {
-  .start .circle {
-    transform: rotate(100deg); /* تدوير بسيط للدائرة */
-    width: 150%; /* تعديل عرض الدائرة */
-    top: 50px; /* تعديل موضع الدائرة */
-    left: -385px; /* تعديل المحاذاة */
-  }
+    .start .circle {
+        transform: rotate(100deg);
+        width: 150%;
+        top: 50px;
+        left: -385px;
+    }
 }
 
-/* تصميم الروابط */
 .start .links {
-  position: fixed; /* تثبيت الروابط في مكانها */
-  right: 30px; /* محاذاة إلى اليمين */
-  top: 300px; /* موضع الروابط من الأعلى */
-  z-index: 10;
+    position: fixed;
+    right: 30px;
+    top: 300px;
+    z-index: 10;
 }
 
 .start .links a img {
-  width: 30px;
+    width: 30px;
 }
 
-/* إضافة مسافة بين الروابط */
 .start .links a {
-  margin: 10px 0;
+    margin: 10px 0;
 }
 
-/* حركة صغيرة للروابط */
 @keyframes fly {
-  to {
-    transform: translateY(10px); /* تحريك الروابط لأعلى قليلاً */
-  }
+    to {
+        transform: translateY(10px);
+    }
 }
 
-/* تعديلات تصميم الروابط والصورة للشاشات الأصغر */
 @media (max-width: 700px) {
-  .start .myimg {
-    padding-right: 80px; /* تعديل المسافة اليمنى */
-  }
-  .start .myname {
-    font-size: 70px; /* تصغير حجم النص */
-  }
-  .start .links {
-    position: absolute; /* تعديل موضع الروابط */
-  }
+    .start .myimg {
+        padding-right: 80px;
+    }
+    .start .myname {
+        font-size: 70px;
+    }
+    .start .links {
+        position: absolute;
+    }
 }
 
-/* footer */
 footer {
-  margin: 0 100px;
+    margin: 0 100px;
 }
 footer .top {
-  text-align: right;
-  margin-top: 50px;
-  display: flex;
-  justify-content: space-between;
+    text-align: right;
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
 }
 footer .email {
-  display: flex;
-  margin: auto;
-  cursor: pointer;
+    display: flex;
+    margin: auto;
+    cursor: pointer;
 }
 footer .links {
-  display: flex;
+    display: flex;
 }
 footer .links img {
-  width: 35px;
-  margin: 0 5px;
+    width: 35px;
+    margin: 0 5px;
 }
 footer span {
-  color: var(--primary-color);
+    color: var(--primary-color);
 }
 @media (max-width: 500px) {
-  footer .top {
-    flex-wrap: wrap;
-    justify-content: space-around;
-  }
-  footer .email {
-    justify-content: center;
-  }
+    footer .top {
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    footer .email {
+        justify-content: center;
+    }
 }
-/* ui as */
+
 button,
 button::after,
 .a,
 .a::after {
-  background-color: transparent;
-  position: relative;
+    background-color: transparent;
+    position: relative;
 }
 
 button::after,
 .a::after {
-  --move1: inset(50% 50% 50% 50%);
-  --move2: inset(31% 0 40% 0);
-  --move3: inset(39% 0 15% 0);
-  --move4: inset(45% 0 40% 0);
-  --move5: inset(45% 0 6% 0);
-  --move6: inset(14% 0 61% 0);
-  clip-path: var(--move1);
-  content: "سكيبر";
-  font-size: 20px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    --move1: inset(50% 50% 50% 50%);
+    --move2: inset(31% 0 40% 0);
+    --move3: inset(39% 0 15% 0);
+    --move4: inset(45% 0 40% 0);
+    --move5: inset(45% 0 6% 0);
+    --move6: inset(14% 0 61% 0);
+    clip-path: var(--move1);
+    content: "سكيبر";
+    font-size: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 button:hover::after,
 .a:hover::after {
-  animation: glitch_4011 1s;
-  text-shadow: 10 10px 10px black;
-  animation-timing-function: steps(2, end);
-  text-shadow: -3px -3px 0px var(--primary-color), 3px 3px 0px #d81d1d;
-  background-color: transparent;
+    animation: glitch_4011 1s;
+    text-shadow: 10 10px 10px black;
+    animation-timing-function: steps(2, end);
+    text-shadow: -3px -3px 0px var(--primary-color), 3px 3px 0px #d81d1d;
+    background-color: transparent;
 }
 
 button:hover,
 .a:hover {
-  background-color: transparent;
+    background-color: transparent;
 }
 
 @keyframes glitch_4011 {
-  0% {
-    clip-path: var(--move1);
-    transform: translate(0px, -10px);
-  }
+    0% {
+        clip-path: var(--move1);
+        transform: translate(0px, -10px);
+    }
 
-  10% {
-    clip-path: var(--move2);
-    transform: translate(-10px, 10px);
-  }
+    10% {
+        clip-path: var(--move2);
+        transform: translate(-10px, 10px);
+    }
 
-  20% {
-    clip-path: var(--move3);
-    transform: translate(10px, 0px);
-  }
+    20% {
+        clip-path: var(--move3);
+        transform: translate(10px, 0px);
+    }
 
-  30% {
-    clip-path: var(--move4);
-    transform: translate(-10px, 10px);
-  }
+    30% {
+        clip-path: var(--move4);
+        transform: translate(-10px, 10px);
+    }
 
-  40% {
-    clip-path: var(--move5);
-    transform: translate(10px, -10px);
-  }
+    40% {
+        clip-path: var(--move5);
+        transform: translate(10px, -10px);
+    }
 
-  50% {
-    clip-path: var(--move6);
-    transform: translate(-10px, 10px);
-  }
+    50% {
+        clip-path: var(--move6);
+        transform: translate(-10px, 10px);
+    }
 
-  60% {
-    clip-path: var(--move1);
-    transform: translate(10px, -10px);
-  }
+    60% {
+        clip-path: var(--move1);
+        transform: translate(10px, -10px);
+    }
 
-  70% {
-    clip-path: var(--move3);
-    transform: translate(-10px, 10px);
-  }
+    70% {
+        clip-path: var(--move3);
+        transform: translate(-10px, 10px);
+    }
 
-  80% {
-    clip-path: var(--move2);
-    transform: translate(10px, -10px);
-  }
+    80% {
+        clip-path: var(--move2);
+        transform: translate(10px, -10px);
+    }
 
-  90% {
-    clip-path: var(--move4);
-    transform: translate(-10px, 10px);
-  }
+    90% {
+        clip-path: var(--move4);
+        transform: translate(-10px, 10px);
+    }
 
-  100% {
-    clip-path: var(--move1);
-    transform: translate(0);
-  }
+    100% {
+        clip-path: var(--move1);
+        transform: translate(0);
+    }
 }
 
-/* Contact */
-
 .contact {
-  font-family: "لاكسر";
-  border-radius: 20px;
-  position: relative;
-  font-size: 30px;
-  text-align: right;
-  padding: 30px;
-  margin: 5px 3%;
-  z-index: 2;
-  border: solid 1px var(--primary-color);
+    font-family: "لاكسر";
+    border-radius: 20px;
+    position: relative;
+    font-size: 30px;
+    text-align: right;
+    padding: 30px;
+    margin: 5px 3%;
+    z-index: 2;
+    border: solid 1px var(--primary-color);
 }
 
 .contact .textInput {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row-reverse;
-  justify-content: flex-start;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row-reverse;
+    justify-content: flex-start;
 }
 
 .contact .textInput input,
 .contact .textInput h4,
 .contact .textInput label,
 .contact input::placeholder {
-  font-size: 30px;
-  text-align: right;
-  font-family: "لاكسر";
-  padding: 5px;
-  color: var(--tx-color);
-  background-color: transparent;
-  border: none;
-  caret-color: var(--primary-color);
+    font-size: 30px;
+    text-align: right;
+    font-family: "لاكسر";
+    padding: 5px;
+    color: var(--tx-color);
+    background-color: transparent;
+    border: none;
+    caret-color: var(--primary-color);
 }
 .contact input::placeholder {
-  color: gray;
+    color: gray;
 }
 
 .contact .textInput label {
-  cursor: pointer;
-  padding: 0px 20px;
-  margin: 5px;
-  border-radius: 15px;
-  border: solid 1px var(--primary-color);
+    cursor: pointer;
+    padding: 0px 20px;
+    margin: 5px;
+    border-radius: 15px;
+    border: solid 1px var(--primary-color);
 }
 .contact .textInput label:hover {
-  background-color: var(--primary-color);
+    background-color: var(--primary-color);
 }
 .contact img {
-  left: -1px;
-  top: -1px;
-  object-fit: cover;
-  object-position: top;
-  width: 50%;
-  max-width: 600px;
-  height: 101%;
-  position: absolute;
-  border-radius: 20px;
+    left: -1px;
+    top: -1px;
+    object-fit: cover;
+    object-position: top;
+    width: 50%;
+    max-width: 600px;
+    height: 101%;
+    position: absolute;
+    border-radius: 20px;
 }
 .contact .mainbut {
-  font-size: 25px;
-  padding: 5px 100px;
+    font-size: 25px;
+    padding: 5px 100px;
 }
 input:focus,
 textarea:focus,
 select:focus {
-  border: none;
-  outline: none;
+    border: none;
+    outline: none;
 }
 .contact .ball {
-  width: 100px;
-  height: 100px;
-  z-index: -1;
-  mix-blend-mode: darken;
-  opacity: 0.5;
-  position: absolute;
-  box-shadow: var(--primary-color) 0 0 100px 100px;
-  border-radius: 100px;
-  background-color: var(--primary-color);
+    width: 100px;
+    height: 100px;
+    z-index: -1;
+    mix-blend-mode: darken;
+    opacity: 0.5;
+    position: absolute;
+    box-shadow: var(--primary-color) 0 0 100px 100px;
+    border-radius: 100px;
+    background-color: var(--primary-color);
 }
 .contact .ball.tr {
-  top: 0;
-  right: 0;
+    top: 0;
+    right: 0;
 }
 .contact .ball.bl {
-  bottom: 0;
-  left: 0;
+    bottom: 0;
+    left: 0;
 }
 
 @media (max-width: 670px) {
-  .contact img {
-    display: none;
-  }
+    .contact img {
+        display: none;
+    }
 }
 @media (max-width: 800px) {
-  .contact .textInput input,
-  .contact .textInput select,
-  .contact .textInput h4,
-  .contact .textInput label,
-  .contact input::placeholder,
-  textarea::placeholder {
-    font-size: 20px;
-  }
+    .contact .textInput input,
+    .contact .textInput select,
+    .contact .textInput h4,
+    .contact .textInput label,
+    .contact input::placeholder,
+    textarea::placeholder {
+        font-size: 20px;
+    }
 }
 
-/* ---------------------------------------- Work */
 .works {
-  margin-top: 150px;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  position: relative;
-  margin-bottom: 100px;
+    margin-top: 150px;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    margin-bottom: 100px;
 }
 
 .works::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: var(--background-image, url(../assets/imgs/tatbela/1.webp));
-  background-size: cover;
-  background-position: center;
-  filter: blur(2px);
-  z-index: -1;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: var(
+        --background-image,
+        url(../assets/imgs/tatbela/1.webp)
+    );
+    background-size: cover;
+    background-position: center;
+    filter: blur(2px);
+    z-index: -1;
 }
 
 .works .topg {
-  height: 50px;
-  top: 0px;
-  transform: rotate(180deg);
+    height: 50px;
+    top: 0px;
+    transform: rotate(180deg);
 }
 .works .bottomg {
-  height: 100px;
-  bottom: 0px;
-  top: auto;
+    height: 100px;
+    bottom: 0px;
+    top: auto;
 }
 .works .top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 20px 10%;
-  font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 10%;
+    font-size: 20px;
 }
 
 .works .mainbut {
-  font-size: 20px;
-  padding: 10px;
-  width: 200px;
+    font-size: 20px;
+    padding: 10px;
+    width: 200px;
 }
 
 .works .bottom {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin: 0 20%;
-  height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 20%;
+    height: 100%;
 }
 
 .works .bottom .right .slider {
-  display: flex;
+    display: flex;
 }
 
 .works .bottom .right .work {
-  width: 200px;
-  text-align: center;
-  font-size: 18px;
-  margin: 0 10px;
+    width: 200px;
+    text-align: center;
+    font-size: 18px;
+    margin: 0 10px;
 }
 .works .bottom .right .work h3 {
-  transform: translateY(-20px);
+    transform: translateY(-20px);
 }
 
 .works .bottom .right .work img {
-  width: 100%;
-  border-radius: 20px;
-  margin-bottom: 20px;
+    width: 100%;
+    border-radius: 20px;
+    margin-bottom: 20px;
 }
 .works .bottom .right .work img:hover {
-  transform: scale(1.2);
+    transform: scale(1.2);
 }
 
 .works .bottom .left #workSubtitle {
-  color: gray;
-  margin: 10px 0;
+    color: gray;
+    margin: 10px 0;
 }
 .works .bottom .mainbut {
-  background-color: var(--primary-color);
+    background-color: var(--primary-color);
 }
 .works .bottom .mainbut:hover {
-  background-color: transparent;
+    background-color: transparent;
 }
 
 .works .controls {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 200px;
-  position: relative;
-  bottom: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 200px;
+    position: relative;
+    bottom: 70px;
 }
 .works .controls i {
-  margin: 0 10px;
+    margin: 0 10px;
 }
 .works .controls i:hover {
-  transform: scale(1.2);
+    transform: scale(1.2);
 }
 .works .controls svg {
-  width: 50px;
-  height: 50px;
-  padding: 15px;
-  fill: white;
-  background-color: #282828;
-  border-radius: 100px;
-  cursor: pointer;
+    width: 50px;
+    height: 50px;
+    padding: 15px;
+    fill: white;
+    background-color: #282828;
+    border-radius: 100px;
+    cursor: pointer;
 }
 
 @media (max-width: 700px) {
-  .works .bottom .right .work,
-  .works .bottom .left h2 {
-    display: none;
-  }
-  .works .top {
-    font-size: 15px;
-  }
-  .works .top .mainbut {
-    font-size: 15;
-    width: 150px;
-  }
+    .works .bottom .right .work,
+    .works .bottom .left h2 {
+        display: none;
+    }
+    .works .top {
+        font-size: 15px;
+    }
+    .works .top .mainbut {
+        font-size: 15;
+        width: 150px;
+    }
 
-  .works .bottom .right .work:nth-child(1) {
-    display: block;
-    width: 220px;
-    font-size: 30px;
-  }
+    .works .bottom .right .work:nth-child(1) {
+        display: block;
+        width: 220px;
+        font-size: 30px;
+    }
 
-  .works .bottom {
-    flex-direction: column-reverse;
-    justify-content: space-evenly;
-    text-align: center;
-    margin: 0;
-  }
-  .works .bottom .work {
-    transform: translateY(-25px);
-  }
+    .works .bottom {
+        flex-direction: column-reverse;
+        justify-content: space-evenly;
+        text-align: center;
+        margin: 0;
+    }
+    .works .bottom .work {
+        transform: translateY(-25px);
+    }
 
-  .works .bottom .left {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: -80px;
-    width: 80%;
-  }
+    .works .bottom .left {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: -80px;
+        width: 80%;
+    }
 
-  .works .bottom .left #workSubtitle {
-    position: relative;
-    display: block;
-    font-size: 20px;
-  }
+    .works .bottom .left #workSubtitle {
+        position: relative;
+        display: block;
+        font-size: 20px;
+    }
 
-  .works .controls {
-    bottom: 40px;
-  }
+    .works .controls {
+        bottom: 40px;
+    }
 }
 
-/* app portfolios padge */
 .portfolios {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: end;
-  align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: end;
+    align-items: center;
 }
 .portfolios .portfoliocard {
-  width: 300px;
-  height: 240px;
-  border-radius: 20px;
-  margin: 10px;
-  background-color: #222;
+    width: 300px;
+    height: 240px;
+    border-radius: 20px;
+    margin: 10px;
+    background-color: #222;
 }
 .portfolios .portfoliocard .all {
-  background-color: #222;
-  padding: 10px;
-  border-radius: 20px;
+    background-color: #222;
+    padding: 10px;
+    border-radius: 20px;
 }
 .portfolios .portfoliocard .all:hover {
-  transform: scale(1.05);
-  cursor: pointer;
+    transform: scale(1.05);
+    cursor: pointer;
 }
 .portfolios .portfoliocard .cover {
-  width: 280px;
-  height: 140px;
-  border-radius: 16px;
+    width: 280px;
+    height: 140px;
+    border-radius: 16px;
 }
 .portfolios .portfoliocard .buttom {
-  position: relative;
-  display: flex;
-  padding-top: 10px;
-  flex-direction: row-reverse;
-  align-items: center;
+    position: relative;
+    display: flex;
+    padding-top: 10px;
+    flex-direction: row-reverse;
+    align-items: center;
 }
 .portfolios .portfoliocard .mainbut {
-  font-size: 10px;
-  padding: 10px 10px;
-  border-radius: 15px;
-  position: absolute;
-  left: 0px;
+    font-size: 10px;
+    padding: 10px 10px;
+    border-radius: 15px;
+    position: absolute;
+    left: 0px;
 }
 .portfolios .portfoliocard .detals {
-  text-align: right;
-  margin-right: 10px;
+    text-align: right;
+    margin-right: 10px;
 }
 
 .portfolios .portfoliocard .logo {
-  width: 70px;
-  border-radius: 16px;
+    width: 70px;
+    border-radius: 16px;
 }
 
 .portfolios .portfoliocard .detals h3 {
-  font-size: 20px;
+    font-size: 20px;
 }
 .portfolios .portfoliocard .detals h4 {
-  font-size: 14px;
-  margin: -5px 0;
+    font-size: 14px;
+    margin: -5px 0;
 }
 .portfolios .portfoliocard .detals h5 {
-  font-size: 10px;
-  margin: -5px 0;
+    font-size: 10px;
+    margin: -5px 0;
 }
 
 @media (max-width: 1420px) {
-  .portfolios .portfoliocard {
-    width: 31.5%;
-    height: 26%;
-  }
-  .portfolios .portfoliocard .cover {
-    width: 100%;
-    height: 50%;
-  }
+    .portfolios .portfoliocard {
+        width: 31.5%;
+        height: 26%;
+    }
+    .portfolios .portfoliocard .cover {
+        width: 100%;
+        height: 50%;
+    }
 }
 @media (max-width: 1215px) {
-  .portfolios .portfoliocard {
-    width: 47%;
-    height: 40%;
-  }
-  .portfolios .portfoliocard .cover {
-    width: 100%;
-    height: 50%;
-  }
+    .portfolios .portfoliocard {
+        width: 47%;
+        height: 40%;
+    }
+    .portfolios .portfoliocard .cover {
+        width: 100%;
+        height: 50%;
+    }
 }
 @media (max-width: 740px) {
-  .portfolios .portfoliocard {
-    width: 100%;
-    height: 80%;
-  }
-  .portfolios .portfoliocard .cover {
-    width: 100%;
-    height: 50%;
-  }
+    .portfolios .portfoliocard {
+        width: 100%;
+        height: 80%;
+    }
+    .portfolios .portfoliocard .cover {
+        width: 100%;
+        height: 50%;
+    }
 }
-/* one project page  */
+
 .project {
-  margin: 0 5%;
+    margin: 0 5%;
 }
 .project .top {
-  margin-top: 30px;
-  display: flex;
-  flex-direction: row-reverse;
-  justify-content: space-between;
-  align-items: center;
-  text-align: right;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    text-align: right;
 }
 .project .top .detals {
-  display: flex;
-  align-items: center;
-  justify-content: end;
-  flex-direction: row-reverse;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    flex-direction: row-reverse;
 }
 .project .top .logo {
-  width: 100px;
-  margin-left: 20px;
-  border-radius: 20px;
+    width: 100px;
+    margin-left: 20px;
+    border-radius: 20px;
 }
 
 .project .top .mainbut {
-  font-size: 20px;
+    font-size: 20px;
 }
 
 .project .buttom {
-  margin: 40px 0;
+    margin: 40px 0;
 }
 
 .project .buttom .dis {
-  display: flex;
-  flex-direction: column;
-  justify-content: end;
-  align-items: end;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: end;
 }
 #markdown-container {
-  padding: 10px 30px;
-  background-color: #222;
-  border-radius: 10px;
-  width: 100%;
+    padding: 10px 30px;
+    background-color: #222;
+    border-radius: 10px;
+    width: 100%;
 }
-hr{
-  margin: 10px 0;
+hr {
+    margin: 10px 0;
 }
 .project .buttom .imgs {
-  display: flex;
-  margin: 10px 0;
-  overflow-x: scroll;
-  border-radius: 20px;
-  scrollbar-width: none;
+    display: flex;
+    margin: 10px 0;
+    overflow-x: scroll;
+    border-radius: 20px;
+    scrollbar-width: none;
 }
 .project .buttom .cover {
-  height: 400px;
-  margin: 5px 10px;
-  border-radius: 20px;
-  box-shadow: #222 -4px 4px 0px;
+    height: 400px;
+    margin: 5px 10px;
+    border-radius: 20px;
+    box-shadow: #222 -4px 4px 0px;
 }
 
 @media (max-width: 740px) {
-  .project .buttom .cover {
-    height: 200px;
-  }
-  .project .top .mainbut {
-    font-size: 15px;
-    padding: 10px 50px;
-  }
+    .project .buttom .cover {
+        height: 200px;
+    }
+    .project .top .mainbut {
+        font-size: 15px;
+        padding: 10px 50px;
+    }
 }
 @media (max-width: 430px) {
-  .project .top .mainbut {
-    font-size: 15px;
-    padding: 10px 20px;
-  }
+    .project .top .mainbut {
+        font-size: 15px;
+        padding: 10px 20px;
+    }
 }

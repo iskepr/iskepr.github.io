@@ -1,32 +1,31 @@
 // دالة لتحميل بيانات المشاريع وعرضها
 const loadProjects = () => {
-  fetch("../data/projects.json")
-    .then((response) => {
-      if (!response.ok) throw new Error("حدث خطأ في تحميل البيانات");
-      return response.json();
-    })
-    .then((data) => {
-      // عرض كل مشروع في الصفحة
-      displayProjects(data);
-    })
-    .catch((error) => {
-      console.error("حدث خطأ:", error.message);
-      alert("حدث خطأ أثناء تحميل المشاريع. يرجى المحاولة لاحقًا.");
-    });
+    fetch("../data/projects.json")
+        .then((response) => {
+            if (!response.ok) throw new Error("حدث خطأ في تحميل البيانات");
+            return response.json();
+        })
+        .then((data) => {
+            // عرض كل مشروع في الصفحة
+            displayProjects(data);
+        })
+        .catch((error) => {
+            console.error("حدث خطأ:", error.message);
+            alert("حدث خطأ أثناء تحميل المشاريع. يرجى المحاولة لاحقًا.");
+        });
 };
 
 // دالة لعرض المشاريع في الصفحة
 const displayProjects = (projects) => {
-  const portfoliosContainer = document.querySelector(".portfolios");
+    const portfoliosContainer = document.querySelector(".portfolios");
 
-  projects.forEach((project, index) => {
-    const adjustedIndex = index; // تعديل الفهرس ليبدأ من 1
-    const buttonLabel = project.النوع === "تطبيق" ? "تنزيل" : "ألقى نظرة";
+    projects.forEach((project) => {
+        const buttonLabel = project.النوع === "تطبيق" ? "تنزيل" : "ألقى نظرة";
 
-    // إنشاء عنصر المشروع باستخدام innerHTML
-    const projectCard = `
-            <a href="../project/?id=${adjustedIndex}">
-              <div class="portfoliocard" id="project-${adjustedIndex}" data-aos="fade-up">
+        // إنشاء عنصر المشروع باستخدام innerHTML
+        const projectCard = `
+            <a href="../project/#${project.اسم_المستودع}">
+              <div class="portfoliocard" id="project-${project.اسم_المستودع}" data-aos="fade-up">
                 <div class="all">
                   <img class="cover" src="../${project.الصور[0]}" alt="${project.الاسم} ${project.الوصف}">
                   <div class="buttom">
@@ -43,17 +42,9 @@ const displayProjects = (projects) => {
             </a>
           `;
 
-    // إضافة المشروع إلى الحاوية
-    portfoliosContainer.innerHTML += projectCard;
-
-    // إضافة حدث الضغط على العنصر
-    const projectElement = document.getElementById(`project-${adjustedIndex}`);
-    if (projectElement) {
-      projectElement.addEventListener("click", () => {
-        window.location.href = `../project/?id=${adjustedIndex}`;
-      });
-    }
-  });
+        // إضافة المشروع إلى الحاوية
+        portfoliosContainer.innerHTML += projectCard;
+    });
 };
 
 // تشغيل الكود عند تحميل الصفحة
