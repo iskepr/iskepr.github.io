@@ -1,5 +1,6 @@
 import { IBM_Plex_Sans_Arabic } from "next/font/google";
-import "./globals.css";
+import "@/scss/globals.css";
+import "@/scss/Main.scss";
 
 const ibm = IBM_Plex_Sans_Arabic({
     variable: "--font-ibm-sans",
@@ -17,8 +18,8 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
     return (
-        <html lang="ar">
-            <body className={`${ibm.variable}`}>{children}</body>
+        <html lang="ar" dir="rtl">
+            <body className={ibm.variable}>{children}</body>
         </html>
     );
 }
