@@ -1,3 +1,4 @@
+@use "./components.scss";
 :root {
     --background: #171717;
     --foreground: #ffffff;
@@ -18,24 +19,23 @@ button {
     height: 100vh;
 }
 
+input,
+textarea {
+    background-color: none;
+    padding: 5px;
+    border-bottom: 1px solid grey;
+}
+
 header {
     a:hover {
         scale: 1.1;
     }
 }
+section {
+    min-height: 100vh;
+}
 
 .Home {
-    .prograsbar {
-        border-radius: 100px;
-        width: 80%;
-        padding: 10px;
-        position: fixed;
-        bottom: 20px;
-        right: 50%;
-        transform: translateX(50%);
-        z-index: 10;
-        animation: flyb 3s ease-in infinite alternate-reverse;
-    }
     #first {
         height: 100vh;
         background: url("/imgs/back.webp");
@@ -72,6 +72,35 @@ header {
         bottom: 0;
         left: 0;
         z-index: 1;
+    }
+
+    // Contact
+    .light {
+        width: 1px;
+        height: 1px;
+        position: absolute;
+        border-radius: 100px;
+        box-shadow: #125206 0 0 300px 300px;
+        z-index: -1;
+    }
+}
+
+.lightBut {
+    position: relative;
+    bottom: 0;
+    right: 70%;
+    width: fit-content;
+    background-color: #125206;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    box-shadow: #125206 0 0 100px 100px;
+    animation: flybl 3s ease-in infinite alternate-reverse;
+}
+@keyframes flybl {
+    to {
+        box-shadow: #125206 0 0 80px 80px;
+        bottom: 10px;
     }
 }
 

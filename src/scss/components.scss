@@ -1,0 +1,63 @@
+// Popup
+#Popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    backdrop-filter: blur(5px);
+    z-index: 100;
+
+    .Card {
+        padding: 1.5rem;
+        width: 70%;
+        margin-top: 2rem;
+        height: 2rem;
+        text-align: center;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        animation: popup-in 1s ease-in-out;
+        border-radius: 30px;
+
+        button {
+            padding: 0.5rem 1rem;
+            margin: auto;
+        }
+
+        .PopupBody {
+            overflow: scroll;
+            margin: 1rem 0;
+            padding: 1rem;
+        }
+        .bottom {
+            display: flex;
+            gap: 0.5rem;
+            button {
+                width: 100%;
+            }
+        }
+    }
+}
+
+@keyframes popup-in {
+    0% {
+        opacity: 0;
+        transform: scale(0.9) translateY(-100px);
+        width: 20%;
+    }
+    20% {
+        opacity: 0;
+    }
+    30% {
+        transform: scale(1) translateY(0);
+        width: 20%;
+    }
+    100% {
+        width: 70%;
+    }
+}
