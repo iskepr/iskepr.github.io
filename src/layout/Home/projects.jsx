@@ -18,16 +18,16 @@ export default function Projects() {
                     />
                 ))}
             </div>
-            {projects.map((project, i) => (
+            {projects.slice(0, 5).map((project, i) => (
                 <div
                     key={i}
                     data-aos="fade-up"
-                    className="project border-b-1 flex items-center justify-between !px-15 !py-5"
+                    className={`project ${
+                        i !== 4 ? "border-b-1" : ""
+                    } flex items-center justify-between !px-15 !py-5`}
                 >
                     <div className="info">
-                        <h2 className="text-3xl font-bold m-10">
-                            {project.الاسم}
-                        </h2>
+                        <h2 className="text-3xl font-bold">{project.الاسم}</h2>
                         <p className="text-2xl">{project.الوصف}</p>
                         <a
                             href={`https://github.com/iskepr/${project.اسم_المستودع}`}
@@ -35,13 +35,14 @@ export default function Projects() {
                             المستودع
                         </a>
                     </div>
-                    <Link href={`/${project.اسم_المستودع}`}>
+                    <Link href={`/Project/${project.اسم_المستودع}`}>
                         <div className="rounded-3xl">
                             <Image
                                 src={project.الشعار}
                                 alt={project.الاسم}
                                 width={100}
                                 height={100}
+                                className="rounded-3xl"
                             />
                         </div>
                     </Link>

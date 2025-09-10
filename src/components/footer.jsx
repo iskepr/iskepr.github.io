@@ -1,15 +1,7 @@
 import Image from "next/image";
+import links from "@/data/mylinks.json";
+
 export default function Footer() {
-    const links = [
-        { link: "https://www.facebook.com/itskepr/", img: "/svg/facebook.svg" },
-        {
-            link: "https://www.instagram.com/itskepr/",
-            img: "/svg/instagram.svg",
-        },
-        { link: "https://www.youtube.com/@iskepr/", img: "/svg/youtube.svg" },
-        { link: "https://t.me/Iskepr", img: "/svg/telegram.svg" },
-        { link: "https://github.com/iskepr", img: "/svg/github.svg" },
-    ];
     return (
         <footer className="flex items-center justify-between !p-10">
             <h2 className="text-2xl">

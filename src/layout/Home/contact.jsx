@@ -178,7 +178,7 @@ export default function Contact() {
                             <div key={i} className="w-full">
                                 <h3 className="text-2xl" data-aos="fade-up">
                                     <span className="text-gray-500 text-[15px]">
-                                        .{i + 1}
+                                        {i + 1}.
                                     </span>{" "}
                                     {fild.title}
                                 </h3>

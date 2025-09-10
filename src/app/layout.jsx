@@ -2,6 +2,8 @@ import { IBM_Plex_Sans_Arabic } from "next/font/google";
 import "@/scss/globals.css";
 import "@/scss/Main.scss";
 
+import ParallaxWrapper from "@/components/ParallaxWrapper";
+
 const ibm = IBM_Plex_Sans_Arabic({
     variable: "--font-ibm-sans",
     subsets: ["latin", "arabic"],
@@ -19,7 +21,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
     return (
         <html lang="ar" dir="rtl">
-            <body className={ibm.variable}>{children}</body>
+            <body className={ibm.variable}>
+                <ParallaxWrapper>{children}</ParallaxWrapper>
+            </body>
         </html>
     );
 }

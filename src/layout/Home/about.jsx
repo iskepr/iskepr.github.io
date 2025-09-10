@@ -4,6 +4,7 @@ import Link from "next/link";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
+import { Parallax } from "react-scroll-parallax";
 export default function AboutS() {
     useEffect(() => {
         Aos.init();
@@ -18,15 +19,17 @@ export default function AboutS() {
     return (
         <section className="flex items-center justify-center relative">
             <div className="flex items-start relative">
-                <Image
-                    src="/imgs/me/mecafe.webp"
-                    className="rounded-full !ml-10"
-                    width={80}
-                    height={80}
-                    data-aos="fade-left"
-                    data-aos-delay={100}
-                    alt="محمد سيد عبد العليم مبرمج مواقع سكيبر Mohamed Sayed AbdElalem web dev"
-                />
+                <Parallax speed={-1}>
+                    <Image
+                        src="/imgs/me/mecafe.webp"
+                        className="rounded-full !ml-10"
+                        width={80}
+                        height={80}
+                        data-aos="fade-left"
+                        data-aos-delay={100}
+                        alt="محمد سيد عبد العليم مبرمج مواقع سكيبر Mohamed Sayed AbdElalem web dev"
+                    />
+                </Parallax>
                 <p
                     className="text-6xl absolute right-21 top-[-2rem] rotate-180 text-[#F7DF1E]"
                     data-aos="fade-up"
@@ -59,17 +62,22 @@ export default function AboutS() {
                     ))}
                 </div>
             </div>
-            <Link
-                data-aos="fade-up"
-                href={"/About"}
-                type="submit"
-                className="lightBut !absolute !bottom-[9rem] !right-[15%] text-3xl cursor-pointer mt-5"
-                style={{
-                    boxShadow: "#125206 0 0 200px 200px",
-                }}
+            <Parallax
+                speed={-15}
+                className="!absolute !bottom-[9rem] !right-[15%]"
             >
-                عني
-            </Link>
+                <Link
+                    data-aos="fade-up"
+                    href={"/About"}
+                    type="submit"
+                    className="lightBut  text-3xl cursor-pointer mt-5"
+                    style={{
+                        boxShadow: "#125206 0 0 200px 200px",
+                    }}
+                >
+                    عني
+                </Link>
+            </Parallax>
         </section>
     );
 }
