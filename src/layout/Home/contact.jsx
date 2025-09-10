@@ -2,8 +2,14 @@
 import Image from "next/image";
 import { useState } from "react";
 import { notify } from "@/components/notify";
-
+import Aos from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 export default function Contact() {
+    useEffect(() => {
+        Aos.init();
+    }, []);
+
     const [formData, setFormData] = useState({
         cName: "",
         cEmail: "",
@@ -154,7 +160,10 @@ export default function Contact() {
     return (
         <div className="relative h-[80%]">
             <div className="light top-0 right-0"></div>
-            <div className="GlassBG !m-10 !p-5 rounded-2xl flex justify-between z-10 h-full">
+            <div
+                className="GlassBG !m-10 !p-5 rounded-2xl flex justify-between z-10 h-full"
+                data-aos="fade-up"
+            >
                 <div className="w-[80%]">
                     <h2 className="text-3xl font-bold">تواصل معي</h2>
                     <br />
@@ -167,7 +176,7 @@ export default function Contact() {
                     >
                         {filds.map((fild, i) => (
                             <div key={i} className="w-full">
-                                <h3 className="text-2xl">
+                                <h3 className="text-2xl" data-aos="fade-up">
                                     <span className="text-gray-500 text-[15px]">
                                         .{i + 1}
                                     </span>{" "}
@@ -180,6 +189,7 @@ export default function Contact() {
                                         value={formData[fild.name]}
                                         onChange={handleChange}
                                         placeholder={fild.place}
+                                        data-aos="fade-up"
                                         className="text-[20px] w-3/4 border-b-2 outline-none"
                                     />
                                 ) : (
@@ -189,6 +199,7 @@ export default function Contact() {
                                         value={formData[fild.name]}
                                         onChange={handleChange}
                                         placeholder={fild.place}
+                                        data-aos="fade-up"
                                         className="text-[20px] w-3/4 border-b-2 outline-none"
                                     />
                                 )}
@@ -196,6 +207,7 @@ export default function Contact() {
                         ))}
                         <button
                             type="submit"
+                            data-aos="fade-up"
                             className="lightBut cursor-pointer mt-5"
                         >
                             ارسال

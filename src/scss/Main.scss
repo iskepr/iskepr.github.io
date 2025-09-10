@@ -100,7 +100,7 @@ section {
 @keyframes flybl {
     to {
         box-shadow: #125206 0 0 80px 80px;
-        bottom: 10px;
+        transform: translateY(-10px);
     }
 }
 

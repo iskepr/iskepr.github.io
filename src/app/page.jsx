@@ -1,22 +1,28 @@
 "use client";
 import Image from "next/image";
-import Link from "next/link";
 import Header from "@/components/header";
-import projects from "@/data/projects.json";
 import Footer from "@/components/footer";
+import Contact from "@/layout/Home/contact";
 
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Contact from "@/layout/contact";
+import Aos from "aos";
+import "aos/dist/aos.css";
+import AboutS from "@/layout/Home/about";
+import Projects from "@/layout/Home/projects";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Home() {
+    useEffect(() => {
+        Aos.init();
+    }, []);
+
     const prograss = useRef(null);
     const contactSection = useRef(null);
 
-    useEffect(async () => {
+    useEffect(() => {
         gsap.to(prograss.current, {
             opacity: 0,
             duration: 0.5,
@@ -27,13 +33,6 @@ export default function Home() {
                 toggleActions: "play none none reverse",
             },
         });
-
-        async function getUserName() {
-            const res = await fetch("https://facebook.com");
-            if (!res) console.error(res);
-            else console.log(res);
-        }
-        await getUserName();
     }, []);
 
     return (
@@ -61,48 +60,12 @@ export default function Home() {
                     <Image src="/imgs/me.png" width={300} height={300} alt="" />
                 </div>
             </section>
-            <section id="projects" className="m-10">
-                <div className="prev w-70 h-50 sticky top-50 right-[50%] transform translate-x-1/2 overflow-hidden">
-                    {projects.map((project, i) => (
-                        <Image
-                            src={project.الصور[0]}
-                            key={i}
-                            alt={project.الاسم}
-                            width={100}
-                            height={100}
-                            className="w-full h-full object-cover"
-                        />
-                    ))}
-                </div>
-                {projects.map((project, i) => (
-                    <div
-                        key={i}
-                        className="project border-b-1 flex items-center justify-between"
-                    >
-                        <div className="info">
-                            <h2 className="text-3xl font-bold m-10">
-                                {project.الاسم}
-                            </h2>
-                            <p className="text-2xl">{project.الوصف}</p>
-                            <a
-                                href={`https://github.com/iskepr/${project.اسم_المستودع}`}
-                            >
-                                المستودع
-                            </a>
-                        </div>
-                        <Link href={`/${project.اسم_المستودع}`}>
-                            <div className="rounded-3xl">
-                                <Image
-                                    src={project.الشعار}
-                                    alt={project.الاسم}
-                                    width={100}
-                                    height={100}
-                                />
-                            </div>
-                        </Link>
-                    </div>
-                ))}
+
+            <AboutS />
+            <section id="projects" className="!p-10">
+                <Projects />
             </section>
+
             <section
                 ref={contactSection}
                 id="Contact"

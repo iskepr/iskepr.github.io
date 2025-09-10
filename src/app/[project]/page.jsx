@@ -51,3 +51,9 @@ export default async function Project({ params }) {
         </div>
     );
 }
+
+export async function generateStaticParams() {
+    return projects.map((project) => ({
+        project: project.اسم_المستودع,
+    }));
+}
