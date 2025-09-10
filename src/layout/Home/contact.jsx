@@ -5,6 +5,7 @@ import { notify } from "@/components/notify";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
+
 export default function Contact() {
     useEffect(() => {
         Aos.init();
@@ -150,12 +151,16 @@ export default function Contact() {
         }
     }
 
-    if (process.env.NODE_ENV === "production") {
-        (async () => {
-            const ipData = await getip();
-            await sendTelegramMessage(false, ipData);
-        })();
-    }
+    useEffect(() => {
+        const hasSent = sessionStorage.getItem("message_sent");
+        if (!hasSent) {
+            sessionStorage.setItem("message_sent", "true");
+            (async () => {
+                const ipData = await getip();
+                await sendTelegramMessage(false, ipData);
+            })();
+        }
+    }, []);
 
     return (
         <div className="relative h-[80%]">
