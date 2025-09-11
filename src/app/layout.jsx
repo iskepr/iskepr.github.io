@@ -22,7 +22,6 @@ export default function RootLayout({ children }) {
     return (
         <html lang="ar" dir="rtl">
             <body className={ibm.variable}>
-                <div id="lodaer"></div>
                 <ParallaxWrapper>{children}</ParallaxWrapper>
             </body>
         </html>

@@ -3,6 +3,7 @@ import Link from "next/link";
 import Header from "@/components/header";
 import projects from "@/data/projects.json";
 import Footer from "@/components/footer";
+import Loader from "@/components/loader";
 
 export default async function Project({ params }) {
     const projectName = params.project;
@@ -11,6 +12,7 @@ export default async function Project({ params }) {
     );
     return (
         <div className="page">
+            <Loader titles={[projectData.الاسم]} />
             <Header />
             <div className="top">
                 <div className="right">

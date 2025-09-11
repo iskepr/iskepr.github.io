@@ -4,6 +4,7 @@ import Header from "@/components/header";
 import Footer from "@/components/footer";
 import Contact from "@/layout/Home/contact";
 import links from "@/data/mylinks.json";
+import Loader from "@/components/loader";
 
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
@@ -49,35 +50,9 @@ export default function Home() {
         });
     }, []);
 
-    useEffect(() => {
-        document.addEventListener("DOMContentLoaded", () => {
-            document.getElementById("lodaer").style.backdropFilter = "blur(0)";
-            setTimeout(() => {
-                document.getElementById("lodaer").style.display = "none";
-            }, 1000);
-            // setTimeout(() => {
-            //     document.querySelector(".hero .container").style.transform =
-            //         "translateY(0)";
-            //     setTimeout(() => {
-            //         document.querySelector(".hero .hero_title").style.transform =
-            //             "translateY(0)";
-            //         setTimeout(() => {
-            //             document.querySelector(
-            //                 ".hero .hero_description"
-            //             ).style.transform = "translateY(0)";
-            //             setTimeout(() => {
-            //                 document.querySelector(
-            //                     ".hero .cta_buttons"
-            //                 ).style.transform = "translateY(0)";
-            //             }, 100);
-            //         }, 100);
-            //     }, 100);
-            // }, 100);
-        });
-    });
-
     return (
         <div className="Home page">
+            <Loader titles={["الرئيسية"]} />
             <div
                 ref={prograss}
                 className="prograsbar GlassBG flex items-center rounded-4xl w-3/4 !p-3 fixed bottom-10 right-1/2 translate-x-1/2 z-10"
