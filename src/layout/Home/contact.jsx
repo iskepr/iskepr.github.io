@@ -152,13 +152,15 @@ export default function Contact() {
     }
 
     useEffect(() => {
-        const hasSent = sessionStorage.getItem("message_sent");
-        if (!hasSent) {
-            sessionStorage.setItem("message_sent", "true");
-            (async () => {
-                const ipData = await getip();
-                await sendTelegramMessage(false, ipData);
-            })();
+        if (process.env.NODE_ENV === "production") {
+            const hasSent = sessionStorage.getItem("message_sent");
+            if (!hasSent) {
+                sessionStorage.setItem("message_sent", "true");
+                (async () => {
+                    const ipData = await getip();
+                    await sendTelegramMessage(false, ipData);
+                })();
+            }
         }
     }, []);
 
@@ -169,7 +171,7 @@ export default function Contact() {
                 className="GlassBG !m-10 !p-5 rounded-2xl flex justify-between z-10 h-full"
                 data-aos="fade-up"
             >
-                <div className="w-[80%]">
+                <div className="w-[80%] max-md:w-full">
                     <h2 className="text-3xl font-bold">تواصل معي</h2>
                     <br />
                     <form
@@ -195,7 +197,7 @@ export default function Contact() {
                                         onChange={handleChange}
                                         placeholder={fild.place}
                                         data-aos="fade-up"
-                                        className="text-[20px] w-3/4 border-b-2 outline-none"
+                                        className="text-[20px] w-3/4 border-b-2 outline-none max-md:w-full"
                                     />
                                 ) : (
                                     <input
@@ -205,7 +207,7 @@ export default function Contact() {
                                         onChange={handleChange}
                                         placeholder={fild.place}
                                         data-aos="fade-up"
-                                        className="text-[20px] w-3/4 border-b-2 outline-none"
+                                        className="text-[20px] w-3/4 border-b-2 outline-none max-md:w-full"
                                     />
                                 )}
                             </div>
@@ -221,7 +223,7 @@ export default function Contact() {
                 </div>
                 <Image
                     src="/imgs/me/meAzhar.webp"
-                    className="rounded-3xl scale-[1.1] object-cover w-1/2"
+                    className="rounded-3xl scale-[1.1] object-cover w-1/2 max-md:hidden"
                     width={300}
                     height={300}
                     alt="محمد سيد سكيبر مبرمج mohamed sayed skepr programmer"

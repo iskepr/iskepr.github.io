@@ -74,11 +74,11 @@ export default function Home() {
             <section id="first" className="relative overflow-hidden">
                 <Header />
                 <Parallax
-                    speed={-30}
+                    speed={-20}
                     className="absolute w-full flex justify-center right-1/2 transform top-[10%] translate-x-1/2"
                 >
                     <Image
-                        className="ImageName w-3/4"
+                        className="ImageName w-3/4 max-md:w-[90%]"
                         src="/imgs/myname.svg"
                         alt="محمد سيد سكيبر"
                         width={300}
@@ -88,6 +88,7 @@ export default function Home() {
                 <Parallax speed={-10} className="me">
                     <Image
                         src="/imgs/me.png"
+                        className="!w-110 !h-auto max-md:w-300"
                         width={300}
                         height={300}
                         alt="Me"
@@ -96,7 +97,7 @@ export default function Home() {
             </section>
             <AboutS />
             <section id="projects" className="!p-10">
-                <h2 className="text-center text-6xl font-bold">أخر اعمالي</h2>
+                <h2 className="text-center text-6xl font-bold max-md:text-4xl">أخر اعمالي</h2>
                 <Projects />
                 <div className="flex justify-center w-full">
                     <Link
