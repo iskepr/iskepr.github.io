@@ -49,6 +49,33 @@ export default function Home() {
         });
     }, []);
 
+    useEffect(() => {
+        document.addEventListener("DOMContentLoaded", () => {
+            document.getElementById("lodaer").style.backdropFilter = "blur(0)";
+            setTimeout(() => {
+                document.getElementById("lodaer").style.display = "none";
+            }, 1000);
+            // setTimeout(() => {
+            //     document.querySelector(".hero .container").style.transform =
+            //         "translateY(0)";
+            //     setTimeout(() => {
+            //         document.querySelector(".hero .hero_title").style.transform =
+            //             "translateY(0)";
+            //         setTimeout(() => {
+            //             document.querySelector(
+            //                 ".hero .hero_description"
+            //             ).style.transform = "translateY(0)";
+            //             setTimeout(() => {
+            //                 document.querySelector(
+            //                     ".hero .cta_buttons"
+            //                 ).style.transform = "translateY(0)";
+            //             }, 100);
+            //         }, 100);
+            //     }, 100);
+            // }, 100);
+        });
+    });
+
     return (
         <div className="Home page">
             <div
@@ -96,8 +123,10 @@ export default function Home() {
                 </Parallax>
             </section>
             <AboutS />
-            <section id="projects" className="!p-10">
-                <h2 className="text-center text-6xl font-bold max-md:text-4xl">أخر اعمالي</h2>
+            <section id="projects" className="!p-10" ref={contactSection}>
+                <h2 className="text-center text-6xl font-bold max-md:text-4xl">
+                    أخر اعمالي
+                </h2>
                 <Projects />
                 <div className="flex justify-center w-full">
                     <Link
@@ -108,11 +137,7 @@ export default function Home() {
                     </Link>
                 </div>
             </section>
-            <section
-                ref={contactSection}
-                id="Contact"
-                className="flex flex-col justify-between"
-            >
+            <section id="Contact" className="flex flex-col justify-between">
                 <Contact />
                 <Footer />
             </section>
