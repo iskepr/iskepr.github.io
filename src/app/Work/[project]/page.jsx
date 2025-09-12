@@ -6,12 +6,15 @@ import Footer from "@/components/footer";
 import Loader from "@/components/loader";
 
 import Swipe from "./layout/swipe";
+import Desc from "./layout/desc";
+import Sugest from "./layout/sugest";
 
 export default async function Project({ params }) {
     const projectName = params.project;
     const projectData = await projects.find(
         (project) => project.اسم_المستودع === projectName
     );
+
     return (
         <div className="page">
             <Loader titles={[projectData.الاسم]} />
@@ -28,6 +31,7 @@ export default async function Project({ params }) {
                     <Image
                         src={projectData.الصور[0]}
                         className="!w-full !h-full"
+                        alt={projectData.الاسم}
                         width={100}
                         height={100}
                     />
@@ -51,7 +55,7 @@ export default async function Project({ params }) {
                 </div>
                 <Link
                     href={projectData.الرابط}
-                    className="GlassBG !px-10 !py-2 bg-gradient-to-tl from-[#0f01] to-[#0f03]"
+                    className="GlassBG !px-10 !py-2 text-[1rem] bg-gradient-to-tl from-[#0f01] to-[#0f03]"
                     style={{ boxShadow: "#0f01 0 0 50px 50px" }}
                 >
                     {projectData.النوع === "تطبيق" ? "تحميل" : "القي نظرة"}
@@ -61,9 +65,11 @@ export default async function Project({ params }) {
                 projectData={projectData}
                 withVid={projectData.الفديو === null ? false : true}
             />
-            <div className="desc">{projectData.الشرح}</div>
-
-            <Footer />
+            <Desc projectData={projectData} />
+            <section className="flex flex-col justify-between">
+                <Sugest projects={projects} thisProj={projectData} />
+                <Footer />
+            </section>
         </div>
     );
 }

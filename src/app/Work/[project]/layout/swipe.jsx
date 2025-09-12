@@ -22,7 +22,14 @@ export default function SimpleSwipe({ projectData, withVid }) {
             breakpoints={{
                 740: { slidesPerView: 3 },
                 840: { slidesPerView: 4 },
-                1024: { slidesPerView: 5 },
+                1024: {
+                    slidesPerView:
+                        images.length > 5
+                            ? 5
+                            : images.length > 2
+                            ? images.length - 1
+                            : images.length,
+                },
             }}
             modules={[Autoplay]}
         >
@@ -33,7 +40,7 @@ export default function SimpleSwipe({ projectData, withVid }) {
                         src={item}
                         width={250}
                         height={250}
-                        className="rounded-xl object-cover"
+                        className="rounded-xl object-cover w-full"
                     />
                 </SwiperSlide>
             ))}

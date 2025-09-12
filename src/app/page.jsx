@@ -13,7 +13,7 @@ import Aos from "aos";
 import "aos/dist/aos.css";
 import AboutS from "@/layout/Home/about";
 import Projects from "@/layout/Home/projects";
-import Link from "next/link";
+import TLink from "@/components/TLink";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -83,12 +83,13 @@ export default function Home() {
                 </h2>
                 <Projects />
                 <div className="flex justify-center w-full">
-                    <Link
+                    <TLink
                         href="/Work"
+                        title={"• اعمالي"}
                         className="GlassBG !px-10 !py-5 text-1xl font-bold !rounded-full "
                     >
                         المزيد من اعمالي
-                    </Link>
+                    </TLink>
                 </div>
             </section>
 
