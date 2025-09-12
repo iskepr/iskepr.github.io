@@ -14,7 +14,7 @@ export default function TLink({ href, children, title, ...props }) {
         const titleEl = document.querySelector("#loader .titles h1");
         titleEl.innerHTML = title || "";
         loader.style.display = "flex";
-        await sleep(500);
+        await sleep(100);
         loader.style.opacity = "1";
 
         await sleep(200);

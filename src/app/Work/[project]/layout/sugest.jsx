@@ -9,14 +9,14 @@ export default function Sugest({ projects, thisProj }) {
     const project = filteredProjects[randomIndex];
 
     return (
-        <div className="flex items-center justify-center flex-col h-[85vh] !mx-20 !pt-10">
+        <div className="flex items-center justify-center flex-col h-[85vh] !mx-20 !pt-10 max-md:h-fit max-md:!mb-5 max-md:!mx-5">
             <div className="relative group  overflow-hidden w-full border-b-2 border-gray-500">
                 <TLink
                     href={"/Work/" + project.اسم_المستودع}
                     title={"• " + project.الاسم}
                     className="flex items-center justify-center flex-col"
                 >
-                    <h3 className="text-9xl font-bold translate-y-10 z-0  group-hover:text-gray-500">
+                    <h3 className="text-9xl font-bold translate-y-10 z-0  group-hover:text-gray-500 max-md:text-[360%]">
                         {project.الاسم}
                     </h3>
                     <Image

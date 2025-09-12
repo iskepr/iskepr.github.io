@@ -37,22 +37,26 @@ export default async function Project({ params }) {
                     />
                 )}
             </div>
-            <div className="flex justify-between items-center !mx-20 z-2">
-                <div className="right flex gap-5">
+
+            <div className="flex justify-between items-center !mx-20 z-2 max-md:!mx-5">
+                <div className="right flex  gap-5 max-md:gap-2">
                     <Image
                         src={projectData.الشعار}
                         width={200}
                         height={200}
                         alt={projectData.الاسم}
-                        className="rounded-3xl"
+                        className="rounded-3xl max-md:!w-30"
                     />
-                    <div className="!mt-5">
-                        <h1 className="text-3xl font-bold">
+                    <div className="!mt-5 flex flex-col w-fit max-md:!mt-1">
+                        <h1 className="text-3xl font-bold w-fit max-md:text-2xl">
                             {projectData.الاسم}
                         </h1>
-                        <h1 className="text-2xl">{projectData.الوصف}</h1>
+                        <h2 className="text-2xl max-md:text-xl">
+                            {projectData.الوصف}
+                        </h2>
                     </div>
                 </div>
+
                 <Link
                     href={projectData.الرابط}
                     className="GlassBG !px-10 !py-2 text-[1rem] bg-gradient-to-tl from-[#0f01] to-[#0f03]"
@@ -61,12 +65,13 @@ export default async function Project({ params }) {
                     {projectData.النوع === "تطبيق" ? "تحميل" : "القي نظرة"}
                 </Link>
             </div>
+
             <Swipe
                 projectData={projectData}
                 withVid={projectData.الفديو === null ? false : true}
             />
             <Desc projectData={projectData} />
-            <section className="flex flex-col justify-between">
+            <section className="flex flex-col justify-between max-md:!min-h-fit">
                 <Sugest projects={projects} thisProj={projectData} />
                 <Footer />
             </section>
