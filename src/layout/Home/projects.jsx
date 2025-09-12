@@ -1,6 +1,6 @@
-import Link from "next/link";
 import Image from "next/image";
 
+import TLink from "@/components/TLink";
 import projects from "@/data/projects.json";
 
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -8,7 +8,6 @@ import { EffectCoverflow, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
-import TLink from "@/components/TLink";
 
 export default function Projects() {
     return (
@@ -83,7 +82,7 @@ export default function Projects() {
                         }}
                     >
                         <TLink
-                            href={`/Project/${project.اسم_المستودع}`}
+                            href={`/Work/${project.اسم_المستودع}`}
                             title={"• " + project.الاسم}
                         >
                             <div className="rounded-2xl">

@@ -2,6 +2,8 @@
 :root {
     --background: #171717;
     --foreground: #ffffff;
+    --lightgreen: #05ff2d;
+    --yello: #f7df1e;
 }
 
 .GlassBG,
@@ -113,4 +115,16 @@ section {
     to {
         bottom: 10px;
     }
+}
+
+// project
+.topvid::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(to left, #171717 0, #0000 56%),
+        linear-gradient(to top, #171717 0, #0000 56%);
 }

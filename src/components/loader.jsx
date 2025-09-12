@@ -51,7 +51,7 @@ export default function Loader({ titles = hi }) {
     return (
         <div
             id="loader"
-            className="flex items-center justify-center fixed w-full h-full z-30 transition duration-1000 ease-in-out bg-[#111]"
+            className="flex items-center justify-center fixed w-full h-full z-30 transition duration-1000 ease-in-out bg-(--background)"
         >
             <div className="titles">
                 <h1 className="text-5xl transition-opacity duration-500">

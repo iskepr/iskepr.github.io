@@ -31,14 +31,14 @@ export default function AboutS() {
                     />
                 </Parallax>
                 <p
-                    className="text-6xl absolute right-21 top-[-2rem] rotate-180 text-[#F7DF1E] max-md:right-0"
+                    className="text-6xl absolute right-21 top-[-2rem] rotate-180 text-(--yello) max-md:right-0"
                     data-aos="fade-up"
                     data-aos-delay={200}
                 >
                     “
                 </p>
                 <p
-                    className="text-6xl absolute left-[-2rem] bottom-[-3rem] text-[#F7DF1E] max-md:left-[-0.5rem]"
+                    className="text-6xl absolute left-[-2rem] bottom-[-3rem] text-(--yello) max-md:left-[-0.5rem]"
                     data-aos="fade-up"
                     data-aos-delay={200}
                 >

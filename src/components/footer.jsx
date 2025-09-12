@@ -6,7 +6,7 @@ export default function Footer() {
         <footer className="flex items-center justify-between !p-10 max-md:flex-col-reverse">
             <h2 className="text-2xl max-md:text-[1rem]">
                 تم تطوير الموقع بواسطتي{" "}
-                <span className="text-[#05FF2D] font-bold">@سكيبر</span>
+                <span className="text-[var(--lightgreen)] font-bold">@سكيبر</span>
             </h2>
             <div className="links flex gap-2">
                 {links.map((link, i) => (

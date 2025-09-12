@@ -84,7 +84,7 @@ export default function Home() {
                 <Projects />
                 <div className="flex justify-center w-full">
                     <Link
-                        href="/Projects"
+                        href="/Work"
                         className="GlassBG !px-10 !py-5 text-1xl font-bold !rounded-full "
                     >
                         المزيد من اعمالي
