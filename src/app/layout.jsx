@@ -3,6 +3,7 @@ import "@/scss/globals.css";
 import "@/scss/Main.scss";
 
 import ParallaxWrapper from "@/components/ParallaxWrapper";
+import { ReactLenis } from "@/utils/lenis";
 
 const ibm = IBM_Plex_Sans_Arabic({
     variable: "--font-ibm-sans",
@@ -22,7 +23,9 @@ export default function RootLayout({ children }) {
     return (
         <html lang="ar" dir="rtl">
             <body className={ibm.variable}>
-                <ParallaxWrapper>{children}</ParallaxWrapper>
+                <ParallaxWrapper>
+                    <ReactLenis root>{children}</ReactLenis>
+                </ParallaxWrapper>
             </body>
         </html>
     );
