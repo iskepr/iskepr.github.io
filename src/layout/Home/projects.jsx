@@ -8,6 +8,7 @@ import { EffectCoverflow, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
+import TLink from "@/components/TLink";
 
 export default function Projects() {
     return (
@@ -26,13 +27,12 @@ export default function Projects() {
             </div>
             <Swiper
                 data-aos="fade-up"
-                className="!m-10 !mx-[-2.5rem] "
+                className="!mx-[-4.5rem] scale-[0.9]"
                 effect="coverflow"
                 grabCursor={true}
                 centeredSlides={true}
                 loop={true}
-                loopAdditionalSlides={5}
-                autoplay={{ delay: 5000, reverseDirection: true }}
+                slidesPerView="auto"
                 modules={[EffectCoverflow, Autoplay]}
                 coverflowEffect={{
                     rotate: 0,
@@ -41,9 +41,14 @@ export default function Projects() {
                     modifier: 1,
                     slideShadows: true,
                 }}
+                autoplay={{
+                    delay: 7000,
+                    reverseDirection: true,
+                    disableOnInteraction: false,
+                }}
                 breakpoints={{
                     320: {
-                        slidesPerView: 1.6,
+                        slidesPerView: 1.2,
                         spaceBetween: 20,
                         coverflowEffect: {
                             rotate: 0,
@@ -53,15 +58,15 @@ export default function Projects() {
                         },
                     },
                     640: {
-                        slidesPerView: 2.7,
+                        slidesPerView: 2,
                         spaceBetween: 30,
                     },
                     1024: {
-                        slidesPerView: 3,
+                        slidesPerView: 2.5,
                         spaceBetween: 40,
                     },
                     1280: {
-                        slidesPerView: 3.5,
+                        slidesPerView: 3,
                         spaceBetween: 50,
                     },
                 }}
@@ -77,7 +82,10 @@ export default function Projects() {
                             maxWidth: "900px",
                         }}
                     >
-                        <Link href={`/Project/${project.اسم_المستودع}`}>
+                        <TLink
+                            href={`/Project/${project.اسم_المستودع}`}
+                            title={"• " + project.الاسم}
+                        >
                             <div className="rounded-2xl">
                                 <Image
                                     src={project.الشعار}
@@ -87,7 +95,7 @@ export default function Projects() {
                                     className="rounded-2xl w-full h-auto object-cover"
                                 />
                             </div>
-                        </Link>
+                        </TLink>
                         <div className="info !px-5 !py-2">
                             <h2 className="text-3xl font-bold">
                                 {project.الاسم}

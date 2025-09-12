@@ -28,7 +28,7 @@ export default async function Project({ params }) {
                     {projectData.النوع === "تطبيق" ? "تحميل" : "القي نظرة"}
                 </Link>
             </div>
-            <div className="Imgs flex">
+            <div className="Imgs flex w-full overflow-scroll">
                 {projectData.الصور.map((item, i) => {
                     return (
                         <Image

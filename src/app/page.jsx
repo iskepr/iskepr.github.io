@@ -1,10 +1,10 @@
 "use client";
 import Image from "next/image";
-import Header from "@/components/header";
 import Footer from "@/components/footer";
 import Contact from "@/layout/Home/contact";
 import links from "@/data/mylinks.json";
 import Loader from "@/components/loader";
+import First from "@/layout/Home/first";
 
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
@@ -13,7 +13,6 @@ import Aos from "aos";
 import "aos/dist/aos.css";
 import AboutS from "@/layout/Home/about";
 import Projects from "@/layout/Home/projects";
-import { Parallax } from "react-scroll-parallax";
 import Link from "next/link";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -63,6 +62,7 @@ export default function Home() {
                 <h5>التواصل</h5>
                 <div className="brog bg-green-800 h-0.5 w-full"></div>
             </div>
+
             <div
                 ref={linksdiv}
                 className="links flex flex-col-reverse gap-2 fixed z-20 right-7 top-[30%] transform translate-y-1/2"
@@ -73,31 +73,10 @@ export default function Home() {
                     </a>
                 ))}
             </div>
-            <section id="first" className="relative overflow-hidden">
-                <Header />
-                <Parallax
-                    speed={-20}
-                    className="absolute w-full flex justify-center right-1/2 transform top-[10%] translate-x-1/2"
-                >
-                    <Image
-                        className="ImageName w-3/4 max-md:w-[90%]"
-                        src="/imgs/myname.svg"
-                        alt="محمد سيد سكيبر"
-                        width={300}
-                        height={300}
-                    />
-                </Parallax>
-                <Parallax speed={-10} className="me">
-                    <Image
-                        src="/imgs/me.png"
-                        className="!w-110 !h-auto max-md:w-300"
-                        width={300}
-                        height={300}
-                        alt="Me"
-                    />
-                </Parallax>
-            </section>
+
+            <First />
             <AboutS />
+
             <section id="projects" className="!p-10" ref={contactSection}>
                 <h2 className="text-center text-6xl font-bold max-md:text-4xl">
                     أخر اعمالي
@@ -112,6 +91,7 @@ export default function Home() {
                     </Link>
                 </div>
             </section>
+
             <section id="Contact" className="flex flex-col justify-between">
                 <Contact />
                 <Footer />

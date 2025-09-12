@@ -1,10 +1,10 @@
 "use client";
 import Image from "next/image";
-import Link from "next/link";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
 import { Parallax } from "react-scroll-parallax";
+import TLink from "@/components/TLink";
 export default function AboutS() {
     useEffect(() => {
         Aos.init();
@@ -66,7 +66,7 @@ export default function AboutS() {
                 speed={-15}
                 className="!absolute !bottom-[9rem] !right-[15%] max-md:right-0 max-md:scale-[0.7]"
             >
-                <Link
+                <TLink
                     data-aos="fade-up"
                     href={"/About"}
                     type="submit"
@@ -76,7 +76,7 @@ export default function AboutS() {
                     }}
                 >
                     عني
-                </Link>
+                </TLink>
             </Parallax>
         </section>
     );

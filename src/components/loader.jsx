@@ -4,15 +4,15 @@ import { useEffect, useState } from "react";
 const hi = [
     "السلام عليكم",
     "Peace be upon you",
+    "平和があなたにありますように",
     "Que la paix soit sur vous",
     "La paz sea contigo",
     "La pace sia su di te",
     "Friede sei mit dir",
+    "愿你平安",
     "Selamün aleyküm",
-    "平和があなたにありますように",
     "Assalamu alaikum",
     "Amani iwe juu yako",
-    "愿你平安",
 ];
 
 export default function Loader({ titles = hi }) {
@@ -32,28 +32,26 @@ export default function Loader({ titles = hi }) {
     useEffect(() => {
         const t = setInterval(() => {
             setCurrent((prev) => (prev + 1) % activeList.length);
-        }, 2000);
+        }, 200);
         return () => clearInterval(t);
     }, [activeList]);
 
     useEffect(() => {
-        const el = document.getElementById("lodaer");
+        const el = document.getElementById("loader");
         if (!el) return;
-
         const t = setTimeout(() => {
-            el.style.backdropFilter = "blur(0)";
             el.style.opacity = "0";
             setTimeout(() => {
                 el.style.display = "none";
             }, 1000);
-        }, 1000);
+        }, 1500);
         return () => clearTimeout(t);
     }, [showHi]);
 
     return (
         <div
-            id="lodaer"
-            className="flex items-center justify-center absolute w-full h-full backdrop-blur-3xl z-30 transition-opacity duration-500"
+            id="loader"
+            className="flex items-center justify-center fixed w-full h-full z-30 transition duration-1000 ease-in-out bg-[#111]"
         >
             <div className="titles">
                 <h1 className="text-5xl transition-opacity duration-500">
