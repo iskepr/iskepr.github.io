@@ -3,14 +3,15 @@
 3:I[4952,["820","static/chunks/820-f07436cd5a2c424b.js","177","static/chunks/app/layout-19117c032411b198.js"],"ReactLenis"]
 4:I[9766,[],""]
 5:I[8924,[],""]
-6:I[1959,[],"ClientPageRoot"]
-7:I[4735,["592","static/chunks/c15bf2b0-2ece6baba74be594.js","850","static/chunks/850-85e85b66e51b14a6.js","258","static/chunks/258-5f3866e7bc9f4582.js","820","static/chunks/820-f07436cd5a2c424b.js","301","static/chunks/301-dd5857372a937b4a.js","974","static/chunks/app/page-5c3379c103b7ccdb.js"],"default"]
-a:I[4431,[],"OutletBoundary"]
-c:I[5278,[],"AsyncMetadataOutlet"]
-e:I[4431,[],"ViewportBoundary"]
-10:I[4431,[],"MetadataBoundary"]
-11:"$Sreact.suspense"
-13:I[7150,[],""]
+6:I[2988,["305","static/chunks/305-ea2e32441dc97995.js","481","static/chunks/481-989a700717db88d2.js","345","static/chunks/app/not-found-6b2237d4f6547bfa.js"],"default"]
+7:I[1959,[],"ClientPageRoot"]
+8:I[974,["592","static/chunks/c15bf2b0-2ece6baba74be594.js","305","static/chunks/305-ea2e32441dc97995.js","481","static/chunks/481-989a700717db88d2.js","211","static/chunks/211-219174bca18a49f0.js","820","static/chunks/820-f07436cd5a2c424b.js","301","static/chunks/301-dd5857372a937b4a.js","974","static/chunks/app/page-d797ea38ce3135c4.js"],"default"]
+b:I[4431,[],"OutletBoundary"]
+d:I[5278,[],"AsyncMetadataOutlet"]
+f:I[4431,[],"ViewportBoundary"]
+11:I[4431,[],"MetadataBoundary"]
+12:"$Sreact.suspense"
+14:I[7150,[],""]
 :HL["/_next/static/media/03d0d66ed2ce10c4-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/_next/static/media/078954fc9e8513ac-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/_next/static/media/23acdaac58de6ef3-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
@@ -25,15 +26,15 @@ e:I[4431,[],"ViewportBoundary"]
 :HL["/_next/static/media/dbdc77a4a9d637b5-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/_next/static/media/e2b4e710b9760801-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/_next/static/media/e9f1c10244402551-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
-:HL["/_next/static/css/8f2c3dfa1efd1643.css","style"]
+:HL["/_next/static/css/e86ef2f754e6356d.css","style"]
 :HL["/_next/static/css/65aa3619a1925c9d.css","style"]
 :HL["/_next/static/css/3cd83cfe34ca397f.css","style"]
 :HL["/_next/static/css/c37340727ca4fe15.css","style"]
-0:{"P":null,"b":"AAFUOzqZpCO5ZsyDPxlu6","p":"","c":["",""],"i":false,"f":[[["",{"children":["__PAGE__",{}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/8f2c3dfa1efd1643.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"ar","dir":"rtl","children":["$","body",null,{"className":"__variable_4c27c1","children":["$","$L2",null,{"children":["$","$L3",null,{"root":true,"children":["$","$L4",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}]}]}]}]]}],{"children":["__PAGE__",["$","$1","c",{"children":[["$","$L6",null,{"Component":"$7","searchParams":{},"params":{},"promises":["$@8","$@9"]}],[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/65aa3619a1925c9d.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","1",{"rel":"stylesheet","href":"/_next/static/css/3cd83cfe34ca397f.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","2",{"rel":"stylesheet","href":"/_next/static/css/c37340727ca4fe15.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","$La",null,{"children":["$Lb",["$","$Lc",null,{"promise":"$@d"}]]}]]}],{},null,false]},null,false],["$","$1","h",{"children":[null,[["$","$Le",null,{"children":"$Lf"}],["$","meta",null,{"name":"next-size-adjust","content":""}]],["$","$L10",null,{"children":["$","div",null,{"hidden":true,"children":["$","$11",null,{"fallback":null,"children":"$L12"}]}]}]]}],false]],"m":"$undefined","G":["$13",[]],"s":false,"S":true}
-8:{}
-9:"$0:f:0:1:2:children:1:props:children:0:props:params"
-f:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
-b:null
-14:I[622,[],"IconMark"]
-d:{"metadata":[["$","title","0",{"children":"مُحمد سَــــــــيد"}],["$","meta","1",{"name":"description","content":"السلام عليكم انا مُحمد سيد مُطور مواقع منذ 1442 هـ ومُطور تطبيقات باستخدام فلاتر منذ 1445 هـ"}],["$","meta","2",{"name":"keywords","content":"محمد سيد , محمد سيد عبدالعليم , محمد سيد عبدالعليم محمود , سكيبر , محمد سكيبر , محمد سيد سكيبر , مصر , الزاوية الحمرء ,محمد سيد حاج , محمد السيد , محد سيد ازاوية الحمراء , Mohamed , Mohamed Sayed , Mohamed Skepr , Mohamed Sayed Skepr , Mohamed Sayed AbdElalem ,iskrpr , itskepr, qwsdxccc"}],["$","link","3",{"rel":"icon","href":"/icon.png?0fa2123b4cf5302d","type":"image/png","sizes":"1080x1080"}],["$","$L14","4",{}]],"error":null,"digest":"$undefined"}
-12:"$d:metadata"
+0:{"P":null,"b":"skWLU2XnnLDTqHS4zPXGC","p":"","c":["",""],"i":false,"f":[[["",{"children":["__PAGE__",{}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/e86ef2f754e6356d.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"ar","dir":"rtl","children":["$","body",null,{"className":"__variable_4c27c1","children":["$","$L2",null,{"children":["$","$L3",null,{"root":true,"children":["$","$L4",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","$L6",null,{}],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}]}]}]}]]}],{"children":["__PAGE__",["$","$1","c",{"children":[["$","$L7",null,{"Component":"$8","searchParams":{},"params":{},"promises":["$@9","$@a"]}],[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/65aa3619a1925c9d.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","1",{"rel":"stylesheet","href":"/_next/static/css/3cd83cfe34ca397f.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","2",{"rel":"stylesheet","href":"/_next/static/css/c37340727ca4fe15.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","$Lb",null,{"children":["$Lc",["$","$Ld",null,{"promise":"$@e"}]]}]]}],{},null,false]},null,false],["$","$1","h",{"children":[null,[["$","$Lf",null,{"children":"$L10"}],["$","meta",null,{"name":"next-size-adjust","content":""}]],["$","$L11",null,{"children":["$","div",null,{"hidden":true,"children":["$","$12",null,{"fallback":null,"children":"$L13"}]}]}]]}],false]],"m":"$undefined","G":["$14",[]],"s":false,"S":true}
+9:{}
+a:"$0:f:0:1:2:children:1:props:children:0:props:params"
+10:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+c:null
+15:I[622,[],"IconMark"]
+e:{"metadata":[["$","title","0",{"children":"مُحمد سَــــــــيد"}],["$","meta","1",{"name":"description","content":"السلام عليكم انا مُحمد سيد مُطور مواقع منذ 1442 هـ ومُطور تطبيقات باستخدام فلاتر منذ 1445 هـ"}],["$","meta","2",{"name":"keywords","content":"محمد سيد , محمد سيد عبدالعليم , محمد سيد عبدالعليم محمود , سكيبر , محمد سكيبر , محمد سيد سكيبر , مصر , الزاوية الحمرء ,محمد سيد حاج , محمد السيد , محد سيد ازاوية الحمراء , Mohamed , Mohamed Sayed , Mohamed Skepr , Mohamed Sayed Skepr , Mohamed Sayed AbdElalem ,iskrpr , itskepr, qwsdxccc"}],["$","link","3",{"rel":"icon","href":"/icon.png?0fa2123b4cf5302d","type":"image/png","sizes":"1080x1080"}],["$","$L15","4",{}]],"error":null,"digest":"$undefined"}
+13:"$e:metadata"
