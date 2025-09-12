@@ -6,16 +6,13 @@ import links from "@/data/mylinks.json";
 import Loader from "@/components/loader";
 import First from "@/layout/Home/first";
 
-import { useEffect, useRef } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useEffect, useRef, useState } from "react";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import AboutS from "@/layout/Home/about";
 import Projects from "@/layout/Home/projects";
 import TLink from "@/components/TLink";
-
-gsap.registerPlugin(ScrollTrigger);
+import Link from "next/link";
 
 export default function Home() {
     useEffect(() => {
@@ -26,27 +23,38 @@ export default function Home() {
     const linksdiv = useRef(null);
     const contactSection = useRef(null);
 
+    const [scrollProgress, setScrollProgress] = useState(0);
+
     useEffect(() => {
-        gsap.to(prograss.current, {
-            opacity: 0,
-            duration: 0.5,
-            ease: "power2.out",
-            scrollTrigger: {
-                trigger: contactSection.current,
-                start: "top bottom",
-                toggleActions: "play none none reverse",
-            },
-        });
-        gsap.to(linksdiv.current, {
-            opacity: 0,
-            duration: 0.5,
-            ease: "power2.out",
-            scrollTrigger: {
-                trigger: contactSection.current,
-                start: "top bottom",
-                toggleActions: "play none none reverse",
-            },
-        });
+        if (!contactSection.current) return;
+        const handleScroll = () => {
+            const contactTop =
+                contactSection.current.getBoundingClientRect().top;
+            const windowHeight = window.innerHeight;
+
+            if (contactTop < windowHeight) {
+                prograss.current.style.opacity = 0;
+                linksdiv.current.style.opacity = 0;
+            } else {
+                prograss.current.style.opacity = 1;
+                linksdiv.current.style.opacity = 1;
+            }
+        };
+
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
+
+    useEffect(() => {
+        const updateProgress = () => {
+            const scrollTop = window.scrollY;
+            const docHeight = document.body.scrollHeight - window.innerHeight;
+            const scrolled = (scrollTop / docHeight) * 100;
+            setScrollProgress(scrolled);
+        };
+
+        window.addEventListener("scroll", updateProgress);
+        return () => window.removeEventListener("scroll", updateProgress);
     }, []);
 
     return (
@@ -54,13 +62,21 @@ export default function Home() {
             <Loader titles={["الرئيسية"]} />
             <div
                 ref={prograss}
-                className="prograsbar GlassBG flex items-center rounded-4xl w-3/4 !p-3 fixed bottom-10 right-1/2 translate-x-1/2 z-10"
+                className="prograsbar GlassBG flex items-center gap-3 rounded-4xl w-3/4 !p-3 fixed bottom-10 right-1/2 translate-x-1/2 z-10"
                 style={{
                     animation: "flyb 3s ease-in infinite alternate-reverse",
                 }}
             >
-                <h5>التواصل</h5>
-                <div className="brog bg-green-800 h-0.5 w-full"></div>
+                <Link href={"/#Contact"}>التواصل</Link>
+                <div className="brog-container flex-1 h-0.5 bg-gray-500 rounded overflow-hidden">
+                    <div
+                        className="brog bg-green-800 h-full rounded"
+                        style={{
+                            width: `${scrollProgress}%`,
+                            transition: "width 0.1s linear",
+                        }}
+                    ></div>
+                </div>
             </div>
 
             <div
@@ -77,15 +93,18 @@ export default function Home() {
             <First />
             <AboutS />
 
-            <section id="projects" className="!p-10" ref={contactSection}>
+            <section id="projects" className="!p-10">
                 <h2 className="text-center text-6xl font-bold max-md:text-4xl">
                     أخر اعمالي
                 </h2>
                 <Projects />
-                <div className="flex justify-center w-full">
+                <div
+                    className="flex justify-center w-full"
+                    >
                     <TLink
                         href="/Work"
                         title={"• اعمالي"}
+                        ref={contactSection}
                         className="GlassBG !px-10 !py-5 text-1xl font-bold !rounded-full "
                     >
                         المزيد من اعمالي

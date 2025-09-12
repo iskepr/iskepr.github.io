@@ -24,7 +24,7 @@ export default function Sugest({ projects, thisProj }) {
                         width={400}
                         height={400}
                         alt={project.الاسم}
-                        className="rounded-0 translate-y-[2rem] group-hover:scale-110 group-hover:translate-y-0 group-hover:rounded-t-3xl"
+                        className="rounded-0 translate-y-[2rem] group-hover:scale-110 group-hover:translate-y-0 group-hover:rounded-t-3xl max-md:!w-2/3"
                     />
                 </TLink>
             </div>

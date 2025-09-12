@@ -63,7 +63,7 @@ export default function AboutS() {
                 </div>
             </div>
             <Parallax
-                speed={-15}
+                speed={-5}
                 className="!absolute !bottom-[9rem] !right-[15%] max-md:right-0 max-md:scale-[0.7]"
             >
                 <TLink

@@ -8,7 +8,7 @@ export default function First() {
             <Header />
             <Parallax
                 speed={-20}
-                className="absolute w-full flex justify-center right-1/2 transform top-[10%] translate-x-1/2"
+                className="absolute w-full flex justify-center right-1/2 transform top-[20%] translate-x-1/2 max-md:top-[40%]"
             >
                 <Image
                     className="ImageName w-3/4 max-md:w-[90%]"
@@ -18,7 +18,7 @@ export default function First() {
                     height={300}
                 />
             </Parallax>
-            <Parallax speed={-10} className="me">
+            <Parallax speed={-15} className="me">
                 <Image
                     src="/imgs/me.png"
                     className="!w-110 !h-auto max-md:w-300"

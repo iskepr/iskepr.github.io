@@ -1,24 +1,30 @@
+"use client";
+import { useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import Aos from "aos";
+import "aos/dist/aos.css";
+
 import Header from "@/components/header";
-import projects from "@/data/projects.json";
 import Footer from "@/components/footer";
 import Loader from "@/components/loader";
-
 import Swipe from "./layout/swipe";
 import Desc from "./layout/desc";
 import Sugest from "./layout/sugest";
 
-export default async function Project({ params }) {
-    const projectName = params.project;
-    const projectData = await projects.find(
-        (project) => project.اسم_المستودع === projectName
-    );
+export default function Project({ projectData, projects }) {
+    useEffect(() => {
+        Aos.init();
+    }, []);
+
+    if (!projectData)
+        return <div className="text-center p-10">المشروع غير موجود</div>;
 
     return (
         <div className="page">
             <Loader titles={[projectData.الاسم]} />
             <Header />
+
             <div className="topvid absolute top-0 left-0 z-[-1] w-2/3 max-md:w-[90%] max-sm:w-full">
                 {projectData.الفديو ? (
                     <video
@@ -38,8 +44,8 @@ export default async function Project({ params }) {
                 )}
             </div>
 
-            <div className="flex justify-between items-center !mx-20 z-2 max-md:!mx-5">
-                <div className="right flex  gap-5 max-md:gap-2">
+            <div className="flex justify-between items-center !mx-20 z-2 max-md:!mx-5 max-md:flex-col max-md:items-start">
+                <div className="right flex gap-5 max-md:gap-2">
                     <Image
                         src={projectData.الشعار}
                         width={200}
@@ -59,28 +65,23 @@ export default async function Project({ params }) {
 
                 <Link
                     href={projectData.الرابط}
-                    className="GlassBG !px-10 !py-2 text-[1rem] bg-gradient-to-tl from-[#0f01] to-[#0f03]"
+                    className="GlassBG !px-10 !py-2 text-[1rem] text-center bg-gradient-to-tl from-[#0f01] to-[#0f03] max-md:w-full max-md:!mt-5"
                     style={{ boxShadow: "#0f01 0 0 50px 50px" }}
                 >
                     {projectData.النوع === "تطبيق" ? "تحميل" : "القي نظرة"}
                 </Link>
             </div>
 
-            <Swipe
-                projectData={projectData}
-                withVid={projectData.الفديو === null ? false : true}
-            />
+            <Swipe projectData={projectData} withVid={!!projectData.الفديو} />
             <Desc projectData={projectData} />
-            <section className="flex flex-col justify-between max-md:!min-h-fit">
+
+            <section
+                className="flex flex-col justify-between max-md:!min-h-fit"
+                data-aos="fade-up"
+            >
                 <Sugest projects={projects} thisProj={projectData} />
                 <Footer />
             </section>
         </div>
     );
-}
-
-export async function generateStaticParams() {
-    return projects.map((project) => ({
-        project: project.اسم_المستودع,
-    }));
 }
