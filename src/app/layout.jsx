@@ -17,6 +17,31 @@ export const metadata = {
         "السلام عليكم انا مُحمد سيد مُطور مواقع منذ 1442 هـ ومُطور تطبيقات باستخدام فلاتر منذ 1445 هـ",
     keywords:
         "محمد سيد , محمد سيد عبدالعليم , محمد سيد عبدالعليم محمود , سكيبر , محمد سكيبر , محمد سيد سكيبر , مصر , الزاوية الحمرء ,محمد سيد حاج , محمد السيد , محد سيد ازاوية الحمراء , Mohamed , Mohamed Sayed , Mohamed Skepr , Mohamed Sayed Skepr , Mohamed Sayed AbdElalem ,iskrpr , itskepr, qwsdxccc",
+    openGraph: {
+        title: "مُحمد سَــــــــيد",
+        description:
+            "السلام عليكم انا مُحمد سيد مُطور مواقع منذ 1442 هـ ومُطور تطبيقات باستخدام فلاتر منذ 1445 هـ",
+        type: "website",
+        locale: "ar",
+        images: [
+            {
+                url: "/imgs/ScreenShot.webp",
+                width: 1200,
+                height: 630,
+                alt: "مُحمد سَــــــــيد",
+            },
+        ],
+    },
+    twitter: {
+        title: "مُحمد سَــــــــيد",
+        description:
+            "السلام عليكم انا مُحمد سيد مُطور مواقع منذ 1442 هـ ومُطور تطبيقات باستخدام فلاتر منذ 1445 هـ",
+        card: "summary_large_image",
+        images: ["/imgs/ScreenShot.webp"],
+    },
+    verification: {
+        google: "2GOHGN8OibdcrOzxm623zqvHhH4RQ3907cSktTndfec",
+    },
 };
 
 export default function RootLayout({ children }) {
