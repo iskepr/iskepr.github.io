@@ -17,6 +17,7 @@
             "/imgs/mogremeto/5.webp",
             "/imgs/mogremeto/6.webp"
         ],
+        "الادوات": "Flutter GithubAPI",
         "التاريخ": "١٧ شعبان ١٤٤٦ هـ"
     },
     {
@@ -30,6 +31,7 @@
         "النوع": "موقع",
         "الفديو": "/imgs/alif/alif.mp4",
         "الصور": ["/imgs/alif/1.png", "/imgs/alif/2.png", "/imgs/alif/3.png"],
+        "الادوات": "HTML CSS JS Subapase",
         "التاريخ": "١ ربيع الآخر ١٤٤٦ هـ"
     },
     {
@@ -42,6 +44,7 @@
         "ريدمي": "https://raw.githubusercontent.com/iskepr/Tatbela/refs/heads/main/README.md",
         "النوع": "موقع",
         "الفديو": null,
+        "الادوات": "HTML CSS JS Subapase",
         "الصور": [
             "/imgs/tatbela/1.webp",
             "/imgs/tatbela/2.webp",
@@ -61,6 +64,7 @@
         "النوع": "موقع",
         "الفديو": null,
         "الصور": ["/imgs/AlifExtension/1.png", "/imgs/AlifExtension/2.png"],
+        "الادوات": "JS VScode",
         "التاريخ": "١٧ شعبان ١٤٤٦ هـ"
     },
     {
@@ -74,19 +78,7 @@
         "النوع": "موقع",
         "الفديو": null,
         "الصور": ["/imgs/AhmedOsama/1.png", "/imgs/AhmedOsama/2.png"],
-        "التاريخ": "١٢ رمضان ١٤٤٦ هـ"
-    },
-    {
-        "الاسم": "تطبيق اختبار",
-        "اسم_المستودع": "quiz",
-        "الشعار": "/imgs/quiz/icon.png",
-        "الوصف": "تطبيق اختبار بسيط",
-        "الشرح": "تطبيق اختبار تفاعلي بتصميم جذّاب، يقدّم تجربة مستخدم سهلة، ويعرض في النهاية الأسئلة التي أُجيب عنها بشكل خاطئ مع الإجابات الصحيحة لمساعدة المستخدم على التعلم.",
-        "الرابط": "https://iskepr.github.io/quiz/",
-        "ريدمي": "https://raw.githubusercontent.com/iskepr/quiz/refs/heads/main/README.md",
-        "النوع": "موقع",
-        "الفديو": null,
-        "الصور": ["/imgs/quiz/1.png", "/imgs/quiz/2.png"],
+        "الادوات": "HTML CSS JS",
         "التاريخ": "١٢ رمضان ١٤٤٦ هـ"
     }
 ]
