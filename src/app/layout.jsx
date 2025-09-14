@@ -44,7 +44,7 @@ export const metadata = {
     },
 };
 
-const isPhone = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+const isPhone = false;
 
 export default function RootLayout({ children }) {
     return (

@@ -15,7 +15,7 @@ export default function Projects() {
             <div className="prev w-70 h-50 sticky top-50 right-[50%] transform translate-x-1/2 overflow-hidden hidden">
                 {projects.map((project, i) => (
                     <Image
-                        src={project.الصور[0]}
+                        src={"/imgs/" + project.اسم_المستودع + "/1.webp"}
                         key={i}
                         alt={project.الاسم}
                         width={100}
@@ -73,7 +73,7 @@ export default function Projects() {
                 {projects.slice(0, 5).map((project, i) => (
                     <SwiperSlide
                         key={i}
-                        className="swiper-slide flex items-center justify-between !rounded-4xl GlassBG !h-full"
+                        className="swiper-slide flex items-center justify-between !rounded-[3rem] GlassBG !h-full overflow-hidden"
                         style={{
                             transform:
                                 "translate3d(0px, 0px, 0px) rotateX(0deg) rotateY(0deg)",
@@ -85,13 +85,17 @@ export default function Projects() {
                             href={`/Work/${project.اسم_المستودع}`}
                             title={"• " + project.الاسم}
                         >
-                            <div className="rounded-2xl">
+                            <div className="rounded-5xl">
                                 <Image
-                                    src={project.الشعار}
+                                    src={
+                                        "/imgs/" +
+                                        project.اسم_المستودع +
+                                        "/icon.webp"
+                                    }
                                     alt={project.الاسم}
                                     width={300}
                                     height={300}
-                                    className="rounded-2xl w-full h-auto object-cover"
+                                    className="rounded-[3rem] w-full h-auto object-cover"
                                 />
                             </div>
                         </TLink>
@@ -100,12 +104,7 @@ export default function Projects() {
                                 {project.الاسم}
                             </h2>
                             <p className="text-2xl">{project.الوصف}</p>
-                            <a
-                                href={`https://github.com/iskepr/${project.اسم_المستودع}`}
-                                target="_blank"
-                            >
-                                المستودع
-                            </a>
+                            <p className="text-[gray]">{project.التاريخ}</p>
                         </div>
                     </SwiperSlide>
                 ))}

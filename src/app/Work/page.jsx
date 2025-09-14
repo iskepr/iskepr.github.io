@@ -32,7 +32,9 @@ export default function Work() {
                             className="block relative w-full h-70"
                         >
                             <Image
-                                src={project.الصور[0]}
+                                src={
+                                    "/imgs/" + project.اسم_المستودع + "/1.webp"
+                                }
                                 width={240}
                                 height={240}
                                 alt={project.الاسم}

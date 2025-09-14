@@ -7,11 +7,12 @@ export async function generateMetadata({ params }) {
     );
     const title = project ? project.الاسم : "مشروع غير موجود";
     const description = project ? project.الوصف : "وصف المشروع غير موجود";
+    const img = "/imgs/" + project.اسم_المستودع + "/1.webp";
 
     return {
         title,
         icons: {
-            icon: project.الشعار,
+            icon: "/imgs/" + project.اسم_المستودع + "/icon.webp",
         },
         description,
         keywords:
@@ -23,7 +24,7 @@ export async function generateMetadata({ params }) {
             locale: "ar",
             images: [
                 {
-                    url: project.الصور[0],
+                    url: img,
                     width: 1200,
                     height: 630,
                     alt: title,
@@ -34,7 +35,7 @@ export async function generateMetadata({ params }) {
             title,
             description,
             card: "summary_large_image",
-            images: [project.الصور[0]],
+            images: [img],
         },
     };
 }
@@ -50,5 +51,5 @@ export default function ProjectPage({ params }) {
         (project) => project.اسم_المستودع === params.project
     );
 
-    return <Project projectData={projectData} projects={projects} />;
+    return <Project project={projectData} projects={projects} />;
 }

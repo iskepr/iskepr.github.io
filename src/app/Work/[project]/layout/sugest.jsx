@@ -20,7 +20,7 @@ export default function Sugest({ projects, thisProj }) {
                         {project.الاسم}
                     </h3>
                     <Image
-                        src={project.الصور[0]}
+                        src={"/imgs/" + project.اسم_المستودع + "/1.webp"}
                         width={400}
                         height={400}
                         alt={project.الاسم}

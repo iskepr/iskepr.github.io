@@ -5,8 +5,11 @@ import { Autoplay } from "swiper/modules";
 import Image from "next/image";
 import "swiper/css";
 
-export default function SimpleSwipe({ projectData, withVid }) {
-    const images = withVid ? projectData.الصور : projectData.الصور.slice(1);
+export default function SimpleSwipe({ project, withVid }) {
+    let imgs = [];
+    for (let i = 1; i <= project.الصور; i++)
+        imgs.push("/imgs/" + project.اسم_المستودع + "/" + i + ".webp");
+    const images = withVid ? imgs : imgs.slice(1);
     return (
         <Swiper
             className="w-[90%] !mx-20 !my-10 !mb-5 max-md:!mx-5"
@@ -26,7 +29,7 @@ export default function SimpleSwipe({ projectData, withVid }) {
                     slidesPerView:
                         images.length > 5
                             ? 5
-                            : images.length > 2
+                            : images.length > 3
                             ? images.length - 1
                             : images.length,
                 },
@@ -36,7 +39,7 @@ export default function SimpleSwipe({ projectData, withVid }) {
             {images.map((item, i) => (
                 <SwiperSlide key={i}>
                     <Image
-                        alt={`${projectData.الاسم} skepr محمد سكيبر`}
+                        alt={`${project.الاسم} skepr محمد سكيبر`}
                         src={item}
                         width={250}
                         height={250}
