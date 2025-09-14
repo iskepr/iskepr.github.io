@@ -44,13 +44,19 @@ export const metadata = {
     },
 };
 
+const isPhone = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+
 export default function RootLayout({ children }) {
     return (
         <html lang="ar" dir="rtl">
             <body className={ibm.variable}>
-                <ParallaxWrapper>
-                    <ReactLenis root>{children}</ReactLenis>
-                </ParallaxWrapper>
+                {isPhone ? (
+                    children
+                ) : (
+                    <ParallaxWrapper>
+                        <ReactLenis root>{children}</ReactLenis>
+                    </ParallaxWrapper>
+                )}
             </body>
         </html>
     );

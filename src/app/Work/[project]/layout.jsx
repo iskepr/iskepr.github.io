@@ -5,11 +5,36 @@ export async function generateMetadata({ params }) {
     const project = projects.find(
         (proj) => proj.اسم_المستودع === params.project
     );
+    const title = project ? project.الاسم : "مشروع غير موجود";
+    const description = project ? project.الوصف : "وصف المشروع غير موجود";
 
     return {
-        title: project ? project.الاسم : "مشروع غير موجود",
+        title,
         icons: {
             icon: project.الشعار,
+        },
+        description,
+        keywords:
+            project.الاسم + project.الادوات + project.الشرح + project.النوع,
+        openGraph: {
+            title,
+            description,
+            type: "website",
+            locale: "ar",
+            images: [
+                {
+                    url: project.الصور[0],
+                    width: 1200,
+                    height: 630,
+                    alt: title,
+                },
+            ],
+        },
+        twitter: {
+            title,
+            description,
+            card: "summary_large_image",
+            images: [project.الصور[0]],
         },
     };
 }
