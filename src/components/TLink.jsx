@@ -19,6 +19,7 @@ export default function TLink({ href, children, title, ...props }) {
 
         await sleep(200);
         router.push(href);
+        window.scrollTo(0, 0);
     };
 
     return (

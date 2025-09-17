@@ -76,10 +76,10 @@ export default function Work() {
             <section className="flex flex-col justify-between !pt-[15%]">
                 <div className="h-full !mx-[15%] relative">
                     <div className="flex">
-                        <div className="w-fit !my-10 !mx-5">
-                            <h4 className="text-8xl font-bold">لنعمل معاً</h4>
+                        <div className="w-fit !my-10 !mx-5 max-md:!mt-30">
+                            <h4 className="text-8xl font-bold max-md:text-5xl">لنعمل معاً</h4>
                             <div className="flex items-center gap-5 w-full justify-between">
-                                <h4 className="text-8xl font-bold">الآن</h4>
+                                <h4 className="text-8xl font-bold max-md:text-5xl">الآن</h4>
                                 <Image
                                     src={"/imgs/me/mecofee.webp"}
                                     width={80}
@@ -92,7 +92,7 @@ export default function Work() {
                         </div>
                         <CodeXml
                             size={130}
-                            className="absolute -top-10 left-20"
+                            className="absolute -top-10 left-[0%]"
                         />
                     </div>
                     <hr />

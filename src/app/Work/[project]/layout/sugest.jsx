@@ -34,7 +34,7 @@ export default function Sugest({ projects, thisProj }) {
                 title={"• أعمالي"}
                 className="GlassBG !px-10 !py-5 text-1xl font-bold !rounded-full !mt-10"
             >
-                المزيد من أعمالي
+                كل من أعمالي
             </TLink>
         </div>
     );
