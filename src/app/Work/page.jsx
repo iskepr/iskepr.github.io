@@ -28,7 +28,7 @@ export default function Work() {
                     >
                         <TLink
                             href={"/Work/" + project.اسم_المستودع}
-                            title={project.الاسم}
+                            title={"• " + project.الاسم}
                             className="block relative w-full h-70"
                         >
                             <Image

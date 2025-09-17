@@ -3,7 +3,6 @@ import Image from "next/image";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
-import { Parallax } from "react-scroll-parallax";
 import TLink from "@/components/TLink";
 export default function AboutS() {
     useEffect(() => {
@@ -19,7 +18,7 @@ export default function AboutS() {
     return (
         <section className="flex items-center justify-center relative">
             <div className="flex items-start justify-center relative max-md:!m-5">
-                <Parallax speed={-1}>
+                <div speed={-1}>
                     <Image
                         src="/imgs/me/mecafe.webp"
                         className="rounded-full !ml-10 max-md:hidden"
@@ -29,7 +28,7 @@ export default function AboutS() {
                         data-aos-delay={100}
                         alt="محمد سيد عبد العليم مبرمج مواقع سكيبر Mohamed Sayed AbdElalem web dev"
                     />
-                </Parallax>
+                </div>
                 <p
                     className="text-6xl absolute right-21 top-[-2rem] rotate-180 text-(--yello) max-md:right-0"
                     data-aos="fade-up"
@@ -62,8 +61,7 @@ export default function AboutS() {
                     ))}
                 </div>
             </div>
-            <Parallax
-                speed={-5}
+            <div
                 className="!absolute !bottom-[9rem] !right-[15%] max-md:right-0 max-md:scale-[0.7]"
             >
                 <TLink
@@ -77,7 +75,7 @@ export default function AboutS() {
                 >
                     عني
                 </TLink>
-            </Parallax>
+            </div>
         </section>
     );
 }

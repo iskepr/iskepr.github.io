@@ -2,7 +2,6 @@ import { IBM_Plex_Sans_Arabic } from "next/font/google";
 import "@/scss/globals.css";
 import "@/scss/Main.scss";
 
-import ParallaxWrapper from "@/components/ParallaxWrapper";
 import { ReactLenis } from "@/utils/lenis";
 
 const ibm = IBM_Plex_Sans_Arabic({
@@ -44,19 +43,11 @@ export const metadata = {
     },
 };
 
-const isPhone = false;
-
 export default function RootLayout({ children }) {
     return (
         <html lang="ar" dir="rtl">
             <body className={ibm.variable}>
-                {isPhone ? (
-                    children
-                ) : (
-                    <ParallaxWrapper>
-                        <ReactLenis root>{children}</ReactLenis>
-                    </ParallaxWrapper>
-                )}
+                <ReactLenis root>{children}</ReactLenis>
             </body>
         </html>
     );

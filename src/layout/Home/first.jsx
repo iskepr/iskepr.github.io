@@ -1,15 +1,11 @@
 import Header from "@/components/header";
 import Image from "next/image";
-import { Parallax } from "react-scroll-parallax";
 
 export default function First() {
     return (
         <section id="first" className="relative overflow-hidden">
             <Header />
-            <Parallax
-                speed={-20}
-                className="absolute w-full flex justify-center right-1/2 transform top-[20%] translate-x-1/2 max-md:top-[40%]"
-            >
+            <div className="absolute w-full flex justify-center right-1/2 transform top-[20%] translate-x-1/2 max-md:top-[40%]">
                 <Image
                     className="ImageName w-3/4 max-md:w-[90%]"
                     src="/imgs/myname.svg"
@@ -17,8 +13,8 @@ export default function First() {
                     width={300}
                     height={300}
                 />
-            </Parallax>
-            <Parallax speed={-15} className="me">
+            </div>
+            <div className="me">
                 <Image
                     src="/imgs/me.png"
                     className="!w-110 !h-auto max-md:w-300"
@@ -26,7 +22,7 @@ export default function First() {
                     height={300}
                     alt="Me"
                 />
-            </Parallax>
+            </div>
         </section>
     );
 }

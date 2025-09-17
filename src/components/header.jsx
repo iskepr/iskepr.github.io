@@ -8,7 +8,9 @@ export default function Header() {
             <TLink href="/" title={"• الرئيسية"} className="text-2xl">
                 سكِيبر
             </TLink>
-            <Link href="/#projects">اعمالي</Link>
+            <TLink href="/Work/" title={"• أعمالي"}>
+                أعمالي
+            </TLink>
         </header>
     );
 }

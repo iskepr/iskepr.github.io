@@ -13,8 +13,12 @@ import AboutS from "@/layout/Home/about";
 import Projects from "@/layout/Home/projects";
 import TLink from "@/components/TLink";
 import Link from "next/link";
+import { isPhone } from "@/utils/isPhone";
 
 export default function Home() {
+    return isPhone ? <HomeClient /> : <HomeClient />;
+}
+function HomeClient() {
     useEffect(() => {
         Aos.init();
     }, []);
@@ -95,19 +99,17 @@ export default function Home() {
 
             <section id="projects" className="!p-10">
                 <h2 className="text-center text-6xl font-bold max-md:text-4xl">
-                    أخر اعمالي
+                    أخر أعمالي
                 </h2>
                 <Projects />
-                <div
-                    className="flex justify-center w-full"
-                    >
+                <div className="flex justify-center w-full">
                     <TLink
                         href="/Work"
-                        title={"• اعمالي"}
+                        title={"• أعمالي"}
                         ref={contactSection}
                         className="GlassBG !px-10 !py-5 text-1xl font-bold !rounded-full "
                     >
-                        المزيد من اعمالي
+                        المزيد من أعمالي
                     </TLink>
                 </div>
             </section>
