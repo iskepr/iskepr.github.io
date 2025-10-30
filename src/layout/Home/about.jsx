@@ -16,7 +16,7 @@ export default function AboutS() {
         "تَحْوِيلِ أَفْكَارِي وَخَيَالِي إِلَى شَيْءٍ حَقِيقِيٍّ عَلَى أَرْضِ الْوَاقِعِ.",
     ];
     return (
-        <section className="flex items-center justify-center relative">
+        <section className="flex items-center justify-center relative max-md:hidden">
             <div className="flex items-start justify-center relative max-md:!m-5">
                 <div speed={-1}>
                     <Image

@@ -40,15 +40,15 @@
     },
     {
         "الاسم": "مُحرر طيف",
-        "اسم_المستودع": "AlifEAndroid",
+        "اسم_المستودع": "TaifIDE",
         "الوصف": "محرر شفرة خاص بلغة الف للهاتف",
         "الشرح": "محرر شفرة كامل مع تلوين و اكمال تلقائي و طرفية يشغل الملف التنفيذي للغة برمجة العربية الف. يمكن فتح اكتر من ملف في نفس الوقت",
-        "الرابط": "https://github.com/iskepr/AlifEAndroid/releases/latest/download/Taif.apk",
-        "ريدمي": "https://raw.githubusercontent.com/iskepr/AlifEAndroid/refs/heads/master/README.md",
+        "الرابط": "https://github.com/iskepr/TaifIDE/releases/latest/download/Taif.apk",
+        "ريدمي": "https://raw.githubusercontent.com/iskepr/TaifIDE/refs/heads/master/README.md",
         "النوع": "تطبيق",
         "الفديو": null,
         "الصور": 4,
-        "الادوات": "Dart Flutter Android",
+        "الادوات": "Dart Flutter Android ProcessManagement",
         "التاريخ": "٢٢ ربيع الاول ١٤٤٧ هـ"
     },
     {

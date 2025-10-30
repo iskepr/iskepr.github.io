@@ -10,33 +10,71 @@ const ibm = IBM_Plex_Sans_Arabic({
     weight: ["100", "200", "300", "400", "500", "600", "700"],
 });
 
+const title = "مُحَمّد سِــــــــيّد";
+
 export const metadata = {
-    title: "مُحمد سَــــــــيد",
+    metadataBase: new URL("https://iskepr.github.io"),
+    title: {
+        default: title,
+        template: "%s | " + title,
+    },
     description:
-        "السلام عليكم انا مُحمد سيد مُطور مواقع منذ 1442 هـ ومُطور تطبيقات باستخدام فلاتر منذ 1445 هـ",
-    keywords:
-        "محمد سيد , محمد سيد عبدالعليم , محمد سيد عبدالعليم محمود , سكيبر , محمد سكيبر , محمد سيد سكيبر , مصر , الزاوية الحمرء ,محمد سيد حاج , محمد السيد , محد سيد ازاوية الحمراء , Mohamed , Mohamed Sayed , Mohamed Skepr , Mohamed Sayed Skepr , Mohamed Sayed AbdElalem ,iskrpr , itskepr, qwsdxccc",
+        "أنا محمد سيد، مطور مواقع محترف منذ عام 1442 هـ، ومطور تطبيقات Flutter منذ عام 1445 هـ. أُحب بناء مشاريع حديثة وسريعة تدعم العربية وتخدم المستخدم العربي.",
+    keywords: [
+        "محمد سيد",
+        "محمد سكيبر",
+        "مطوّر مواقع",
+        "مطور فلاتر",
+        "مطور ويب",
+        "مطور تطبيقات",
+        "محمد سيد مصر",
+        "سكبر",
+
+        "Mohamed Sayed",
+        "Mohamed Sayed AbdElalem",
+        "Mohamed Sayed AbdElalem web developer Egypt",
+        "Mohamed Skepr",
+        "Web Developer",
+        "Flutter Developer",
+        "App Developer",
+        "Web Developer Egypt",
+        "Flutter Developer Egypt",
+        "App Developer Egypt",
+        "Web Developer Egypt",
+        "Flutter Developer Egypt",
+        "App Developer Egypt",
+        "Skepr",
+    ],
+    authors: [{ name: "محمد سيد", url: "https://iskepr.github.io" }],
+    publisher: title,
     openGraph: {
-        title: "مُحمد سَــــــــيد",
+        title: title,
         description:
-            "السلام عليكم انا مُحمد سيد مُطور مواقع منذ 1442 هـ ومُطور تطبيقات باستخدام فلاتر منذ 1445 هـ",
+            "أنا محمد سيد، مطور مواقع محترف منذ عام 1442 هـ، ومطور تطبيقات Flutter منذ عام 1445 هـ.",
         type: "website",
-        locale: "ar",
+        locale: "ar_EG",
+        url: "https://iskepr.github.io",
         images: [
             {
-                url: "/imgs/ScreenShot.webp",
+                url: "https://iskepr.github.io/imgs/ScreenShot.webp",
                 width: 1200,
                 height: 630,
-                alt: "مُحمد سَــــــــيد",
+                alt: title,
             },
         ],
     },
     twitter: {
-        title: "مُحمد سَــــــــيد",
-        description:
-            "السلام عليكم انا مُحمد سيد مُطور مواقع منذ 1442 هـ ومُطور تطبيقات باستخدام فلاتر منذ 1445 هـ",
         card: "summary_large_image",
-        images: ["/imgs/ScreenShot.webp"],
+        title: title,
+        description: "أنا محمد سيد، مطور مواقع محترف ومطور تطبيقات Flutter.",
+        images: ["https://iskepr.github.io/imgs/ScreenShot.webp"],
+    },
+    alternates: {
+        canonical: "https://iskepr.github.io",
+    },
+    robots: {
+        index: true,
+        follow: true,
     },
     verification: {
         google: "2GOHGN8OibdcrOzxm623zqvHhH4RQ3907cSktTndfec",
