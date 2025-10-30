@@ -1,0 +1,154 @@
+@use "./components.scss";
+:root {
+    --background: #171717;
+    --foreground: #ffffff;
+    --lightgreen: #05ff2d;
+    --yello: #f7df1e;
+}
+
+.GlassBG,
+button {
+    color: var(--foreground);
+    backdrop-filter: blur(3px);
+    border-radius: 20px;
+    border: 1px solid #fff1;
+}
+.GlassBG:hover {
+    border: 1px solid #fff5;
+}
+.page {
+    width: 100vw;
+    height: 100vh;
+}
+
+input,
+textarea {
+    background-color: none;
+    padding: 5px;
+    border-bottom: 1px solid grey;
+}
+
+header {
+    a:hover {
+        scale: 1.1;
+    }
+}
+section {
+    min-height: 100vh;
+}
+hr {
+    color: gray;
+}
+
+.Home {
+    #first {
+        height: 100vh;
+        background: url("/imgs/back.webp");
+        background-position: center;
+        background-size: cover;
+
+        .ImageName {
+            animation: flyt 3s ease-in infinite alternate-reverse;
+        }
+
+        .me {
+            width: 100%;
+            height: calc(100% - 95px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+
+            img {
+                height: 97%;
+                padding-right: 50px;
+                width: auto;
+                position: absolute;
+                bottom: 0;
+            }
+        }
+    }
+    #first::before {
+        content: "";
+        width: 100%;
+        height: 90%;
+        background: linear-gradient(0deg, var(--background) 0%, #0000 70%);
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: 1;
+    }
+
+    // Contact
+    .light {
+        width: 1px;
+        height: 1px;
+        position: absolute;
+        border-radius: 100px;
+        box-shadow: #125206 0 0 300px 300px;
+        z-index: -1;
+    }
+}
+
+.lightBut {
+    position: relative;
+    bottom: 0;
+    right: 70%;
+    width: fit-content;
+    background-color: #125206;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    box-shadow: #125206 0 0 100px 100px;
+    animation: flybl 3s ease-in infinite alternate-reverse;
+}
+@keyframes flybl {
+    to {
+        box-shadow: #125206 0 0 80px 80px;
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes flyt {
+    to {
+        transform: translateY(-10px);
+    }
+}
+@keyframes flyb {
+    to {
+        bottom: 10px;
+    }
+}
+
+// project
+.topvid::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(to left, #171717 0, #0000 56%),
+        linear-gradient(to top, #171717 0, #0000 56%);
+}
+
+// projects
+.noise {
+    background: linear-gradient(180deg, #0f03, #0000);
+}
+.noise::before {
+    content: "";
+    background-repeat: repeat;
+    background: linear-gradient(
+            180deg,
+            rgba(0, 0, 0, 0) 0%,
+            rgba(0, 0, 0, 0.5) 100%
+        ),
+        url("/imgs/noise.png");
+    opacity: 0.1;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
