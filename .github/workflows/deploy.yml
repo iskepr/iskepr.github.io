@@ -3,7 +3,7 @@ name: Deploy Next.js site to GitHub Pages
 on:
     push:
         branches:
-            - dev
+            - main
 
 jobs:
     build-and-deploy:
@@ -19,6 +19,11 @@ jobs:
               uses: actions/setup-node@v4
               with:
                   node-version: 20
+
+            - name: Create .env file
+              run: |
+                  echo "NEXT_PUBLIC_SUPABASE_URL=${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}" >> .env
+                  echo "NEXT_PUBLIC_SUPABASE_ANON_KEY=${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}" >> .env
 
             - name: Install dependencies
               run: npm install
