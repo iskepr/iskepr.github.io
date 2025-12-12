@@ -1,6 +1,7 @@
 import { IBM_Plex_Sans_Arabic } from "next/font/google";
 import "@/scss/globals.css";
 import "@/scss/Main.scss";
+import Script from "next/script";
 
 import { ReactLenis } from "@/utils/lenis";
 
@@ -82,10 +83,31 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+    const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
+
     return (
         <html lang="ar" dir="rtl">
             <body className={ibm.variable}>
                 <ReactLenis root>{children}</ReactLenis>
+
+                {GA_ID && (
+                    <>
+                        <Script
+                            src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+                            strategy="afterInteractive"
+                        />
+                        <Script
+                            id="google-analytics"
+                            strategy="afterInteractive"
+                        >
+                            {`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', '${GA_ID}');`}
+                        </Script>
+                    </>
+                )}
             </body>
         </html>
     );

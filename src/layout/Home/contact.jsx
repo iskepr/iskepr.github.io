@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import { useState } from "react";
-import { notify } from "@/components/notify";
+import sendTelegramMessage from "@/utils/sendTelegram";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
@@ -52,118 +52,6 @@ export default function Contact() {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     }
 
-    async function sendTelegramMessage(isManewal, data) {
-        const { cName, cEmail, cPhone, cProject, cMessage } = formData;
-        let message = isManewal
-            ? `
-    *طلب عمل جديد*
-    *الاسم:* ${cName}
-    *البريد:* ${cEmail}
-    *الهاتف:* ${cPhone || "غير محدد"}
-    *المشروع:* ${cProject}
-    *الرسالة:* ${cMessage || "بدون رسالة"}`
-            : `*زائر جديد*
-    *الip:* ${data[1]}
-    *البلد:* ${data[0]}`;
-
-        if (isManewal) {
-            if (!cName || !cEmail || !cProject) {
-                notify({
-                    type: "تحذير",
-                    children: "من فضلك املأ الحقول المطلوبة!",
-                });
-                return;
-            }
-        }
-
-        try {
-            const res = await fetch(
-                `https://api.telegram.org/bot7882906682:AAFrbBdASaSB2fPTRMsKDfE1oXpEHylkayo/sendMessage`,
-                {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json",
-                    },
-                    body: JSON.stringify({
-                        chat_id: "1742032331",
-                        parse_mode: "Markdown",
-                        text: message,
-                    }),
-                }
-            );
-
-            const result = await res.json();
-
-            if (result.ok) {
-                isManewal ??
-                    notify({
-                        type: "تمام",
-                        children: "تم ارسال الطلب بنجاح",
-                    });
-                setFormData({
-                    cName: "",
-                    cEmail: "",
-                    cPhone: "",
-                    cProject: "",
-                    cMessage: "",
-                });
-            } else {
-                notify({
-                    type: "خطأ",
-                    children: "للأسف حدث خطأ في الإرسال",
-                });
-            }
-        } catch (error) {
-            console.error("Error:", error);
-            notify({
-                type: "خطأ",
-                children: "حدث خطأ أثناء الإرسال.",
-            });
-        }
-    }
-
-    async function getip() {
-        try {
-            const response = await fetch("https://api.ipify.org?format=json");
-            const data = await response.json();
-            const ip = data.ip;
-
-            let country = "Unknown";
-            try {
-                const locationResponse = await fetch(
-                    `https://ipinfo.io/${ip}/json`,
-                    {
-                        signal: AbortSignal.timeout(3000),
-                    }
-                );
-                if (locationResponse.ok) {
-                    const locationData = await locationResponse.json();
-                    country = `${locationData.country}/${locationData.city}/${locationData.timezone}`;
-                }
-            } catch (err) {
-                console.warn("Location fetch timeout or error:", err);
-            }
-
-            return [country, ip];
-        } catch (error) {
-            console.error("Error fetching IP:", error);
-            return ["Unknown", "Unknown"];
-        }
-    }
-
-    useEffect(() => {
-        if (process.env.NODE_ENV === "production") {
-            const hasSent = sessionStorage.getItem("message_sent");
-            if (!hasSent) {
-                sessionStorage.setItem("message_sent", "true");
-                (async () => {
-                    const ipData = await getip();
-                    await sendTelegramMessage(false, ipData);
-                })();
-            }
-        }
-    }, []);
-
     return (
         <div className="relative h-[80%]">
             <div className="light top-0 right-0"></div>
@@ -178,7 +66,7 @@ export default function Contact() {
                         className="flex flex-col gap-5 relative"
                         onSubmit={(e) => {
                             e.preventDefault();
-                            sendTelegramMessage(true);
+                            sendTelegramMessage(true, "", formData);
                         }}
                     >
                         {filds.map((fild, i) => (
