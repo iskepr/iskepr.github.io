@@ -12,7 +12,7 @@ export default function SimpleSwipe({ project, withVid }) {
     const images = withVid ? imgs : imgs.slice(1);
     return (
         <Swiper
-            className="w-[90%] !mx-20 !my-10 !mb-5 max-md:!mx-5"
+            className="w-[90%] mx-20! my-10! mb-5! max-md:mx-5!"
             loop={true}
             grabCursor={true}
             spaceBetween={10}

@@ -15,12 +15,12 @@ export default function Work() {
                 <Header />
                 <div className="flex flex-col justify-end items-center h-[40%]">
                     <h1 className="text-8xl text-center font-bold">أعمالي</h1>
-                    <p className="text-center text-4xl !mt-7 text-[gray]">
+                    <p className="text-center text-4xl mt-7! text-[gray]">
                         اِنقُـــــل عَمَلَك لِـــمُستَـوى آخَــــر
                     </p>
                 </div>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 justify-items-center p-5 !mx-10 !mt-[-15%]">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 justify-items-center p-5 mx-10! mt-[-15%]!">
                 {projects.map((project, i) => (
                     <div
                         key={i}
@@ -47,7 +47,7 @@ export default function Work() {
                                 }}
                             ></div>
 
-                            <div className="absolute bottom-0 left-0 right-0 !p-3 z-10">
+                            <div className="absolute bottom-0 left-0 right-0 p-3! z-10">
                                 <h2 className="text-2xl font-semibold text-white drop-shadow-md">
                                     {project.name}
                                 </h2>
@@ -58,7 +58,7 @@ export default function Work() {
                                     {project.tools.split(" ").map((t, i) => (
                                         <span
                                             key={i}
-                                            className="!px-2 !py-1 !my-1 text-xs bg-white/10 rounded-full backdrop-blur-sm hover:bg-white/20"
+                                            className="px-2! py-1! my-1! text-xs bg-white/10 rounded-full backdrop-blur-sm hover:bg-white/20"
                                         >
                                             • {t}
                                         </span>
@@ -71,10 +71,10 @@ export default function Work() {
             </div>
 
             <br />
-            <section className="flex flex-col justify-between !pt-[15%]">
-                <div className="h-full !mx-[15%] relative">
+            <section className="flex flex-col justify-between pt-[15%]!">
+                <div className="h-full mx-[15%]! relative">
                     <div className="flex">
-                        <div className="w-fit !my-10 !mx-5 max-md:!mt-30">
+                        <div className="w-fit my-10! mx-5! max-md:mt-30!">
                             <h4 className="text-8xl font-bold max-md:text-5xl">
                                 لنعمل معاً
                             </h4>
@@ -101,7 +101,7 @@ export default function Work() {
                     <TLink
                         href="/#Contact"
                         title="• الرئيسية"
-                        className="lightBut cursor-pointer !top-2 text-2xl"
+                        className="lightBut cursor-pointer top-2! text-2xl"
                     >
                         تواصل معي
                     </TLink>

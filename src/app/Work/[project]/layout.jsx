@@ -2,7 +2,14 @@ import projects from "@/data/projects.json";
 import Project from "./page";
 
 export async function generateMetadata({ params }) {
-    const project = projects.find((proj) => proj.repoName === params.project);
+    const { project: projectName } = await params;
+
+    const project = projects.find((proj) => proj.repoName === projectName);
+
+    if (!project) {
+        return { title: "مشروع غير موجود" };
+    }
+
     const title = project ? project.name : "مشروع غير موجود";
     const description = project ? project.descript : "وصف المشروع غير موجود";
     const img = "/imgs/" + project.repoName + "/1.webp";
@@ -15,7 +22,7 @@ export async function generateMetadata({ params }) {
         description,
         keywords:
             project.name +
-            project.tools +
+            project.الادوات +
             project.fullDescript +
             project.projectType,
         openGraph: {
@@ -41,12 +48,12 @@ export async function generateMetadata({ params }) {
     };
 }
 
-export default function ProjectPage({ params }) {
-    const projectData = projects.find(
-        (project) => project.repoName === params.project
-    );
+export default async function ProjectPage({ params }) {
+    const { project: projectName } = await params;
 
-    console.log("----------------------------------------", projects);
+    const projectData = projects.find(
+        (project) => project.repoName == projectName
+    );
 
     return <Project project={projectData} projects={projects} />;
 }

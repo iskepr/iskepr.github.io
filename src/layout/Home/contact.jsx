@@ -56,7 +56,7 @@ export default function Contact() {
         <div className="relative h-[80%]">
             <div className="light top-0 right-0"></div>
             <div
-                className="GlassBG !m-10 !p-5 rounded-2xl flex justify-between z-10 h-full max-md:!mx-5"
+                className="GlassBG m-10! p-5! rounded-2xl flex justify-between z-10 h-full max-md:mx-5!"
                 data-aos="fade-up"
             >
                 <div className="w-[80%] max-md:w-full">

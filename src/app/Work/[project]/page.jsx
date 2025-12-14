@@ -41,7 +41,7 @@ export default function Project({ project, projects }) {
                 ) : (
                     <Image
                         src={"/imgs/" + project.repoName + "/1.webp"}
-                        className="!w-full !h-full"
+                        className="w-full! h-full!"
                         alt={project.name}
                         width={100}
                         height={100}
@@ -49,16 +49,16 @@ export default function Project({ project, projects }) {
                 )}
             </div>
 
-            <div className="flex justify-between items-center !mx-20 z-2 max-md:!mx-5 max-md:flex-col max-md:items-start">
+            <div className="flex justify-between items-center mx-20! z-2 max-md:mx-5! max-md:flex-col max-md:items-start">
                 <div className="right flex gap-5 max-md:gap-2">
                     <Image
                         src={"/imgs/" + project.repoName + "/icon.webp"}
                         width={200}
                         height={200}
                         alt={project.name}
-                        className="rounded-3xl max-md:!w-30"
+                        className="rounded-3xl max-md:w-30!"
                     />
-                    <div className="!mt-5 flex flex-col w-fit max-md:!mt-1">
+                    <div className="mt-5! flex flex-col w-fit max-md:mt-1!">
                         <h1 className="text-3xl font-bold w-fit max-md:text-2xl">
                             {project.name}
                         </h1>
@@ -70,7 +70,7 @@ export default function Project({ project, projects }) {
 
                 <Link
                     href={project.projectURL}
-                    className="GlassBG !px-10 !py-2 text-[1rem] text-center bg-gradient-to-tl from-[#0f01] to-[#0f03] max-md:w-full max-md:!mt-5"
+                    className="GlassBG px-10! py-2! text-[1rem] text-center bg-linear-to-tl from-[#0f01] to-[#0f03] max-md:w-full max-md:mt-5!"
                     style={{ boxShadow: "#0f01 0 0 50px 50px" }}
                 >
                     {project.projectType === "تطبيق" ? "تحميل" : "القي نظرة"}
@@ -81,7 +81,7 @@ export default function Project({ project, projects }) {
             <Desc project={project} />
 
             <section
-                className="flex flex-col justify-between max-md:!min-h-fit"
+                className="flex flex-col justify-between max-md:min-h-fit!"
                 data-aos="fade-up"
             >
                 <Sugest projects={projects} thisProj={project} />

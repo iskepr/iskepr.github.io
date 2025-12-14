@@ -26,7 +26,7 @@ export default function Projects() {
             </div>
             <Swiper
                 data-aos="fade-up"
-                className="!mx-[-4.5rem] scale-[0.9]"
+                className="-mx-18! scale-[0.9]"
                 effect="coverflow"
                 grabCursor={true}
                 centeredSlides={true}
@@ -73,7 +73,7 @@ export default function Projects() {
                 {projects.slice(0, 5).map((project, i) => (
                     <SwiperSlide
                         key={i}
-                        className="swiper-slide flex items-center justify-between !rounded-[3rem] GlassBG !h-full overflow-hidden"
+                        className="swiper-slide flex items-center justify-between rounded-[3rem]! GlassBG h-full! overflow-hidden"
                         style={{
                             transform:
                                 "translate3d(0px, 0px, 0px) rotateX(0deg) rotateY(0deg)",
@@ -99,7 +99,7 @@ export default function Projects() {
                                 />
                             </div>
                         </TLink>
-                        <div className="info !px-5 !py-2">
+                        <div className="info px-5! py-2!">
                             <h2 className="text-3xl font-bold">
                                 {project.name}
                             </h2>

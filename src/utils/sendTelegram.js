@@ -11,9 +11,7 @@ export default async function sendTelegramMessage(isManewal, data, formData) {
         : `*زائر جديد*
     *الip:* ${data[1]}
     *البلد:* ${data[0]}
-    *المصدر:* ${data[2]}
-    *projectURL:* ${data[3]}
-    `;
+    *المصدر:* ${data[2]}`;
 
     if (isManewal) {
         if (!cName || !cEmail || !cProject) {
