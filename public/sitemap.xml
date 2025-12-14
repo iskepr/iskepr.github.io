@@ -6,74 +6,59 @@
 
 
   <url>
-    <loc>https://iskepr.github.io/</loc>
-    <lastmod>2025-09-12T14:54:36+00:00</lastmod>
+    <loc>https://skepr.vercel.app/</loc>
+    <lastmod>2025-12-14T18:06:24+00:00</lastmod>
     <priority>1.00</priority>
   </url>
   <url>
-    <loc>https://iskepr.github.io/Work/Mogremeto/</loc>
-    <lastmod>2025-09-12T14:54:36+00:00</lastmod>
+    <loc>https://skepr.vercel.app/Work/</loc>
+    <lastmod>2025-12-14T18:06:24+00:00</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://iskepr.github.io/Work/AlifWebsite/</loc>
-    <lastmod>2025-09-12T14:54:36+00:00</lastmod>
+    <loc>https://skepr.vercel.app/Work/Mogremeto/</loc>
+    <lastmod>2025-12-14T18:06:24+00:00</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://iskepr.github.io/Work/Tatbela/</loc>
-    <lastmod>2025-09-12T14:54:36+00:00</lastmod>
+    <loc>https://skepr.vercel.app/Work/AlifWebsite/</loc>
+    <lastmod>2025-12-14T18:06:24+00:00</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://iskepr.github.io/Work/AlifExtension/</loc>
-    <lastmod>2025-09-12T14:54:36+00:00</lastmod>
+    <loc>https://skepr.vercel.app/Work/Hodor/</loc>
+    <lastmod>2025-12-14T18:06:24+00:00</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://iskepr.github.io/Work/AhmedOsama/</loc>
-    <lastmod>2025-09-12T14:54:36+00:00</lastmod>
+    <loc>https://skepr.vercel.app/Work/Tatbela/</loc>
+    <lastmod>2025-12-14T18:06:24+00:00</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://iskepr.github.io/Work/</loc>
-    <lastmod>2025-09-12T14:54:36+00:00</lastmod>
+    <loc>https://skepr.vercel.app/Work/TaifIDE/</loc>
+    <lastmod>2025-12-14T18:06:24+00:00</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://iskepr.github.io/Tatbela/</loc>
-    <lastmod>2025-02-26T07:33:01+00:00</lastmod>
+    <loc>https://skepr.vercel.app/Work/Natega/</loc>
+    <lastmod>2025-12-14T18:06:24+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://skepr.vercel.app/Work/AlifExtension/</loc>
+    <lastmod>2025-12-14T18:06:24+00:00</lastmod>
     <priority>0.64</priority>
   </url>
   <url>
-    <loc>https://iskepr.github.io/AhmedOsama/</loc>
-    <lastmod>2025-03-11T22:34:28+00:00</lastmod>
+    <loc>https://skepr.vercel.app/Work/InfinityX/</loc>
+    <lastmod>2025-12-14T18:06:24+00:00</lastmod>
     <priority>0.64</priority>
   </url>
   <url>
-    <loc>https://iskepr.github.io/Work/quiz/</loc>
-    <lastmod>2025-09-12T14:54:36+00:00</lastmod>
+    <loc>https://skepr.vercel.app/Work/AhmedOsama/</loc>
+    <lastmod>2025-12-14T18:06:24+00:00</lastmod>
     <priority>0.64</priority>
-  </url>
-  <url>
-    <loc>https://iskepr.github.io/Tatbela/menu.html</loc>
-    <lastmod>2025-02-26T07:33:01+00:00</lastmod>
-    <priority>0.51</priority>
-  </url>
-  <url>
-    <loc>https://iskepr.github.io/Tatbela/index.html</loc>
-    <lastmod>2025-02-26T07:33:01+00:00</lastmod>
-    <priority>0.51</priority>
-  </url>
-  <url>
-    <loc>https://iskepr.github.io/Tatbela/cart.html</loc>
-    <lastmod>2025-02-26T07:33:01+00:00</lastmod>
-    <priority>0.51</priority>
-  </url>
-  <url>
-    <loc>https://iskepr.github.io/quiz/</loc>
-    <lastmod>2024-12-03T20:14:32+00:00</lastmod>
-    <priority>0.51</priority>
   </url>
 
 </urlset>
