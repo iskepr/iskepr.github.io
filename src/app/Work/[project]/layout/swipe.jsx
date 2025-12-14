@@ -7,8 +7,8 @@ import "swiper/css";
 
 export default function SimpleSwipe({ project, withVid }) {
     let imgs = [];
-    for (let i = 1; i <= project.الصور; i++)
-        imgs.push("/imgs/" + project.اسم_المستودع + "/" + i + ".webp");
+    for (let i = 1; i <= project.imgs; i++)
+        imgs.push("/imgs/" + project.repoName + "/" + i + ".webp");
     const images = withVid ? imgs : imgs.slice(1);
     return (
         <Swiper
@@ -39,7 +39,7 @@ export default function SimpleSwipe({ project, withVid }) {
             {images.map((item, i) => (
                 <SwiperSlide key={i}>
                     <Image
-                        alt={`${project.الاسم} skepr محمد سكيبر`}
+                        alt={`${project.name} skepr محمد سكيبر`}
                         src={item}
                         width={250}
                         height={250}

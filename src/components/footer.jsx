@@ -42,10 +42,12 @@ export default function Footer() {
                 (async () => {
                     try {
                         const ipData = await getip();
-                        const ipDataString = ipData.join("\n");
                         const params = window.location.search;
-                        const message = `${ipDataString}\nQuery Parameters: ${params}`;
-                        await sendTelegramMessage(false, [...ipData, params]);
+                        const url = window.location.href.replace(
+                            "https://skepr.vercel.app",
+                            ""
+                        );
+                        await sendTelegramMessage(false, [...ipData, params, url]);
                     } catch (e) {
                         console.error(e);
                     }

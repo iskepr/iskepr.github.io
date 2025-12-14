@@ -22,17 +22,17 @@ export default function Project({ project, projects }) {
 
     return (
         <div className="page">
-            <Loader titles={[project.الاسم]} />
+            <Loader titles={[project.name]} />
             <Header />
 
             <div className="topvid absolute top-0 left-0 z-[-1] w-2/3 max-md:w-[90%] max-sm:w-full">
-                {project.الفديو ? (
+                {project.videoLink ? (
                     <video
                         src={
                             "/imgs/" +
-                            project.اسم_المستودع +
+                            project.repoName +
                             "/" +
-                            project.الفديو
+                            project.videoLink
                         }
                         className="w-full"
                         autoPlay
@@ -40,13 +40,9 @@ export default function Project({ project, projects }) {
                     />
                 ) : (
                     <Image
-                        src={
-                            "/imgs/" +
-                            project.اسم_المستودع +
-                            "/1.webp"
-                        }
+                        src={"/imgs/" + project.repoName + "/1.webp"}
                         className="!w-full !h-full"
-                        alt={project.الاسم}
+                        alt={project.name}
                         width={100}
                         height={100}
                     />
@@ -56,32 +52,32 @@ export default function Project({ project, projects }) {
             <div className="flex justify-between items-center !mx-20 z-2 max-md:!mx-5 max-md:flex-col max-md:items-start">
                 <div className="right flex gap-5 max-md:gap-2">
                     <Image
-                        src={"/imgs/" + project.اسم_المستودع + "/icon.webp"}
+                        src={"/imgs/" + project.repoName + "/icon.webp"}
                         width={200}
                         height={200}
-                        alt={project.الاسم}
+                        alt={project.name}
                         className="rounded-3xl max-md:!w-30"
                     />
                     <div className="!mt-5 flex flex-col w-fit max-md:!mt-1">
                         <h1 className="text-3xl font-bold w-fit max-md:text-2xl">
-                            {project.الاسم}
+                            {project.name}
                         </h1>
                         <h2 className="text-2xl max-md:text-xl">
-                            {project.الوصف}
+                            {project.descript}
                         </h2>
                     </div>
                 </div>
 
                 <Link
-                    href={project.الرابط}
+                    href={project.projectURL}
                     className="GlassBG !px-10 !py-2 text-[1rem] text-center bg-gradient-to-tl from-[#0f01] to-[#0f03] max-md:w-full max-md:!mt-5"
                     style={{ boxShadow: "#0f01 0 0 50px 50px" }}
                 >
-                    {project.النوع === "تطبيق" ? "تحميل" : "القي نظرة"}
+                    {project.projectType === "تطبيق" ? "تحميل" : "القي نظرة"}
                 </Link>
             </div>
 
-            <Swipe project={project} withVid={!!project.الفديو} />
+            <Swipe project={project} withVid={!!project.videoLink} />
             <Desc project={project} />
 
             <section

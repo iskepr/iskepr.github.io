@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function Sugest({ projects, thisProj }) {
     const filteredProjects = projects.filter(
-        (project) => project.اسم_المستودع !== thisProj.اسم_المستودع
+        (project) => project.repoName !== thisProj.repoName
     );
     const randomIndex = Math.floor(Math.random() * filteredProjects.length);
     const project = filteredProjects[randomIndex];
@@ -12,18 +12,18 @@ export default function Sugest({ projects, thisProj }) {
         <div className="flex items-center justify-center flex-col h-[85vh] !mx-20 !pt-10 max-md:h-fit max-md:!mb-5 max-md:!mx-5">
             <div className="relative group  overflow-hidden w-full border-b-2 border-gray-500">
                 <TLink
-                    href={"/Work/" + project.اسم_المستودع}
-                    title={"• " + project.الاسم}
+                    href={"/Work/" + project.repoName}
+                    title={"• " + project.name}
                     className="flex items-center justify-center flex-col"
                 >
                     <h3 className="text-9xl font-bold translate-y-10 z-0  group-hover:text-gray-500 max-md:text-[360%]">
-                        {project.الاسم}
+                        {project.name}
                     </h3>
                     <Image
-                        src={"/imgs/" + project.اسم_المستودع + "/1.webp"}
+                        src={"/imgs/" + project.repoName + "/1.webp"}
                         width={400}
                         height={400}
-                        alt={project.الاسم}
+                        alt={project.name}
                         className="rounded-0 translate-y-[2rem] group-hover:scale-110 group-hover:translate-y-0 group-hover:rounded-t-3xl max-md:!w-2/3"
                     />
                 </TLink>

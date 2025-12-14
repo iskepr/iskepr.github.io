@@ -58,7 +58,7 @@ function ForgotPasswordContent() {
         } else {
             setMessage({
                 type: "success",
-                text: "راجع بريدك الإلكتروني، بعتنالك الرابط!",
+                text: "راجع بريدك الإلكتروني، بعتنالك projectURL!",
             });
         }
     };
@@ -108,7 +108,7 @@ function ForgotPasswordContent() {
                         opacity: loading ? 0.7 : 1,
                     }}
                 >
-                    {loading ? "جاري الإرسال..." : "إرسال الرابط"}
+                    {loading ? "جاري الإرسال..." : "إرسال projectURL"}
                 </button>
             </form>
 

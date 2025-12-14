@@ -2,21 +2,22 @@ import projects from "@/data/projects.json";
 import Project from "./page";
 
 export async function generateMetadata({ params }) {
-    const project = projects.find(
-        (proj) => proj.اسم_المستودع === params.project
-    );
-    const title = project ? project.الاسم : "مشروع غير موجود";
-    const description = project ? project.الوصف : "وصف المشروع غير موجود";
-    const img = "/imgs/" + project.اسم_المستودع + "/1.webp";
+    const project = projects.find((proj) => proj.repoName === params.project);
+    const title = project ? project.name : "مشروع غير موجود";
+    const description = project ? project.descript : "وصف المشروع غير موجود";
+    const img = "/imgs/" + project.repoName + "/1.webp";
 
     return {
         title,
         icons: {
-            icon: "/imgs/" + project.اسم_المستودع + "/icon.webp",
+            icon: "/imgs/" + project.repoName + "/icon.webp",
         },
         description,
         keywords:
-            project.الاسم + project.الادوات + project.الشرح + project.النوع,
+            project.name +
+            project.tools +
+            project.fullDescript +
+            project.projectType,
         openGraph: {
             title,
             description,
@@ -40,16 +41,12 @@ export async function generateMetadata({ params }) {
     };
 }
 
-export async function generateStaticParams() {
-    return projects.map((project) => ({
-        project: project.اسم_المستودع,
-    }));
-}
-
 export default function ProjectPage({ params }) {
     const projectData = projects.find(
-        (project) => project.اسم_المستودع === params.project
+        (project) => project.repoName === params.project
     );
+
+    console.log("----------------------------------------", projects);
 
     return <Project project={projectData} projects={projects} />;
 }

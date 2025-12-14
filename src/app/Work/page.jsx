@@ -27,17 +27,15 @@ export default function Work() {
                         className="GlassBG shadow-lg rounded-xl overflow-hidden w-full h-full hover:scale-105 transition-transform relative"
                     >
                         <TLink
-                            href={"/Work/" + project.اسم_المستودع}
-                            title={"• " + project.الاسم}
+                            href={"/Work/" + project.repoName}
+                            title={"• " + project.name}
                             className="block relative w-full h-70"
                         >
                             <Image
-                                src={
-                                    "/imgs/" + project.اسم_المستودع + "/1.webp"
-                                }
+                                src={"/imgs/" + project.repoName + "/1.webp"}
                                 width={240}
                                 height={240}
-                                alt={project.الاسم}
+                                alt={project.name}
                                 className="w-full h-full object-cover absolute top-0 left-0"
                             />
 
@@ -51,13 +49,13 @@ export default function Work() {
 
                             <div className="absolute bottom-0 left-0 right-0 !p-3 z-10">
                                 <h2 className="text-2xl font-semibold text-white drop-shadow-md">
-                                    {project.الاسم}
+                                    {project.name}
                                 </h2>
                                 <h3 className="text-xl text-gray-200 drop-shadow-md">
-                                    {project.الوصف}
+                                    {project.descript}
                                 </h3>
                                 <div className="flex flex-wrap gap-2 mt-2">
-                                    {project.الادوات.split(" ").map((t, i) => (
+                                    {project.tools.split(" ").map((t, i) => (
                                         <span
                                             key={i}
                                             className="!px-2 !py-1 !my-1 text-xs bg-white/10 rounded-full backdrop-blur-sm hover:bg-white/20"
@@ -77,9 +75,13 @@ export default function Work() {
                 <div className="h-full !mx-[15%] relative">
                     <div className="flex">
                         <div className="w-fit !my-10 !mx-5 max-md:!mt-30">
-                            <h4 className="text-8xl font-bold max-md:text-5xl">لنعمل معاً</h4>
+                            <h4 className="text-8xl font-bold max-md:text-5xl">
+                                لنعمل معاً
+                            </h4>
                             <div className="flex items-center gap-5 w-full justify-between">
-                                <h4 className="text-8xl font-bold max-md:text-5xl">الآن</h4>
+                                <h4 className="text-8xl font-bold max-md:text-5xl">
+                                    الآن
+                                </h4>
                                 <Image
                                     src={"/imgs/me/mecofee.webp"}
                                     width={80}

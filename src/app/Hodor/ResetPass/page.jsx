@@ -23,7 +23,7 @@ export default function ResetPass() {
             } = await supabase.auth.getSession();
 
             if (!session) {
-                // لو مفيش جلسة، يبقى الرابط بايظ أو المستخدم مدخلش منه
+                // لو مفيش جلسة، يبقى projectURL بايظ أو المستخدم مدخلش منه
                 setError(
                     "الجلسة غير صالحة. من فضلك اطلب رابط جديد من صفحة 'نسيت كلمة المرور'."
                 );

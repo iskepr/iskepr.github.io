@@ -15,9 +15,9 @@ export default function Projects() {
             <div className="prev w-70 h-50 sticky top-50 right-[50%] transform translate-x-1/2 overflow-hidden hidden">
                 {projects.map((project, i) => (
                     <Image
-                        src={"/imgs/" + project.اسم_المستودع + "/1.webp"}
+                        src={"/imgs/" + project.repoName + "/1.webp"}
                         key={i}
-                        alt={project.الاسم}
+                        alt={project.name}
                         width={100}
                         height={100}
                         className="w-full h-full object-cover"
@@ -82,17 +82,17 @@ export default function Projects() {
                         }}
                     >
                         <TLink
-                            href={`/Work/${project.اسم_المستودع}`}
-                            title={"• " + project.الاسم}
+                            href={`/Work/${project.repoName}`}
+                            title={"• " + project.name}
                         >
                             <div className="rounded-5xl">
                                 <Image
                                     src={
                                         "/imgs/" +
-                                        project.اسم_المستودع +
+                                        project.repoName +
                                         "/icon.webp"
                                     }
-                                    alt={project.الاسم}
+                                    alt={project.name}
                                     width={300}
                                     height={300}
                                     className="rounded-[3rem] w-full h-auto object-cover"
@@ -101,10 +101,10 @@ export default function Projects() {
                         </TLink>
                         <div className="info !px-5 !py-2">
                             <h2 className="text-3xl font-bold">
-                                {project.الاسم}
+                                {project.name}
                             </h2>
-                            <p className="text-2xl">{project.الوصف}</p>
-                            <p className="text-[gray]">{project.التاريخ}</p>
+                            <p className="text-2xl">{project.descript}</p>
+                            <p className="text-[gray]">{project.date}</p>
                         </div>
                     </SwiperSlide>
                 ))}
