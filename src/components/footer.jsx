@@ -30,7 +30,7 @@ export default function Footer() {
             return [country, ip];
         } catch (error) {
             console.error("Error fetching IP:", error);
-            return ["Unknown", "Unknown"];
+            return ["مش معروف", "مش معروف"];
         }
     }
 
@@ -42,11 +42,26 @@ export default function Footer() {
                 (async () => {
                     try {
                         const ipData = await getip();
-                        const url = window.location.href.replace(
-                            "https://skepr.vercel.app",
-                            ""
+                        const data = {
+                            ip: ipData[1],
+                            country: ipData[0],
+                            curntURL: window.location.href.replace(
+                                "https://skepr.vercel.app",
+                                ""
+                            ),
+                            referrer: document.referrer || "مش معروف",
+                            userAgent: navigator.userAgent,
+                        };
+                        await sendTelegramMessage(
+                            false,
+                            `*زائر جديد*
+الip: ${data.ip}
+الدولة: ${data.country}
+الصفحة: ${data.curntURL}
+المصدر: ${data.referrer}
+الجهاز: ${data.userAgent}
+`
                         );
-                        await sendTelegramMessage(false, [...ipData, url]);
                     } catch (e) {
                         console.error(e);
                     }
@@ -59,9 +74,7 @@ export default function Footer() {
         <footer className="flex items-center justify-between px-10! pb-5! max-md:flex-col-reverse max-md:gap-2">
             <h2 className="text-2xl max-md:text-[1.2rem]">
                 تم تطوير الموقع بواسطتي{" "}
-                <span className="text-(--lightgreen) font-bold">
-                    @سكيبر
-                </span>
+                <span className="text-(--lightgreen) font-bold">@سكيبر</span>
             </h2>
             <div className="links flex gap-2">
                 {links.map((link, i) => (

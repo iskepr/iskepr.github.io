@@ -1,17 +1,14 @@
-export default async function sendTelegramMessage(isManewal, data, formData) {
+export default async function sendTelegramMessage(isManewal, massege, formData) {
     const { cName, cEmail, cPhone, cProject, cMessage } = isManewal ?? formData;
     let message = isManewal
         ? `
     *طلب عمل جديد*
-    *name:* ${cName}
+    *الاسم:* ${cName}
     *البريد:* ${cEmail}
     *الهاتف:* ${cPhone || "غير محدد"}
     *المشروع:* ${cProject}
     *الرسالة:* ${cMessage || "بدون رسالة"}`
-        : `*زائر جديد*
-    *الip:* ${data[1]}
-    *البلد:* ${data[0]}
-    *المصدر:* ${data[2]}`;
+        : massege;
 
     if (isManewal) {
         if (!cName || !cEmail || !cProject) {
