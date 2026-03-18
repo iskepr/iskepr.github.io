@@ -43,7 +43,7 @@ export default function SimpleSwipe({ project, withVid }) {
                         src={item}
                         width={250}
                         height={250}
-                        className="rounded-xl object-cover w-full"
+                        className="rounded-3xl object-cover w-full"
                     />
                 </SwiperSlide>
             ))}

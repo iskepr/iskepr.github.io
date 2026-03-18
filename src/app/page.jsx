@@ -66,7 +66,7 @@ function HomeClient() {
             <Loader titles={["الرئيسية"]} />
             <div
                 ref={prograss}
-                className="prograsbar GlassBG flex items-center gap-3 rounded-4xl w-3/4 !p-3 fixed bottom-10 right-1/2 translate-x-1/2 z-10"
+                className="prograsbar GlassBG flex items-center gap-3 rounded-4xl w-3/4 p-3! fixed bottom-10 right-1/2 translate-x-1/2 z-10"
                 style={{
                     animation: "flyb 3s ease-in infinite alternate-reverse",
                 }}
@@ -97,7 +97,7 @@ function HomeClient() {
             <First />
             <AboutS />
 
-            <section id="projects" className="!p-10">
+            <section id="projects" className="p-10!">
                 <h2 className="text-center text-6xl font-bold max-md:text-4xl">
                     أخر أعمالي
                 </h2>
@@ -107,7 +107,7 @@ function HomeClient() {
                         href="/Work"
                         title={"• أعمالي"}
                         ref={contactSection}
-                        className="GlassBG !px-10 !py-5 text-1xl font-bold !rounded-full "
+                        className="GlassBG px-10! py-5! text-1xl font-bold rounded-full!"
                     >
                         المزيد من أعمالي
                     </TLink>

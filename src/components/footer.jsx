@@ -17,7 +17,7 @@ export default function Footer() {
                     `https://ipinfo.io/${ip}/json`,
                     {
                         signal: AbortSignal.timeout(3000),
-                    }
+                    },
                 );
                 if (locationResponse.ok) {
                     const locationData = await locationResponse.json();
@@ -47,7 +47,7 @@ export default function Footer() {
                             country: ipData[0],
                             curntURL: window.location.href.replace(
                                 "https://skepr.vercel.app",
-                                ""
+                                "",
                             ),
                             referrer: document.referrer || "مش معروف",
                             userAgent: navigator.userAgent,
@@ -59,8 +59,7 @@ export default function Footer() {
 الدولة: ${data.country}
 الصفحة: ${data.curntURL}
 المصدر: ${data.referrer}
-الجهاز: ${data.userAgent}
-`
+الجهاز: ${data.userAgent}`,
                         );
                     } catch (e) {
                         console.error(e);

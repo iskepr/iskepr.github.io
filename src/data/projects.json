@@ -26,6 +26,19 @@
         "date": "١ ربيع الآخر ١٤٤٦ هـ"
     },
     {
+        "name": "حُضور",
+        "repoName": "Hodor",
+        "descript": "تطبق لتسجيل الحضور والاختبارات بالجامعة",
+        "fullDescript": "هو التطبيق المتكامل اللي بيقضي على عصر \"الورقة والقلم\" والتلاعب في الحضور. \"حُضور\" بيوفر للدكاترة والطلاب بيئة تفاعلية لحظية، بتضمن إن الطالب فعلاً موجود في المحاضرة عن طريق تقنيات تحديد الموقع (GPS)، وبيدير كل تفاصيل المادة من حضور، درجات، امتحانات، وحتى التواصل المجهول عشان الطالب يسأل بحرية والدكتور يطور من أسلوبه.",
+        "projectURL": "https://github.com/iskepr/HodorReleases/releases/latest/download/hodor.apk",
+        "projectType": "تطبيق",
+        "readme": "https://raw.githubusercontent.com/iskepr/HodorReleases/refs/heads/main/README.md",
+        "videoLink": null,
+        "imgs": 8,
+        "tools": "Dart Flutter BloC Hive Subapase RealTime OneSignal GPS",
+        "date": "٧ رمضان ١٤٤٧ هـ"
+    },
+    {
         "name": "تتبيلة",
         "repoName": "Tatbela",
         "descript": "موقع لمطعم",

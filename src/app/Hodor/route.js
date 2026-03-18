@@ -33,7 +33,6 @@ export async function GET(request) {
     const { error } = await supabase.auth.exchangeCodeForSession(code);
 
     if (error) {
-        // 🔥🔥 هنا بقى هنطبع الإيرور في المتصفح
         return NextResponse.json({
             status: "Error",
             message: error.message,

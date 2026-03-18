@@ -6,7 +6,6 @@ import Header from "@/components/header";
 import Footer from "@/components/footer";
 import { useSearchParams } from "next/navigation";
 
-// عملنا كومبوننت داخلي للفورم عشان نحطه جوه Suspense
 function ForgotPasswordContent() {
     const [email, setEmail] = useState("");
     const [loading, setLoading] = useState(false);
@@ -18,7 +17,7 @@ function ForgotPasswordContent() {
     useEffect(() => {
         const emailParam = searchParams.get("email");
         if (emailParam) {
-            console.log("Email from URL:", emailParam); // Debugging
+            console.log("Email from URL:", emailParam);
             setEmail(emailParam);
             handleReset(null, emailParam);
         }
@@ -47,7 +46,7 @@ function ForgotPasswordContent() {
             emailToUse,
             {
                 redirectTo: "https://skepr.vercel.app/Hodor/",
-            }
+            },
         );
 
         setLoading(false);
@@ -58,7 +57,7 @@ function ForgotPasswordContent() {
         } else {
             setMessage({
                 type: "success",
-                text: "راجع بريدك الإلكتروني، بعتنالك projectURL!",
+                text: "راجع بريدك الإلكتروني، بعتنالك الرسالة!",
             });
         }
     };
@@ -101,14 +100,14 @@ function ForgotPasswordContent() {
                 <button
                     type="submit"
                     disabled={loading}
-                    className="GlassBG !px-10 !py-2 text-[1rem] text-center bg-gradient-to-tl from-[#0f01] to-[#0f03] w-full max-md:!mt-5"
+                    className="GlassBG px-10! py-2! text-[1rem] text-center bg-linear-to-tl from-[#0f01] to-[#0f03] w-full max-md:mt-5!"
                     style={{
                         boxShadow: "#0f01 0 0 50px 50px",
                         cursor: loading ? "not-allowed" : "pointer",
                         opacity: loading ? 0.7 : 1,
                     }}
                 >
-                    {loading ? "جاري الإرسال..." : "إرسال projectURL"}
+                    {loading ? "جاري الإرسال..." : "إرسال الرسالة"}
                 </button>
             </form>
 
@@ -127,7 +126,6 @@ function ForgotPasswordContent() {
     );
 }
 
-// 3. الكومبوننت الرئيسي بقى بيعمل Wrap
 export default function ForgotPassword() {
     return (
         <div
