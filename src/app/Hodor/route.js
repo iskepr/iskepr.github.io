@@ -8,38 +8,40 @@ export async function GET(request) {
     const next = "/Hodor/ResetPass";
 
     if (!code) {
-        return NextResponse.json({ error: "No code provided in URL" });
+        window.location.href = "hodor://";
+        return NextResponse.json({ error: "No code provided" });
     }
 
-    const cookieStore = cookies();
+    const cookieStore = await cookies();
+
     const supabase = createServerClient(
         process.env.NEXT_PUBLIC_SUPABASE_URL,
         process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY,
         {
             cookies: {
-                get(name) {
-                    return cookieStore.get(name)?.value;
+                getAll() {
+                    return cookieStore.getAll();
                 },
-                set(name, value, options) {
-                    cookieStore.set({ name, value, ...options });
-                },
-                remove(name, options) {
-                    cookieStore.set({ name, value: "", ...options });
+                setAll(cookiesToSet) {
+                    try {
+                        cookiesToSet.forEach(({ name, value, options }) =>
+                            cookieStore.set(name, value, options),
+                        );
+                    } catch {
+                        // الـ Route Handler ساعات بيشتكي من الـ set لو فيه redirect
+                    }
                 },
             },
-        }
+        },
     );
 
     const { error } = await supabase.auth.exchangeCodeForSession(code);
 
     if (error) {
-        return NextResponse.json({
-            status: "Error",
-            message: error.message,
-            hint: "لو الرسالة بتقول verifier mismatch يبقى المشكلة في طريقة إرسال الايميل",
-        });
+        console.error("Auth Error:", error.message);
+        window.location.href = "hodor://";
+        return NextResponse.redirect(`${origin}/login?error=auth-failed`);
     }
 
-    // لو نجح، هيرجعك للصفحة
     return NextResponse.redirect(`${origin}${next}`);
 }

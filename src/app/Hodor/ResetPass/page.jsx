@@ -25,7 +25,7 @@ export default function ResetPass() {
             if (!session) {
                 // لو مفيش جلسة، يبقى projectURL بايظ أو المستخدم مدخلش منه
                 setError(
-                    "الجلسة غير صالحة. من فضلك اطلب رابط جديد من صفحة 'نسيت كلمة المرور'."
+                    "الجلسة غير صالحة. من فضلك اطلب رابط جديد من صفحة 'نسيت كلمة المرور'.",
                 );
             }
         };
@@ -54,12 +54,12 @@ export default function ResetPass() {
             setError(error.message);
         } else {
             setMessage(
-                "تم تغيير كلمة المرور بنجاح! جاري تحويلك للصفحة الرئيسية..."
+                "تم تغيير كلمة المرور بنجاح! جاري تحويلك للصفحة الرئيسية...",
             );
             setPassword("");
-            // نرجعه للصفحة الرئيسية بعد ثانيتين
             setTimeout(() => {
                 router.replace("/");
+                window.location.href = "hodor://";
             }, 2000);
         }
     }
@@ -151,7 +151,7 @@ export default function ResetPass() {
                             loading ||
                             (error && error.includes("الجلسة غير صالحة"))
                         }
-                        className="GlassBG !px-10 !py-2 text-[1rem] text-center bg-gradient-to-tl from-[#0f01] to-[#0f03] w-full max-md:!mt-5"
+                        className="GlassBG px-10! py-2! text-[1rem] text-center bg-linear-to-tl from-[#0f01] to-[#0f03] w-full max-md:mt-5!"
                         style={{
                             boxShadow: "#0f01 0 0 50px 50px",
                             cursor:
