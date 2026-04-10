@@ -11,7 +11,7 @@ export default function Desc({ project }) {
         getData();
     }, [project.readme]);
     return (
-        <div className="GlassBG !mx-20 !p-5 !rounded-2xl bg-gradient-to-tl from-[#0000] to-[#0f01] max-md:!mx-5">
+        <div className="GlassBG mx-20! p-5! rounded-2xl! bg-linear-to-tl from-[#0000] to-[#0f01] max-md:mx-5!">
             {description ? description : project.fullDescript}
         </div>
     );
