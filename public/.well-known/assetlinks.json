@@ -1,0 +1,15 @@
+[
+    {
+        "relation": [
+            "delegate_permission/common.get_login_creds",
+            "delegate_permission/common.handle_all_urls"
+        ],
+        "target": {
+            "namespace": "android_app",
+            "package_name": "me.skepr.hodor",
+            "sha256_cert_fingerprints": [
+                "14:80:29:CF:95:81:7F:64:58:19:C2:CD:0B:67:25:E8:8C:FB:F8:E3:6D:39:64:E8:46:C2:F7:95:92:94:AA:CA"
+            ]
+        }
+    }
+]
