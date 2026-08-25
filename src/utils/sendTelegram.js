@@ -1,3 +1,5 @@
+import { notify } from "@/components/notify";
+
 export default async function sendTelegramMessage(isManewal, massege, formData) {
     const { cName, cEmail, cPhone, cProject, cMessage } = isManewal ?? formData;
     let message = isManewal

@@ -46,7 +46,7 @@ export default function Footer() {
                             ip: ipData[1],
                             country: ipData[0],
                             curntURL: window.location.href.replace(
-                                "https://skepr.vercel.app",
+                                "https://skepr.me",
                                 "",
                             ),
                             referrer: document.referrer || "مش معروف",
